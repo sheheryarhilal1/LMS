@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learnora LMS Student Recordings — Watch and review recorded lectures.">
+
+    <title>Recordings — Learnora LMS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../Css/student.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h2>Learnora</h2>
+                    <span>Student Portal</span>
+                </div>
+            </div>
+
+            <div class="student-mini-profile">
+                <div class="avatar">SA</div>
+                <div>
+                    <strong>Sheheryar Ahmed</strong>
+                    <span>Software Engineering</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-section-title">MAIN</div>
+
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="courses.html" class="nav-link">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>My Courses</span>
+                </a>
+
+                <a href="courses.html#add-drop" class="nav-link">
+                    <i class="fa-solid fa-plus-minus"></i>
+                    <span>Add / Drop Course</span>
+                </a>
+
+                <a href="lectures.html" class="nav-link">
+                    <i class="fa-solid fa-chalkboard"></i>
+                    <span>Lectures</span>
+                </a>
+
+                <a href="recordings.html" class="nav-link active">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <span>Recordings</span>
+                </a>
+
+                <div class="nav-section-title">ACADEMICS</div>
+
+                <a href="assignments.html" class="nav-link">
+                    <i class="fa-solid fa-file-pen"></i>
+                    <span>Assignments</span>
+                </a>
+
+                <a href="quizzes.html" class="nav-link">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    <span>Quizzes & Tests</span>
+                </a>
+
+                <a href="results.html" class="nav-link">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Results & Grades</span>
+                </a>
+
+                <a href="attendance.html" class="nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="schedule.html" class="nav-link">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Schedule</span>
+                </a>
+
+                <a href="materials.html" class="nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Study Materials</span>
+                </a>
+
+                <div class="nav-section-title">COMMUNICATION</div>
+
+                <a href="announcements.html" class="nav-link">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Announcements</span>
+                </a>
+
+                <a href="messages.html" class="nav-link">
+                    <i class="fa-solid fa-message"></i>
+                    <span>Messages</span>
+                </a>
+
+                <div class="nav-section-title">ACCOUNT</div>
+
+                <a href="profile.html" class="nav-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="settings.html" class="nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="../login.html" class="nav-link logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search recordings...">
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button class="icon-btn notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="topbar-profile">
+                        <div class="avatar small">SA</div>
+
+                        <div class="topbar-profile-info">
+                            <strong>Sheheryar Ahmed</strong>
+                            <span>Student</span>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- PAGE -->
+            <div class="page-content">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">
+                            <i class="fa-solid fa-video"></i>
+                            LEARNING LIBRARY
+                        </span>
+
+                        <h1>Lecture Recordings</h1>
+
+                        <p>
+                            Rewatch your lectures anytime and learn at your own pace.
+                        </p>
+                    </div>
+
+                    <div class="header-actions">
+                        <button class="secondary-btn">
+                            <i class="fa-solid fa-filter"></i>
+                            Filter
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- STATS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <div>
+                            <span>Total Recordings</span>
+                            <strong>46</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <span>Watched</span>
+                            <strong>31</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon cyan">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <span>Watch Time</span>
+                            <strong>19h 42m</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                        <div>
+                            <span>Saved</span>
+                            <strong>8</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- COURSE FILTER -->
+                <section class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Course Recordings</h2>
+                            <p>Select a course to view available recordings.</p>
+                        </div>
+
+                        <select class="form-select">
+                            <option>All Courses</option>
+                            <option>CS-401 — Software Engineering</option>
+                            <option>CS-403 — Database Systems</option>
+                            <option>DS-301 — Data Analytics</option>
+                            <option>SE-405 — Mobile Application Development</option>
+                            <option>CS-407 — Information Security</option>
+                        </select>
+
+                    </div>
+
+                    <div class="recordings-grid">
+
+                        <!-- Recording 1 -->
+                        <article class="recording-card">
+
+                            <div class="recording-thumbnail">
+                                <div class="thumbnail-icon">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+
+                                <span class="duration">48:32</span>
+                                <span class="watched-badge">
+                                    <i class="fa-solid fa-check"></i>
+                                    Watched
+                                </span>
+                            </div>
+
+                            <div class="recording-body">
+
+                                <span class="course-label">CS-401 · Software Engineering</span>
+
+                                <h3>Software Testing Strategies</h3>
+
+                                <p>
+                                    Learn unit testing, integration testing,
+                                    system testing and acceptance testing.
+                                </p>
+
+                                <div class="recording-meta">
+                                    <span>
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Sep 26, 2026
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-user"></i>
+                                        Dr. Ahmed Khan
+                                    </span>
+                                </div>
+
+                                <div class="recording-footer">
+                                    <span class="progress-text">100% watched</span>
+
+                                    <button class="primary-btn small-btn">
+                                        <i class="fa-solid fa-play"></i>
+                                        Watch
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Recording 2 -->
+                        <article class="recording-card">
+
+                            <div class="recording-thumbnail">
+                                <div class="thumbnail-icon">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+
+                                <span class="duration">55:18</span>
+                            </div>
+
+                            <div class="recording-body">
+
+                                <span class="course-label">CS-403 · Database Systems</span>
+
+                                <h3>SQL Joins & Relationships</h3>
+
+                                <p>
+                                    Understand inner, left, right and full joins
+                                    with practical database examples.
+                                </p>
+
+                                <div class="recording-meta">
+                                    <span>
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Sep 25, 2026
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-user"></i>
+                                        Prof. Sarah Ahmed
+                                    </span>
+                                </div>
+
+                                <div class="recording-footer">
+                                    <span class="progress-text">62% watched</span>
+
+                                    <button class="primary-btn small-btn">
+                                        <i class="fa-solid fa-play"></i>
+                                        Continue
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Recording 3 -->
+                        <article class="recording-card">
+
+                            <div class="recording-thumbnail">
+                                <div class="thumbnail-icon">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+
+                                <span class="duration">46:09</span>
+                            </div>
+
+                            <div class="recording-body">
+
+                                <span class="course-label">DS-301 · Data Analytics</span>
+
+                                <h3>Data Cleaning with Python</h3>
+
+                                <p>
+                                    Explore missing values, duplicate records,
+                                    outliers and data transformation.
+                                </p>
+
+                                <div class="recording-meta">
+                                    <span>
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Sep 23, 2026
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-user"></i>
+                                        Dr. Muhammad Ali
+                                    </span>
+                                </div>
+
+                                <div class="recording-footer">
+                                    <span class="progress-text">35% watched</span>
+
+                                    <button class="primary-btn small-btn">
+                                        <i class="fa-solid fa-play"></i>
+                                        Continue
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                        <!-- Recording 4 -->
+                        <article class="recording-card">
+
+                            <div class="recording-thumbnail">
+                                <div class="thumbnail-icon">
+                                    <i class="fa-solid fa-play"></i>
+                                </div>
+
+                                <span class="duration">51:44</span>
+                                <span class="watched-badge">
+                                    <i class="fa-solid fa-check"></i>
+                                    Watched
+                                </span>
+                            </div>
+
+                            <div class="recording-body">
+
+                                <span class="course-label">SE-405 · Mobile App Development</span>
+
+                                <h3>Flutter State Management</h3>
+
+                                <p>
+                                    Introduction to state management patterns
+                                    and practical Flutter implementation.
+                                </p>
+
+                                <div class="recording-meta">
+                                    <span>
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Sep 21, 2026
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-user"></i>
+                                        Mr. Hamza Raza
+                                    </span>
+                                </div>
+
+                                <div class="recording-footer">
+                                    <span class="progress-text">100% watched</span>
+
+                                    <button class="primary-btn small-btn">
+                                        <i class="fa-solid fa-play"></i>
+                                        Watch
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+                <!-- RECENTLY WATCHED -->
+                <section class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Recently Watched</h2>
+                            <p>Continue learning from where you stopped.</p>
+                        </div>
+
+                        <a href="lectures.html" class="text-link">
+                            View Lectures
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon blue">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+
+                            <div class="activity-info">
+                                <strong>Requirements Engineering</strong>
+                                <span>CS-401 · 42 minutes</span>
+                            </div>
+
+                            <div class="activity-progress">
+                                <div class="progress-bar">
+                                    <span style="width: 100%;"></span>
+                                </div>
+                                <small>100%</small>
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon cyan">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+
+                            <div class="activity-info">
+                                <strong>Normalization in DBMS</strong>
+                                <span>CS-403 · 51 minutes</span>
+                            </div>
+
+                            <div class="activity-progress">
+                                <div class="progress-bar">
+                                    <span style="width: 74%;"></span>
+                                </div>
+                                <small>74%</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <footer class="main-footer">
+                <span>© 2026 Learnora LMS</span>
+                <span>Learn smarter. Grow faster.</span>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="../../js/student.js"></script>
+
+</body>
+
+</html>

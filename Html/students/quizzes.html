@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learnora LMS Student Quizzes — Take quizzes and tests and track your performance.">
+
+    <title>Quizzes & Tests — Learnora LMS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../Css/student.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h2>Learnora</h2>
+                    <span>Student Portal</span>
+                </div>
+            </div>
+
+            <div class="student-mini-profile">
+                <div class="avatar">SA</div>
+                <div>
+                    <strong>Sheheryar Ahmed</strong>
+                    <span>Software Engineering</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-section-title">MAIN</div>
+
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="courses.html" class="nav-link">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>My Courses</span>
+                </a>
+
+                <a href="courses.html#add-drop" class="nav-link">
+                    <i class="fa-solid fa-plus-minus"></i>
+                    <span>Add / Drop Course</span>
+                </a>
+
+                <a href="lectures.html" class="nav-link">
+                    <i class="fa-solid fa-chalkboard"></i>
+                    <span>Lectures</span>
+                </a>
+
+                <a href="recordings.html" class="nav-link">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <span>Recordings</span>
+                </a>
+
+                <div class="nav-section-title">ACADEMICS</div>
+
+                <a href="assignments.html" class="nav-link">
+                    <i class="fa-solid fa-file-pen"></i>
+                    <span>Assignments</span>
+                </a>
+
+                <a href="quizzes.html" class="nav-link active">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    <span>Quizzes & Tests</span>
+                </a>
+
+                <a href="results.html" class="nav-link">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Results & Grades</span>
+                </a>
+
+                <a href="attendance.html" class="nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="schedule.html" class="nav-link">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Schedule</span>
+                </a>
+
+                <a href="materials.html" class="nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Study Materials</span>
+                </a>
+
+                <div class="nav-section-title">COMMUNICATION</div>
+
+                <a href="announcements.html" class="nav-link">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Announcements</span>
+                </a>
+
+                <a href="messages.html" class="nav-link">
+                    <i class="fa-solid fa-message"></i>
+                    <span>Messages</span>
+                </a>
+
+                <div class="nav-section-title">ACCOUNT</div>
+
+                <a href="profile.html" class="nav-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="settings.html" class="nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="../login.html" class="nav-link logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search quizzes...">
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button class="icon-btn notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="topbar-profile">
+
+                        <div class="avatar small">SA</div>
+
+                        <div class="topbar-profile-info">
+                            <strong>Sheheryar Ahmed</strong>
+                            <span>Student</span>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="page-content">
+
+                <div class="page-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                            ASSESSMENTS
+                        </span>
+
+                        <h1>Quizzes & Tests</h1>
+
+                        <p>
+                            Test your knowledge and track your academic performance.
+                        </p>
+
+                    </div>
+
+                    <button class="secondary-btn">
+                        <i class="fa-solid fa-filter"></i>
+                        Filter
+                    </button>
+
+                </div>
+
+                <!-- STATS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-clipboard-list"></i>
+                        </div>
+
+                        <div>
+                            <span>Total Tests</span>
+                            <strong>12</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div>
+                            <span>Completed</span>
+                            <strong>8</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-hourglass-half"></i>
+                        </div>
+
+                        <div>
+                            <span>Pending</span>
+                            <strong>3</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-chart-simple"></i>
+                        </div>
+
+                        <div>
+                            <span>Average Score</span>
+                            <strong>86%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ACTIVE QUIZZES -->
+                <section class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Available Tests</h2>
+                            <p>Complete the following assessments before their deadlines.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="quiz-list">
+
+                        <!-- Quiz 1 -->
+                        <div class="quiz-card">
+
+                            <div class="quiz-card-icon blue">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+
+                            <div class="quiz-main">
+
+                                <span class="course-label">
+                                    CS-401 · Software Engineering
+                                </span>
+
+                                <h3>Software Testing Quiz</h3>
+
+                                <p>
+                                    Test your understanding of software testing
+                                    strategies and quality assurance.
+                                </p>
+
+                                <div class="quiz-meta">
+
+                                    <span>
+                                        <i class="fa-solid fa-list-ol"></i>
+                                        15 Questions
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-regular fa-clock"></i>
+                                        20 Minutes
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-star"></i>
+                                        20 Points
+                                    </span>
+
+                                    <span class="danger-text">
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Due Sep 30
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="quiz-action">
+
+                                <span class="status-badge pending">
+                                    Not Started
+                                </span>
+
+                                <a href="quiz.html" class="primary-btn">
+                                    Start Quiz
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Quiz 2 -->
+                        <div class="quiz-card">
+
+                            <div class="quiz-card-icon cyan">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+
+                            <div class="quiz-main">
+
+                                <span class="course-label">
+                                    CS-403 · Database Systems
+                                </span>
+
+                                <h3>SQL & Normalization Test</h3>
+
+                                <p>
+                                    Evaluate your knowledge of SQL queries,
+                                    keys and database normalization.
+                                </p>
+
+                                <div class="quiz-meta">
+
+                                    <span>
+                                        <i class="fa-solid fa-list-ol"></i>
+                                        20 Questions
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-regular fa-clock"></i>
+                                        30 Minutes
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-star"></i>
+                                        25 Points
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Due Oct 03
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="quiz-action">
+
+                                <span class="status-badge progress">
+                                    In Progress
+                                </span>
+
+                                <a href="quiz.html" class="primary-btn">
+                                    Continue
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Quiz 3 -->
+                        <div class="quiz-card">
+
+                            <div class="quiz-card-icon purple">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+
+                            <div class="quiz-main">
+
+                                <span class="course-label">
+                                    DS-301 · Data Analytics
+                                </span>
+
+                                <h3>Python Data Analysis Quiz</h3>
+
+                                <p>
+                                    Test your knowledge of Python, Pandas and
+                                    basic data analysis concepts.
+                                </p>
+
+                                <div class="quiz-meta">
+
+                                    <span>
+                                        <i class="fa-solid fa-list-ol"></i>
+                                        15 Questions
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-regular fa-clock"></i>
+                                        25 Minutes
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-star"></i>
+                                        20 Points
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-regular fa-calendar"></i>
+                                        Due Oct 07
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                            <div class="quiz-action">
+
+                                <span class="status-badge pending">
+                                    Not Started
+                                </span>
+
+                                <a href="quiz.html" class="primary-btn">
+                                    Start Quiz
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!-- COMPLETED -->
+                <section class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Completed Tests</h2>
+                            <p>Your recent quiz and test results.</p>
+                        </div>
+
+                        <a href="results.html" class="text-link">
+                            View Results
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table class="data-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Test</th>
+                                    <th>Course</th>
+                                    <th>Date</th>
+                                    <th>Score</th>
+                                    <th>Result</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-title">
+
+                                            <div class="table-icon green">
+                                                <i class="fa-solid fa-code"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Requirements Engineering</strong>
+                                                <span>Quiz #02</span>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                    <td>CS-401</td>
+
+                                    <td>Sep 22, 2026</td>
+
+                                    <td><strong>18/20</strong></td>
+
+                                    <td>
+                                        <span class="status-badge completed">
+                                            90%
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="secondary-btn small-btn">
+                                            Review
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-title">
+
+                                            <div class="table-icon green">
+                                                <i class="fa-solid fa-database"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>ER Modeling</strong>
+                                                <span>Quiz #01</span>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+                                    <td>CS-403</td>
+
+                                    <td>Sep 19, 2026</td>
+
+                                    <td><strong>17/20</strong></td>
+
+                                    <td>
+                                        <span class="status-badge completed">
+                                            85%
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="secondary-btn small-btn">
+                                            Review
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <footer class="main-footer">
+                <span>© 2026 Learnora LMS</span>
+                <span>Learn smarter. Grow faster.</span>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="../../js/student.js"></script>
+
+</body>
+
+</html>

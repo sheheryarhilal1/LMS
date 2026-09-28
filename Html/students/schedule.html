@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learnora LMS Student Schedule — View classes, lectures and academic activities.">
+
+    <title>Schedule — Learnora LMS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../Css/student.css">
+
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h2>Learnora</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+        <div class="student-mini-profile">
+
+            <div class="avatar">SA</div>
+
+            <div>
+                <strong>Sheheryar Ahmed</strong>
+                <span>Software Engineering</span>
+            </div>
+
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section-title">MAIN</div>
+
+            <a href="dashboard.html" class="nav-link">
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="courses.html" class="nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="courses.html#add-drop" class="nav-link">
+                <i class="fa-solid fa-plus-minus"></i>
+                <span>Add / Drop Course</span>
+            </a>
+
+            <a href="lectures.html" class="nav-link">
+                <i class="fa-solid fa-chalkboard"></i>
+                <span>Lectures</span>
+            </a>
+
+            <a href="recordings.html" class="nav-link">
+                <i class="fa-solid fa-circle-play"></i>
+                <span>Recordings</span>
+            </a>
+
+            <div class="nav-section-title">ACADEMICS</div>
+
+            <a href="assignments.html" class="nav-link">
+                <i class="fa-solid fa-file-pen"></i>
+                <span>Assignments</span>
+            </a>
+
+            <a href="quizzes.html" class="nav-link">
+                <i class="fa-solid fa-clipboard-question"></i>
+                <span>Quizzes & Tests</span>
+            </a>
+
+            <a href="results.html" class="nav-link">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Results & Grades</span>
+            </a>
+
+            <a href="attendance.html" class="nav-link">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="schedule.html" class="nav-link active">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Schedule</span>
+            </a>
+
+            <a href="materials.html" class="nav-link">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Study Materials</span>
+            </a>
+
+            <div class="nav-section-title">COMMUNICATION</div>
+
+            <a href="announcements.html" class="nav-link">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>Announcements</span>
+            </a>
+
+            <a href="messages.html" class="nav-link">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+            </a>
+
+            <div class="nav-section-title">ACCOUNT</div>
+
+            <a href="profile.html" class="nav-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="../login.html" class="nav-link logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="topbar-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search schedule...">
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="icon-btn notification-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+
+                    <div class="avatar small">SA</div>
+
+                    <div class="topbar-profile-info">
+                        <strong>Sheheryar Ahmed</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="page-content">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        ACADEMIC CALENDAR
+                    </span>
+
+                    <h1>My Schedule</h1>
+
+                    <p>
+                        View your weekly classes, lectures and academic activities.
+                    </p>
+
+                </div>
+
+                <button class="secondary-btn">
+                    <i class="fa-solid fa-download"></i>
+                    Export Schedule
+                </button>
+
+            </div>
+
+            <!-- TODAY -->
+            <section class="content-card">
+
+                <div class="schedule-toolbar">
+
+                    <button class="secondary-btn">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="schedule-date">
+
+                        <strong>September 28 – October 04, 2026</strong>
+                        <span>Current Week</span>
+
+                    </div>
+
+                    <button class="secondary-btn">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <button class="primary-btn">
+                        Today
+                    </button>
+
+                </div>
+
+                <div class="weekly-schedule">
+
+                    <!-- MONDAY -->
+                    <div class="schedule-day">
+
+                        <div class="day-header active-day">
+                            <span>MON</span>
+                            <strong>28</strong>
+                        </div>
+
+                        <div class="schedule-event blue-event">
+
+                            <span class="event-time">
+                                09:00 – 10:30
+                            </span>
+
+                            <strong>Software Engineering</strong>
+
+                            <span>Room 204 · Dr. Ahmed Khan</span>
+
+                        </div>
+
+                        <div class="schedule-event cyan-event">
+
+                            <span class="event-time">
+                                02:00 – 03:30
+                            </span>
+
+                            <strong>Database Systems</strong>
+
+                            <span>Lab 03 · Prof. Sarah Ahmed</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- TUESDAY -->
+                    <div class="schedule-day">
+
+                        <div class="day-header">
+                            <span>TUE</span>
+                            <strong>29</strong>
+                        </div>
+
+                        <div class="schedule-event purple-event">
+
+                            <span class="event-time">
+                                10:00 – 11:30
+                            </span>
+
+                            <strong>Data Analytics</strong>
+
+                            <span>Room 305 · Dr. Muhammad Ali</span>
+
+                        </div>
+
+                        <div class="schedule-event green-event">
+
+                            <span class="event-time">
+                                01:00 – 02:30
+                            </span>
+
+                            <strong>Mobile App Development</strong>
+
+                            <span>Lab 02 · Mr. Hamza Raza</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- WEDNESDAY -->
+                    <div class="schedule-day">
+
+                        <div class="day-header">
+                            <span>WED</span>
+                            <strong>30</strong>
+                        </div>
+
+                        <div class="schedule-event blue-event">
+
+                            <span class="event-time">
+                                09:00 – 10:30
+                            </span>
+
+                            <strong>Software Engineering</strong>
+
+                            <span>Room 204 · Dr. Ahmed Khan</span>
+
+                        </div>
+
+                        <div class="schedule-event orange-event">
+
+                            <span class="event-time">
+                                03:00 – 04:30
+                            </span>
+
+                            <strong>Information Security</strong>
+
+                            <span>Room 208 · Dr. Usman Shah</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- THURSDAY -->
+                    <div class="schedule-day">
+
+                        <div class="day-header">
+                            <span>THU</span>
+                            <strong>01</strong>
+                        </div>
+
+                        <div class="schedule-event cyan-event">
+
+                            <span class="event-time">
+                                02:00 – 03:30
+                            </span>
+
+                            <strong>Database Systems</strong>
+
+                            <span>Lab 03 · Prof. Sarah Ahmed</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- FRIDAY -->
+                    <div class="schedule-day">
+
+                        <div class="day-header">
+                            <span>FRI</span>
+                            <strong>02</strong>
+                        </div>
+
+                        <div class="schedule-event purple-event">
+
+                            <span class="event-time">
+                                10:00 – 11:30
+                            </span>
+
+                            <strong>Data Analytics</strong>
+
+                            <span>Room 305 · Dr. Muhammad Ali</span>
+
+                        </div>
+
+                        <div class="schedule-event green-event">
+
+                            <span class="event-time">
+                                01:00 – 02:30
+                            </span>
+
+                            <strong>Mobile App Development</strong>
+
+                            <span>Lab 02 · Mr. Hamza Raza</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SATURDAY -->
+                    <div class="schedule-day">
+
+                        <div class="day-header weekend">
+                            <span>SAT</span>
+                            <strong>03</strong>
+                        </div>
+
+                        <div class="empty-schedule">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span>No Classes</span>
+                        </div>
+
+                    </div>
+
+                    <!-- SUNDAY -->
+                    <div class="schedule-day">
+
+                        <div class="day-header weekend">
+                            <span>SUN</span>
+                            <strong>04</strong>
+                        </div>
+
+                        <div class="empty-schedule">
+                            <i class="fa-solid fa-mug-hot"></i>
+                            <span>Day Off</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- UPCOMING -->
+            <section class="content-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Upcoming Activities</h2>
+                        <p>Important academic events for this week.</p>
+                    </div>
+
+                </div>
+
+                <div class="activity-list">
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon orange">
+                            <i class="fa-solid fa-file-pen"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>Software Testing Assignment</strong>
+                            <span>CS-401 · Due Sep 30, 2026</span>
+                        </div>
+
+                        <span class="status-badge pending">
+                            2 Days
+                        </span>
+
+                    </div>
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon blue">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>SQL & Normalization Test</strong>
+                            <span>CS-403 · Oct 03, 2026</span>
+                        </div>
+
+                        <span class="status-badge progress">
+                            5 Days
+                        </span>
+
+                    </div>
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon purple">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+
+                        <div class="activity-info">
+                            <strong>Data Analytics Lecture</strong>
+                            <span>DS-301 · Oct 02, 2026 · 10:00 AM</span>
+                        </div>
+
+                        <span class="status-badge completed">
+                            Scheduled
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <footer class="main-footer">
+            <span>© 2026 Learnora LMS</span>
+            <span>Learn smarter. Grow faster.</span>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../../js/student.js"></script>
+
+</body>
+</html>

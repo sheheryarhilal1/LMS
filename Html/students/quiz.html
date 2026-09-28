@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learnora LMS Quiz — Complete your online assessment.">
+
+    <title>Software Testing Quiz — Learnora LMS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../Css/student.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h2>Learnora</h2>
+                    <span>Student Portal</span>
+                </div>
+            </div>
+
+            <div class="student-mini-profile">
+                <div class="avatar">SA</div>
+
+                <div>
+                    <strong>Sheheryar Ahmed</strong>
+                    <span>Software Engineering</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-section-title">MAIN</div>
+
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="courses.html" class="nav-link">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>My Courses</span>
+                </a>
+
+                <a href="lectures.html" class="nav-link">
+                    <i class="fa-solid fa-chalkboard"></i>
+                    <span>Lectures</span>
+                </a>
+
+                <a href="recordings.html" class="nav-link">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <span>Recordings</span>
+                </a>
+
+                <div class="nav-section-title">ACADEMICS</div>
+
+                <a href="assignments.html" class="nav-link">
+                    <i class="fa-solid fa-file-pen"></i>
+                    <span>Assignments</span>
+                </a>
+
+                <a href="quizzes.html" class="nav-link active">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    <span>Quizzes & Tests</span>
+                </a>
+
+                <a href="results.html" class="nav-link">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Results & Grades</span>
+                </a>
+
+                <a href="attendance.html" class="nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="schedule.html" class="nav-link">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Schedule</span>
+                </a>
+
+                <a href="materials.html" class="nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Study Materials</span>
+                </a>
+
+                <div class="nav-section-title">ACCOUNT</div>
+
+                <a href="profile.html" class="nav-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="settings.html" class="nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="../login.html" class="nav-link logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button class="icon-btn">
+                        <i class="fa-regular fa-bell"></i>
+                    </button>
+
+                    <div class="topbar-profile">
+
+                        <div class="avatar small">SA</div>
+
+                        <div class="topbar-profile-info">
+                            <strong>Sheheryar Ahmed</strong>
+                            <span>Student</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="page-content">
+
+                <!-- QUIZ HEADER -->
+                <section class="quiz-header-card">
+
+                    <div class="quiz-header-left">
+
+                        <a href="quizzes.html" class="back-link">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            Back to Quizzes
+                        </a>
+
+                        <span class="course-label">
+                            CS-401 · Software Engineering
+                        </span>
+
+                        <h1>Software Testing Quiz</h1>
+
+                        <p>
+                            Test your understanding of software testing strategies
+                            and quality assurance.
+                        </p>
+
+                    </div>
+
+                    <div class="quiz-timer">
+
+                        <span>
+                            <i class="fa-regular fa-clock"></i>
+                            TIME REMAINING
+                        </span>
+
+                        <strong id="quizTimer">19:42</strong>
+
+                    </div>
+
+                </section>
+
+                <!-- QUIZ PROGRESS -->
+                <section class="quiz-progress-card">
+
+                    <div class="quiz-progress-top">
+
+                        <div>
+                            <strong>Question 4 of 15</strong>
+                            <span>27% completed</span>
+                        </div>
+
+                        <span>4 / 15</span>
+
+                    </div>
+
+                    <div class="progress-bar large">
+                        <span style="width: 27%;"></span>
+                    </div>
+
+                </section>
+
+                <div class="quiz-layout">
+
+                    <!-- QUESTION -->
+                    <section class="quiz-question-card">
+
+                        <div class="question-number">
+                            QUESTION 04
+                        </div>
+
+                        <h2>
+                            Which type of testing verifies that individual
+                            components or functions work correctly in isolation?
+                        </h2>
+
+                        <p class="question-instruction">
+                            Select the best answer.
+                        </p>
+
+                        <div class="answer-options">
+
+                            <label class="answer-option">
+
+                                <input type="radio" name="question4" value="a">
+
+                                <span class="option-letter">A</span>
+
+                                <span class="option-content">
+                                    <strong>Unit Testing</strong>
+                                    <small>
+                                        Tests individual software components independently.
+                                    </small>
+                                </span>
+
+                                <span class="option-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+
+                            </label>
+
+                            <label class="answer-option">
+
+                                <input type="radio" name="question4" value="b">
+
+                                <span class="option-letter">B</span>
+
+                                <span class="option-content">
+                                    <strong>System Testing</strong>
+                                    <small>
+                                        Tests the complete integrated application.
+                                    </small>
+                                </span>
+
+                                <span class="option-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+
+                            </label>
+
+                            <label class="answer-option">
+
+                                <input type="radio" name="question4" value="c">
+
+                                <span class="option-letter">C</span>
+
+                                <span class="option-content">
+                                    <strong>Acceptance Testing</strong>
+                                    <small>
+                                        Determines whether the system meets user requirements.
+                                    </small>
+                                </span>
+
+                                <span class="option-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+
+                            </label>
+
+                            <label class="answer-option">
+
+                                <input type="radio" name="question4" value="d">
+
+                                <span class="option-letter">D</span>
+
+                                <span class="option-content">
+                                    <strong>Performance Testing</strong>
+                                    <small>
+                                        Measures responsiveness and system performance.
+                                    </small>
+                                </span>
+
+                                <span class="option-check">
+                                    <i class="fa-solid fa-check"></i>
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                        <div class="question-actions">
+
+                            <button class="secondary-btn">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                Previous
+                            </button>
+
+                            <button class="primary-btn">
+                                Save & Next
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                    <!-- QUESTION NAVIGATION -->
+                    <aside class="quiz-navigation">
+
+                        <div class="quiz-nav-header">
+
+                            <div>
+                                <h3>Questions</h3>
+                                <span>15 total</span>
+                            </div>
+
+                            <button class="icon-btn">
+                                <i class="fa-solid fa-expand"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="question-legend">
+
+                            <span>
+                                <i class="fa-solid fa-circle"></i>
+                                Answered
+                            </span>
+
+                            <span>
+                                <i class="fa-regular fa-circle"></i>
+                                Unanswered
+                            </span>
+
+                        </div>
+
+                        <div class="question-grid">
+
+                            <button class="question-number-btn answered">1</button>
+                            <button class="question-number-btn answered">2</button>
+                            <button class="question-number-btn answered">3</button>
+                            <button class="question-number-btn current">4</button>
+
+                            <button class="question-number-btn">5</button>
+                            <button class="question-number-btn">6</button>
+                            <button class="question-number-btn">7</button>
+                            <button class="question-number-btn">8</button>
+
+                            <button class="question-number-btn">9</button>
+                            <button class="question-number-btn">10</button>
+                            <button class="question-number-btn">11</button>
+                            <button class="question-number-btn">12</button>
+
+                            <button class="question-number-btn">13</button>
+                            <button class="question-number-btn">14</button>
+                            <button class="question-number-btn">15</button>
+
+                        </div>
+
+                        <div class="quiz-submit-box">
+
+                            <p>
+                                Make sure you have answered all questions
+                                before submitting.
+                            </p>
+
+                            <button class="danger-btn">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Submit Quiz
+                            </button>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+                <!-- QUIZ NOTICE -->
+                <div class="quiz-notice">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <div>
+                        <strong>Quiz Guidelines</strong>
+
+                        <p>
+                            Do not refresh the page during the quiz.
+                            Your answers are automatically saved as you progress.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <footer class="main-footer">
+                <span>© 2026 Learnora LMS</span>
+                <span>Learn smarter. Grow faster.</span>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="../../js/student.js"></script>
+
+</body>
+
+</html>

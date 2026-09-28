@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learnora LMS Student Results and Grades — View academic performance and course grades.">
+
+    <title>Results & Grades — Learnora LMS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../Css/student.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h2>Learnora</h2>
+                <span>Student Portal</span>
+            </div>
+        </div>
+
+        <div class="student-mini-profile">
+            <div class="avatar">SA</div>
+
+            <div>
+                <strong>Sheheryar Ahmed</strong>
+                <span>Software Engineering</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section-title">MAIN</div>
+
+            <a href="dashboard.html" class="nav-link">
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="courses.html" class="nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="courses.html#add-drop" class="nav-link">
+                <i class="fa-solid fa-plus-minus"></i>
+                <span>Add / Drop Course</span>
+            </a>
+
+            <a href="lectures.html" class="nav-link">
+                <i class="fa-solid fa-chalkboard"></i>
+                <span>Lectures</span>
+            </a>
+
+            <a href="recordings.html" class="nav-link">
+                <i class="fa-solid fa-circle-play"></i>
+                <span>Recordings</span>
+            </a>
+
+            <div class="nav-section-title">ACADEMICS</div>
+
+            <a href="assignments.html" class="nav-link">
+                <i class="fa-solid fa-file-pen"></i>
+                <span>Assignments</span>
+            </a>
+
+            <a href="quizzes.html" class="nav-link">
+                <i class="fa-solid fa-clipboard-question"></i>
+                <span>Quizzes & Tests</span>
+            </a>
+
+            <a href="results.html" class="nav-link active">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Results & Grades</span>
+            </a>
+
+            <a href="attendance.html" class="nav-link">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="schedule.html" class="nav-link">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Schedule</span>
+            </a>
+
+            <a href="materials.html" class="nav-link">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Study Materials</span>
+            </a>
+
+            <div class="nav-section-title">COMMUNICATION</div>
+
+            <a href="announcements.html" class="nav-link">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>Announcements</span>
+            </a>
+
+            <a href="messages.html" class="nav-link">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+            </a>
+
+            <div class="nav-section-title">ACCOUNT</div>
+
+            <a href="profile.html" class="nav-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../login.html" class="nav-link logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="topbar-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search results...">
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="icon-btn notification-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+
+                    <div class="avatar small">SA</div>
+
+                    <div class="topbar-profile-info">
+                        <strong>Sheheryar Ahmed</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="page-content">
+
+            <!-- HEADER -->
+            <div class="page-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        <i class="fa-solid fa-chart-column"></i>
+                        ACADEMIC PERFORMANCE
+                    </span>
+
+                    <h1>Results & Grades</h1>
+
+                    <p>
+                        Track your course grades, assessments and academic progress.
+                    </p>
+
+                </div>
+
+                <button class="secondary-btn">
+                    <i class="fa-solid fa-download"></i>
+                    Download Report
+                </button>
+
+            </div>
+
+            <!-- STATS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div>
+                        <span>Current CGPA</span>
+                        <strong>3.42</strong>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Semester GPA</span>
+                        <strong>3.58</strong>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon cyan">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <div>
+                        <span>Credit Hours</span>
+                        <strong>15</strong>
+                    </div>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+
+                    <div>
+                        <span>Overall Grade</span>
+                        <strong>A-</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CURRENT SEMESTER -->
+            <section class="content-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Fall 2026 Results</h2>
+                        <p>Current semester academic performance.</p>
+                    </div>
+
+                    <select class="form-select">
+                        <option>Fall 2026</option>
+                        <option>Spring 2026</option>
+                        <option>Fall 2025</option>
+                    </select>
+
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table class="data-table">
+
+                        <thead>
+                        <tr>
+                            <th>Course</th>
+                            <th>Credit Hours</th>
+                            <th>Assignments</th>
+                            <th>Quizzes</th>
+                            <th>Final</th>
+                            <th>Total</th>
+                            <th>Grade</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <tr>
+
+                            <td>
+                                <div class="table-title">
+
+                                    <div class="table-icon blue">
+                                        <i class="fa-solid fa-code"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Software Engineering</strong>
+                                        <span>CS-401</span>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>3</td>
+                            <td>18/20</td>
+                            <td>18/20</td>
+                            <td>42/50</td>
+                            <td><strong>78/90</strong></td>
+
+                            <td>
+                                <span class="grade-badge grade-a">
+                                    A-
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                <div class="table-title">
+
+                                    <div class="table-icon cyan">
+                                        <i class="fa-solid fa-database"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Database Systems</strong>
+                                        <span>CS-403</span>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>3</td>
+                            <td>22/25</td>
+                            <td>17/20</td>
+                            <td>40/50</td>
+                            <td><strong>79/95</strong></td>
+
+                            <td>
+                                <span class="grade-badge grade-a">
+                                    A-
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                <div class="table-title">
+
+                                    <div class="table-icon purple">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Data Analytics</strong>
+                                        <span>DS-301</span>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>3</td>
+                            <td>17/20</td>
+                            <td>16/20</td>
+                            <td>38/50</td>
+                            <td><strong>71/90</strong></td>
+
+                            <td>
+                                <span class="grade-badge grade-b">
+                                    B+
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                <div class="table-title">
+
+                                    <div class="table-icon green">
+                                        <i class="fa-solid fa-mobile-screen"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Mobile Application Development</strong>
+                                        <span>SE-405</span>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>3</td>
+                            <td>19/20</td>
+                            <td>18/20</td>
+                            <td>44/50</td>
+                            <td><strong>81/90</strong></td>
+
+                            <td>
+                                <span class="grade-badge grade-a">
+                                    A
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                <div class="table-title">
+
+                                    <div class="table-icon orange">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                    </div>
+
+                                    <div>
+                                        <strong>Information Security</strong>
+                                        <span>CS-407</span>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>3</td>
+                            <td>16/20</td>
+                            <td>15/20</td>
+                            <td>36/50</td>
+                            <td><strong>67/90</strong></td>
+
+                            <td>
+                                <span class="grade-badge grade-b">
+                                    B
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- PERFORMANCE -->
+            <div class="two-column-grid">
+
+                <section class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Performance Breakdown</h2>
+                            <p>Current semester assessment distribution.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="performance-list">
+
+                        <div class="performance-row">
+                            <div>
+                                <strong>Assignments</strong>
+                                <span>92%</span>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width:92%;"></span>
+                            </div>
+                        </div>
+
+                        <div class="performance-row">
+                            <div>
+                                <strong>Quizzes</strong>
+                                <span>86%</span>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width:86%;"></span>
+                            </div>
+                        </div>
+
+                        <div class="performance-row">
+                            <div>
+                                <strong>Attendance</strong>
+                                <span>91%</span>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width:91%;"></span>
+                            </div>
+                        </div>
+
+                        <div class="performance-row">
+                            <div>
+                                <strong>Final Assessments</strong>
+                                <span>82%</span>
+                            </div>
+
+                            <div class="progress-bar">
+                                <span style="width:82%;"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Academic Summary</h2>
+                            <p>Your semester overview.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="summary-box">
+
+                        <div class="summary-item">
+                            <span>Completed Courses</span>
+                            <strong>5 / 5</strong>
+                        </div>
+
+                        <div class="summary-item">
+                            <span>Passed Courses</span>
+                            <strong>5</strong>
+                        </div>
+
+                        <div class="summary-item">
+                            <span>Failed Courses</span>
+                            <strong>0</strong>
+                        </div>
+
+                        <div class="summary-item">
+                            <span>Current Standing</span>
+                            <strong class="success-text">Good</strong>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+        <footer class="main-footer">
+            <span>© 2026 Learnora LMS</span>
+            <span>Learn smarter. Grow faster.</span>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../../js/student.js"></script>
+
+</body>
+</html>

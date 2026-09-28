@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learnora LMS Student Assignments — View, submit and track assignments.">
+
+    <title>Assignments — Learnora LMS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../Css/student.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+                    <h2>Learnora</h2>
+                    <span>Student Portal</span>
+                </div>
+            </div>
+
+            <div class="student-mini-profile">
+                <div class="avatar">SA</div>
+                <div>
+                    <strong>Sheheryar Ahmed</strong>
+                    <span>Software Engineering</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-section-title">MAIN</div>
+
+                <a href="dashboard.html" class="nav-link">
+                    <i class="fa-solid fa-grid-2"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="courses.html" class="nav-link">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>My Courses</span>
+                </a>
+
+                <a href="courses.html#add-drop" class="nav-link">
+                    <i class="fa-solid fa-plus-minus"></i>
+                    <span>Add / Drop Course</span>
+                </a>
+
+                <a href="lectures.html" class="nav-link">
+                    <i class="fa-solid fa-chalkboard"></i>
+                    <span>Lectures</span>
+                </a>
+
+                <a href="recordings.html" class="nav-link">
+                    <i class="fa-solid fa-circle-play"></i>
+                    <span>Recordings</span>
+                </a>
+
+                <div class="nav-section-title">ACADEMICS</div>
+
+                <a href="assignments.html" class="nav-link active">
+                    <i class="fa-solid fa-file-pen"></i>
+                    <span>Assignments</span>
+                </a>
+
+                <a href="quizzes.html" class="nav-link">
+                    <i class="fa-solid fa-clipboard-question"></i>
+                    <span>Quizzes & Tests</span>
+                </a>
+
+                <a href="results.html" class="nav-link">
+                    <i class="fa-solid fa-chart-column"></i>
+                    <span>Results & Grades</span>
+                </a>
+
+                <a href="attendance.html" class="nav-link">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Attendance</span>
+                </a>
+
+                <a href="schedule.html" class="nav-link">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Schedule</span>
+                </a>
+
+                <a href="materials.html" class="nav-link">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span>Study Materials</span>
+                </a>
+
+                <div class="nav-section-title">COMMUNICATION</div>
+
+                <a href="announcements.html" class="nav-link">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <span>Announcements</span>
+                </a>
+
+                <a href="messages.html" class="nav-link">
+                    <i class="fa-solid fa-message"></i>
+                    <span>Messages</span>
+                </a>
+
+                <div class="nav-section-title">ACCOUNT</div>
+
+                <a href="profile.html" class="nav-link">
+                    <i class="fa-solid fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+                <a href="settings.html" class="nav-link">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+                <a href="../login.html" class="nav-link logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="topbar-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search assignments...">
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button class="icon-btn notification-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+
+                    <div class="topbar-profile">
+                        <div class="avatar small">SA</div>
+
+                        <div class="topbar-profile-info">
+                            <strong>Sheheryar Ahmed</strong>
+                            <span>Student</span>
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                </div>
+
+            </header>
+
+            <div class="page-content">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">
+                            <i class="fa-solid fa-file-pen"></i>
+                            ACADEMIC WORK
+                        </span>
+
+                        <h1>Assignments</h1>
+
+                        <p>
+                            Track your assignments, deadlines and submissions.
+                        </p>
+                    </div>
+
+                    <button class="secondary-btn">
+                        <i class="fa-solid fa-filter"></i>
+                        Filter
+                    </button>
+
+                </div>
+
+                <!-- STATS -->
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <div>
+                            <span>Total Assignments</span>
+                            <strong>10</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div>
+                            <span>Submitted</span>
+                            <strong>7</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-hourglass-half"></i>
+                        </div>
+                        <div>
+                            <span>Pending</span>
+                            <strong>2</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon red">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div>
+                            <span>Due Soon</span>
+                            <strong>1</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- UPCOMING -->
+                <section class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Upcoming Assignments</h2>
+                            <p>Assignments that require your attention.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table class="data-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Assignment</th>
+                                    <th>Course</th>
+                                    <th>Due Date</th>
+                                    <th>Points</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-title">
+                                            <div class="table-icon blue">
+                                                <i class="fa-solid fa-code"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Software Testing Report</strong>
+                                                <span>Assignment #03</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>CS-401</td>
+
+                                    <td>
+                                        <strong>Sep 30, 2026</strong>
+                                        <small class="danger-text">2 days left</small>
+                                    </td>
+
+                                    <td>20</td>
+
+                                    <td>
+                                        <span class="status-badge pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="primary-btn small-btn">
+                                            Open
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-title">
+                                            <div class="table-icon cyan">
+                                                <i class="fa-solid fa-database"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Database Normalization</strong>
+                                                <span>Assignment #04</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>CS-403</td>
+
+                                    <td>
+                                        <strong>Oct 03, 2026</strong>
+                                        <small>5 days left</small>
+                                    </td>
+
+                                    <td>25</td>
+
+                                    <td>
+                                        <span class="status-badge pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="primary-btn small-btn">
+                                            Open
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-title">
+                                            <div class="table-icon purple">
+                                                <i class="fa-solid fa-chart-line"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Exploratory Data Analysis</strong>
+                                                <span>Assignment #02</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>DS-301</td>
+
+                                    <td>
+                                        <strong>Oct 07, 2026</strong>
+                                        <small>9 days left</small>
+                                    </td>
+
+                                    <td>20</td>
+
+                                    <td>
+                                        <span class="status-badge progress">
+                                            In Progress
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="primary-btn small-btn">
+                                            Continue
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+                <!-- SUBMITTED -->
+                <section class="content-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Submitted Assignments</h2>
+                            <p>Review your previous submissions and grades.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table class="data-table">
+
+                            <thead>
+                                <tr>
+                                    <th>Assignment</th>
+                                    <th>Course</th>
+                                    <th>Submitted</th>
+                                    <th>Score</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-title">
+                                            <div class="table-icon green">
+                                                <i class="fa-solid fa-file-code"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>Requirements Analysis</strong>
+                                                <span>Assignment #02</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>CS-401</td>
+
+                                    <td>Sep 18, 2026</td>
+
+                                    <td>
+                                        <strong>18/20</strong>
+                                    </td>
+
+                                    <td>
+                                        <span class="status-badge completed">
+                                            Graded
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="secondary-btn small-btn">
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <div class="table-title">
+                                            <div class="table-icon green">
+                                                <i class="fa-solid fa-table"></i>
+                                            </div>
+
+                                            <div>
+                                                <strong>SQL Query Practice</strong>
+                                                <span>Assignment #03</span>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td>CS-403</td>
+
+                                    <td>Sep 15, 2026</td>
+
+                                    <td>
+                                        <strong>22/25</strong>
+                                    </td>
+
+                                    <td>
+                                        <span class="status-badge completed">
+                                            Graded
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <button class="secondary-btn small-btn">
+                                            View
+                                        </button>
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <footer class="main-footer">
+                <span>© 2026 Learnora LMS</span>
+                <span>Learn smarter. Grow faster.</span>
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="../../js/student.js"></script>
+
+</body>
+
+</html>

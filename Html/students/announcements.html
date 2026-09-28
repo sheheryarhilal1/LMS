@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learnora LMS Student Announcements — Stay updated with important academic announcements.">
+
+    <title>Announcements — Learnora LMS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../../Css/student.css">
+
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <div>
+                <h2>Learnora</h2>
+                <span>Student Portal</span>
+            </div>
+
+        </div>
+
+        <div class="student-mini-profile">
+
+            <div class="avatar">SA</div>
+
+            <div>
+                <strong>Sheheryar Ahmed</strong>
+                <span>Software Engineering</span>
+            </div>
+
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <div class="nav-section-title">MAIN</div>
+
+            <a href="dashboard.html" class="nav-link">
+                <i class="fa-solid fa-grid-2"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="courses.html" class="nav-link">
+                <i class="fa-solid fa-book-open"></i>
+                <span>My Courses</span>
+            </a>
+
+            <a href="courses.html#add-drop" class="nav-link">
+                <i class="fa-solid fa-plus-minus"></i>
+                <span>Add / Drop Course</span>
+            </a>
+
+            <a href="lectures.html" class="nav-link">
+                <i class="fa-solid fa-chalkboard"></i>
+                <span>Lectures</span>
+            </a>
+
+            <a href="recordings.html" class="nav-link">
+                <i class="fa-solid fa-circle-play"></i>
+                <span>Recordings</span>
+            </a>
+
+            <div class="nav-section-title">ACADEMICS</div>
+
+            <a href="assignments.html" class="nav-link">
+                <i class="fa-solid fa-file-pen"></i>
+                <span>Assignments</span>
+            </a>
+
+            <a href="quizzes.html" class="nav-link">
+                <i class="fa-solid fa-clipboard-question"></i>
+                <span>Quizzes & Tests</span>
+            </a>
+
+            <a href="results.html" class="nav-link">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Results & Grades</span>
+            </a>
+
+            <a href="attendance.html" class="nav-link">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Attendance</span>
+            </a>
+
+            <a href="schedule.html" class="nav-link">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Schedule</span>
+            </a>
+
+            <a href="materials.html" class="nav-link">
+                <i class="fa-solid fa-folder-open"></i>
+                <span>Study Materials</span>
+            </a>
+
+            <div class="nav-section-title">COMMUNICATION</div>
+
+            <a href="announcements.html" class="nav-link active">
+                <i class="fa-solid fa-bullhorn"></i>
+                <span>Announcements</span>
+            </a>
+
+            <a href="messages.html" class="nav-link">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+            </a>
+
+            <div class="nav-section-title">ACCOUNT</div>
+
+            <a href="profile.html" class="nav-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="settings.html" class="nav-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="../login.html" class="nav-link logout-link">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="topbar-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search announcements...">
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="icon-btn notification-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+
+                    <div class="avatar small">SA</div>
+
+                    <div class="topbar-profile-info">
+                        <strong>Sheheryar Ahmed</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="page-content">
+
+            <div class="page-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        CAMPUS UPDATES
+                    </span>
+
+                    <h1>Announcements</h1>
+
+                    <p>
+                        Stay updated with important academic and course announcements.
+                    </p>
+
+                </div>
+
+                <button class="secondary-btn">
+                    <i class="fa-solid fa-check-double"></i>
+                    Mark All Read
+                </button>
+
+            </div>
+
+            <!-- IMPORTANT ANNOUNCEMENT -->
+            <section class="announcement-feature">
+
+                <div class="announcement-feature-icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>
+
+                <div class="announcement-feature-content">
+
+                    <span class="announcement-label">
+                        IMPORTANT
+                    </span>
+
+                    <h2>Mid-Semester Assessment Schedule Released</h2>
+
+                    <p>
+                        The mid-semester assessment schedule has been published.
+                        Please review your schedule and make sure you are available
+                        for all scheduled assessments.
+                    </p>
+
+                    <div class="announcement-meta">
+                        <span>
+                            <i class="fa-regular fa-calendar"></i>
+                            September 28, 2026
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-user"></i>
+                            Academic Office
+                        </span>
+                    </div>
+
+                </div>
+
+                <button class="primary-btn">
+                    Read More
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </section>
+
+            <!-- ANNOUNCEMENTS -->
+            <section class="content-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <h2>Recent Announcements</h2>
+                        <p>Latest updates from your courses and university.</p>
+                    </div>
+
+                    <select class="form-select">
+                        <option>All Announcements</option>
+                        <option>Course Updates</option>
+                        <option>University</option>
+                        <option>Assignments</option>
+                        <option>Exams</option>
+                    </select>
+
+                </div>
+
+                <div class="announcement-list">
+
+                    <!-- 1 -->
+                    <article class="announcement-item unread">
+
+                        <div class="announcement-icon blue">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+
+                        <div class="announcement-content">
+
+                            <div class="announcement-title-row">
+
+                                <div>
+                                    <span class="announcement-category">
+                                        CS-401 · Course Update
+                                    </span>
+
+                                    <h3>Software Testing Assignment Updated</h3>
+                                </div>
+
+                                <span class="unread-dot"></span>
+
+                            </div>
+
+                            <p>
+                                Assignment #03 has been updated with additional
+                                requirements. Please review the instructions before submission.
+                            </p>
+
+                            <div class="announcement-meta">
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Sep 27, 2026
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-user"></i>
+                                    Dr. Ahmed Khan
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <!-- 2 -->
+                    <article class="announcement-item unread">
+
+                        <div class="announcement-icon cyan">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div class="announcement-content">
+
+                            <div class="announcement-title-row">
+
+                                <div>
+                                    <span class="announcement-category">
+                                        CS-403 · Course Update
+                                    </span>
+
+                                    <h3>Database Lab Session Rescheduled</h3>
+                                </div>
+
+                                <span class="unread-dot"></span>
+
+                            </div>
+
+                            <p>
+                                This week's database laboratory session will take
+                                place on Thursday at 2:00 PM instead of Wednesday.
+                            </p>
+
+                            <div class="announcement-meta">
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Sep 26, 2026
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-user"></i>
+                                    Prof. Sarah Ahmed
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <!-- 3 -->
+                    <article class="announcement-item">
+
+                        <div class="announcement-icon purple">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div class="announcement-content">
+
+                            <div class="announcement-title-row">
+
+                                <div>
+                                    <span class="announcement-category">
+                                        DS-301 · Assignment
+                                    </span>
+
+                                    <h3>Data Analytics Assignment #02</h3>
+                                </div>
+
+                            </div>
+
+                            <p>
+                                The deadline for Exploratory Data Analysis assignment
+                                is October 7, 2026.
+                            </p>
+
+                            <div class="announcement-meta">
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Sep 25, 2026
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-user"></i>
+                                    Dr. Muhammad Ali
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <!-- 4 -->
+                    <article class="announcement-item">
+
+                        <div class="announcement-icon green">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+
+                        <div class="announcement-content">
+
+                            <div class="announcement-title-row">
+
+                                <div>
+                                    <span class="announcement-category">
+                                        University · Academic
+                                    </span>
+
+                                    <h3>Fall Semester Academic Calendar</h3>
+                                </div>
+
+                            </div>
+
+                            <p>
+                                Students can now view the updated academic calendar
+                                for the Fall 2026 semester.
+                            </p>
+
+                            <div class="announcement-meta">
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Sep 23, 2026
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-building-columns"></i>
+                                    Academic Office
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <!-- 5 -->
+                    <article class="announcement-item">
+
+                        <div class="announcement-icon orange">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                        </div>
+
+                        <div class="announcement-content">
+
+                            <div class="announcement-title-row">
+
+                                <div>
+                                    <span class="announcement-category">
+                                        CS-401 · Quiz
+                                    </span>
+
+                                    <h3>Software Testing Quiz Available</h3>
+                                </div>
+
+                            </div>
+
+                            <p>
+                                Quiz #03 is now available. Students have 20 minutes
+                                to complete the assessment.
+                            </p>
+
+                            <div class="announcement-meta">
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Sep 22, 2026
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-user"></i>
+                                    Dr. Ahmed Khan
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <footer class="main-footer">
+            <span>© 2026 Learnora LMS</span>
+            <span>Learn smarter. Grow faster.</span>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="../../js/student.js"></script>
+
+</body>
+</html>

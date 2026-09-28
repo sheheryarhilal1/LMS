@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Learnora LMS Student Courses — View, add and drop your courses.">
+
+    <title>My Courses — Learnora LMS</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Student CSS -->
+    <link rel="stylesheet" href="../../Css/student.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <a href="dashboard.html" class="brand-logo">
+
+                    <span class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </span>
+
+                    <span class="brand-text">
+                        <strong>Learnora</strong>
+                        <small>Student Portal</small>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    SA
+                </div>
+
+                <div class="profile-info">
+                    <strong>Sheheryar Ahmed</strong>
+                    <span>Software Engineering</span>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-section">
+
+                    <p class="nav-title">MAIN</p>
+
+                    <a href="dashboard.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </span>
+
+                        <span>Dashboard</span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <p class="nav-title">ACADEMICS</p>
+
+                    <a href="courses.html" class="nav-link active">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
+
+                        <span>My Courses</span>
+
+                    </a>
+
+                    <a href="#add-drop" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-plus-minus"></i>
+                        </span>
+
+                        <span>Add / Drop Course</span>
+
+                    </a>
+
+                    <a href="lectures.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </span>
+
+                        <span>Lectures</span>
+
+                    </a>
+
+                    <a href="recordings.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-circle-play"></i>
+                        </span>
+
+                        <span>Recordings</span>
+
+                    </a>
+
+                    <a href="assignments.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </span>
+
+                        <span>Assignments</span>
+
+                        <span class="nav-badge">
+                            3
+                        </span>
+
+                    </a>
+
+                    <a href="quizzes.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-clipboard-question"></i>
+                        </span>
+
+                        <span>Quizzes & Tests</span>
+
+                    </a>
+
+                    <a href="results.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </span>
+
+                        <span>Results & Grades</span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <p class="nav-title">MY LEARNING</p>
+
+                    <a href="attendance.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </span>
+
+                        <span>Attendance</span>
+
+                    </a>
+
+                    <a href="schedule.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </span>
+
+                        <span>Schedule</span>
+
+                    </a>
+
+                    <a href="materials.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-folder-open"></i>
+                        </span>
+
+                        <span>Study Materials</span>
+
+                    </a>
+
+                    <a href="announcements.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-bullhorn"></i>
+                        </span>
+
+                        <span>Announcements</span>
+
+                    </a>
+
+                    <a href="messages.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </span>
+
+                        <span>Messages</span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="nav-section">
+
+                    <p class="nav-title">ACCOUNT</p>
+
+                    <a href="profile.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+
+                        <span>My Profile</span>
+
+                    </a>
+
+                    <a href="settings.html" class="nav-link">
+
+                        <span class="nav-icon">
+                            <i class="fa-solid fa-gear"></i>
+                        </span>
+
+                        <span>Settings</span>
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a href="../login.html" class="logout-link">
+
+                    <span class="nav-icon">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                    </span>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN
+        ====================================================== -->
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <button
+                    class="mobile-menu-btn"
+                    id="mobileMenuBtn">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="topbar-title">
+
+                    <span class="page-label">
+                        Student Portal
+                    </span>
+
+                    <h1>
+                        My Courses
+                    </h1>
+
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <button class="topbar-icon">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </button>
+
+                    <button class="topbar-icon notification-btn">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="notification-dot"></span>
+
+                    </button>
+
+                    <a href="profile.html" class="topbar-profile">
+
+                        <div class="topbar-avatar">
+                            SA
+                        </div>
+
+                        <div class="topbar-user">
+
+                            <strong>
+                                Sheheryar Ahmed
+                            </strong>
+
+                            <span>
+                                Student
+                            </span>
+
+                        </div>
+
+                        <i class="fa-solid fa-chevron-down"></i>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+
+            <div class="dashboard-container">
+
+
+                <!-- PAGE INTRO -->
+
+                <section class="page-intro">
+
+                    <div>
+
+                        <span class="card-eyebrow">
+                            ACADEMICS
+                        </span>
+
+                        <h2>
+                            Your Courses
+                        </h2>
+
+                        <p>
+                            Manage your enrolled courses and explore
+                            available courses for the current semester.
+                        </p>
+
+                    </div>
+
+                    <a href="#add-drop" class="primary-btn">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Course
+
+                    </a>
+
+                </section>
+
+
+                <!-- COURSE SUMMARY -->
+
+                <section class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+
+                            <i class="fa-solid fa-book-open"></i>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span>
+                                Enrolled Courses
+                            </span>
+
+                            <strong>
+                                5
+                            </strong>
+
+                            <small>
+                                Current semester
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon cyan">
+
+                            <i class="fa-solid fa-layer-group"></i>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span>
+                                Credit Hours
+                            </span>
+
+                            <strong>
+                                15
+                            </strong>
+
+                            <small>
+                                Registered credits
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span>
+                                Average Progress
+                            </span>
+
+                            <strong>
+                                78%
+                            </strong>
+
+                            <small>
+                                Across all courses
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+
+                            <i class="fa-solid fa-calendar"></i>
+
+                        </div>
+
+                        <div class="stat-content">
+
+                            <span>
+                                Semester
+                            </span>
+
+                            <strong>
+                                8th
+                            </strong>
+
+                            <small>
+                                Fall 2026
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- MY COURSES -->
+
+                <section class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-eyebrow">
+                                CURRENT SEMESTER
+                            </span>
+
+                            <h3>
+                                Enrolled Courses
+                            </h3>
+
+                        </div>
+
+                        <span class="course-count">
+                            5 Courses
+                        </span>
+
+                    </div>
+
+
+                    <div class="courses-list">
+
+
+                        <!-- COURSE 1 -->
+
+                        <article class="course-full-card">
+
+                            <div class="course-large-icon blue-bg">
+
+                                <i class="fa-solid fa-code"></i>
+
+                            </div>
+
+                            <div class="course-full-content">
+
+                                <div class="course-full-top">
+
+                                    <div>
+
+                                        <span class="course-code">
+                                            CS-401
+                                        </span>
+
+                                        <h4>
+                                            Software Engineering
+                                        </h4>
+
+                                        <p>
+                                            Dr. Ahmed Khan · 3 Credit Hours
+                                        </p>
+
+                                    </div>
+
+                                    <span class="status-pill active">
+                                        Active
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-full-progress">
+
+                                    <div class="progress-label">
+
+                                        <span>
+                                            Course Progress
+                                        </span>
+
+                                        <strong>
+                                            82%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="progress-bar">
+
+                                        <span style="width:82%;"></span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="course-full-meta">
+
+                                    <span>
+                                        <i class="fa-solid fa-video"></i>
+                                        18 / 22 Lectures
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-file-lines"></i>
+                                        2 Assignments
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-clipboard-question"></i>
+                                        3 Quizzes
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-actions">
+
+                                    <a href="course-detail.html"
+                                        class="primary-btn small">
+
+                                        Open Course
+
+                                        <i class="fa-solid fa-arrow-right"></i>
+
+                                    </a>
+
+                                    <button class="danger-outline">
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                        Drop Course
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- COURSE 2 -->
+
+                        <article class="course-full-card">
+
+                            <div class="course-large-icon cyan-bg">
+
+                                <i class="fa-solid fa-database"></i>
+
+                            </div>
+
+                            <div class="course-full-content">
+
+                                <div class="course-full-top">
+
+                                    <div>
+
+                                        <span class="course-code">
+                                            CS-403
+                                        </span>
+
+                                        <h4>
+                                            Database Systems
+                                        </h4>
+
+                                        <p>
+                                            Prof. Sarah Ahmed · 3 Credit Hours
+                                        </p>
+
+                                    </div>
+
+                                    <span class="status-pill active">
+                                        Active
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-full-progress">
+
+                                    <div class="progress-label">
+
+                                        <span>
+                                            Course Progress
+                                        </span>
+
+                                        <strong>
+                                            74%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="progress-bar">
+
+                                        <span style="width:74%;"></span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="course-full-meta">
+
+                                    <span>
+                                        <i class="fa-solid fa-video"></i>
+                                        15 / 20 Lectures
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-file-lines"></i>
+                                        3 Assignments
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-clipboard-question"></i>
+                                        2 Quizzes
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-actions">
+
+                                    <a href="course-detail.html"
+                                        class="primary-btn small">
+
+                                        Open Course
+
+                                        <i class="fa-solid fa-arrow-right"></i>
+
+                                    </a>
+
+                                    <button class="danger-outline">
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                        Drop Course
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- COURSE 3 -->
+
+                        <article class="course-full-card">
+
+                            <div class="course-large-icon purple-bg">
+
+                                <i class="fa-solid fa-chart-simple"></i>
+
+                            </div>
+
+                            <div class="course-full-content">
+
+                                <div class="course-full-top">
+
+                                    <div>
+
+                                        <span class="course-code">
+                                            DS-301
+                                        </span>
+
+                                        <h4>
+                                            Data Analytics
+                                        </h4>
+
+                                        <p>
+                                            Dr. Muhammad Ali · 3 Credit Hours
+                                        </p>
+
+                                    </div>
+
+                                    <span class="status-pill active">
+                                        Active
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-full-progress">
+
+                                    <div class="progress-label">
+
+                                        <span>
+                                            Course Progress
+                                        </span>
+
+                                        <strong>
+                                            68%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="progress-bar">
+
+                                        <span style="width:68%;"></span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="course-full-meta">
+
+                                    <span>
+                                        <i class="fa-solid fa-video"></i>
+                                        12 / 18 Lectures
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-file-lines"></i>
+                                        1 Assignment
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-clipboard-question"></i>
+                                        2 Quizzes
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-actions">
+
+                                    <a href="course-detail.html"
+                                        class="primary-btn small">
+
+                                        Open Course
+
+                                        <i class="fa-solid fa-arrow-right"></i>
+
+                                    </a>
+
+                                    <button class="danger-outline">
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                        Drop Course
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- COURSE 4 -->
+
+                        <article class="course-full-card">
+
+                            <div class="course-large-icon orange-bg">
+
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+
+                            </div>
+
+                            <div class="course-full-content">
+
+                                <div class="course-full-top">
+
+                                    <div>
+
+                                        <span class="course-code">
+                                            SE-405
+                                        </span>
+
+                                        <h4>
+                                            Mobile Application Development
+                                        </h4>
+
+                                        <p>
+                                            Mr. Hamza Raza · 3 Credit Hours
+                                        </p>
+
+                                    </div>
+
+                                    <span class="status-pill active">
+                                        Active
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-full-progress">
+
+                                    <div class="progress-label">
+
+                                        <span>
+                                            Course Progress
+                                        </span>
+
+                                        <strong>
+                                            71%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="progress-bar">
+
+                                        <span style="width:71%;"></span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="course-full-meta">
+
+                                    <span>
+                                        <i class="fa-solid fa-video"></i>
+                                        14 / 20 Lectures
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-file-lines"></i>
+                                        2 Assignments
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-clipboard-question"></i>
+                                        2 Quizzes
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-actions">
+
+                                    <a href="course-detail.html"
+                                        class="primary-btn small">
+
+                                        Open Course
+
+                                        <i class="fa-solid fa-arrow-right"></i>
+
+                                    </a>
+
+                                    <button class="danger-outline">
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                        Drop Course
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- COURSE 5 -->
+
+                        <article class="course-full-card">
+
+                            <div class="course-large-icon green-bg">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                            </div>
+
+                            <div class="course-full-content">
+
+                                <div class="course-full-top">
+
+                                    <div>
+
+                                        <span class="course-code">
+                                            CS-407
+                                        </span>
+
+                                        <h4>
+                                            Information Security
+                                        </h4>
+
+                                        <p>
+                                            Dr. Usman Shah · 3 Credit Hours
+                                        </p>
+
+                                    </div>
+
+                                    <span class="status-pill active">
+                                        Active
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-full-progress">
+
+                                    <div class="progress-label">
+
+                                        <span>
+                                            Course Progress
+                                        </span>
+
+                                        <strong>
+                                            65%
+                                        </strong>
+
+                                    </div>
+
+                                    <div class="progress-bar">
+
+                                        <span style="width:65%;"></span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="course-full-meta">
+
+                                    <span>
+                                        <i class="fa-solid fa-video"></i>
+                                        11 / 17 Lectures
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-file-lines"></i>
+                                        2 Assignments
+                                    </span>
+
+                                    <span>
+                                        <i class="fa-solid fa-clipboard-question"></i>
+                                        2 Quizzes
+                                    </span>
+
+                                </div>
+
+
+                                <div class="course-actions">
+
+                                    <a href="course-detail.html"
+                                        class="primary-btn small">
+
+                                        Open Course
+
+                                        <i class="fa-solid fa-arrow-right"></i>
+
+                                    </a>
+
+                                    <button class="danger-outline">
+
+                                        <i class="fa-solid fa-xmark"></i>
+
+                                        Drop Course
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =====================================================
+                     ADD / DROP
+                ====================================================== -->
+
+                <section
+                    class="dashboard-card add-drop-card"
+                    id="add-drop">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="card-eyebrow">
+                                COURSE REGISTRATION
+                            </span>
+
+                            <h3>
+                                Add / Drop Course
+                            </h3>
+
+                            <p class="card-description">
+                                Enter the course code to find and
+                                register for an available course.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="course-search">
+
+                        <div class="search-input">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="text"
+                                id="courseCode"
+                                placeholder="Enter course code e.g. CS-410">
+
+                        </div>
+
+                        <button
+                            class="primary-btn"
+                            id="searchCourseBtn">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            Search Course
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- Available Course -->
+
+                    <div class="available-course">
+
+                        <div class="available-icon">
+
+                            <i class="fa-solid fa-brain"></i>
+
+                        </div>
+
+                        <div class="available-info">
+
+                            <span class="course-code">
+                                AI-401
+                            </span>
+
+                            <h4>
+                                Artificial Intelligence
+                            </h4>
+
+                            <p>
+                                Dr. Hassan Ahmed · 3 Credit Hours
+                            </p>
+
+                            <div class="available-meta">
+
+                                <span>
+                                    <i class="fa-solid fa-users"></i>
+                                    32 / 40 Seats
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-clock"></i>
+                                    Mon & Wed · 02:00 PM
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button class="primary-btn">
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            Add Course
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <footer class="dashboard-footer">
+
+                    <span>
+                        © 2026 Learnora LMS
+                    </span>
+
+                    <span>
+                        Smart Learning Management System
+                    </span>
+
+                </footer>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay">
+    </div>
+
+
+    <script src="../../js/student.js"></script>
+
+</body>
+
+</html>
