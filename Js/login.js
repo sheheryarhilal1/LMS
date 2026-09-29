@@ -1,6 +1,8 @@
+
 /* =========================================================
    LEARNORA LMS — LOGIN JAVASCRIPT
    Multi-User Student / Teacher / Parent Login
+   Dynamic Account-Based LMS
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -57,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       MULTIPLE USERS
+       USER DATABASE
        ===================================================== */
 
     const users = [
@@ -91,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             coursesCount: 5,
 
             courses: [
+
                 {
                     code: "CS-401",
                     name: "Software Engineering",
@@ -99,6 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A-",
                     credits: 3
                 },
+
                 {
                     code: "CS-403",
                     name: "Database Systems",
@@ -107,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B+",
                     credits: 3
                 },
+
                 {
                     code: "DS-301",
                     name: "Data Analytics",
@@ -115,6 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B+",
                     credits: 3
                 },
+
                 {
                     code: "CS-405",
                     name: "Web Engineering",
@@ -123,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A-",
                     credits: 3
                 },
+
                 {
                     code: "SE-410",
                     name: "Software Project Management",
@@ -131,27 +138,32 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B+",
                     credits: 3
                 }
+
             ],
 
             assignments: [
+
                 {
                     title: "Software Requirements Document",
                     course: "Software Engineering",
                     due: "Sep 30, 2026",
                     status: "pending"
                 },
+
                 {
                     title: "Database Normalization",
                     course: "Database Systems",
                     due: "Oct 02, 2026",
                     status: "pending"
                 },
+
                 {
                     title: "Data Cleaning Report",
                     course: "Data Analytics",
                     due: "Oct 05, 2026",
                     status: "submitted"
                 }
+
             ]
         },
 
@@ -185,6 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
             coursesCount: 6,
 
             courses: [
+
                 {
                     code: "CS-401",
                     name: "Software Engineering",
@@ -193,6 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A",
                     credits: 3
                 },
+
                 {
                     code: "CS-403",
                     name: "Database Systems",
@@ -201,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A-",
                     credits: 3
                 },
+
                 {
                     code: "DS-301",
                     name: "Data Analytics",
@@ -209,6 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A-",
                     credits: 3
                 },
+
                 {
                     code: "CS-405",
                     name: "Web Engineering",
@@ -217,6 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A",
                     credits: 3
                 },
+
                 {
                     code: "AI-310",
                     name: "Artificial Intelligence",
@@ -225,6 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A-",
                     credits: 3
                 },
+
                 {
                     code: "SE-410",
                     name: "Project Management",
@@ -233,27 +251,32 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A",
                     credits: 3
                 }
+
             ],
 
             assignments: [
+
                 {
                     title: "AI Research Paper",
                     course: "Artificial Intelligence",
                     due: "Sep 29, 2026",
                     status: "pending"
                 },
+
                 {
                     title: "Database Project",
                     course: "Database Systems",
                     due: "Oct 01, 2026",
                     status: "submitted"
                 },
+
                 {
                     title: "Web Engineering Assignment",
                     course: "Web Engineering",
                     due: "Oct 04, 2026",
                     status: "pending"
                 }
+
             ]
         },
 
@@ -287,6 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
             coursesCount: 5,
 
             courses: [
+
                 {
                     code: "SE-301",
                     name: "Software Design",
@@ -295,6 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A-",
                     credits: 3
                 },
+
                 {
                     code: "CS-303",
                     name: "Database Systems",
@@ -303,6 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B+",
                     credits: 3
                 },
+
                 {
                     code: "DS-301",
                     name: "Data Analytics",
@@ -311,6 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A-",
                     credits: 3
                 },
+
                 {
                     code: "WEB-302",
                     name: "Web Development",
@@ -319,6 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "A",
                     credits: 3
                 },
+
                 {
                     code: "SE-305",
                     name: "Software Testing",
@@ -327,27 +355,32 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B+",
                     credits: 3
                 }
+
             ],
 
             assignments: [
+
                 {
                     title: "Software Testing Report",
                     course: "Software Testing",
                     due: "Sep 30, 2026",
                     status: "pending"
                 },
+
                 {
                     title: "Web Development Project",
                     course: "Web Development",
                     due: "Oct 03, 2026",
                     status: "submitted"
                 },
+
                 {
                     title: "Analytics Case Study",
                     course: "Data Analytics",
                     due: "Oct 06, 2026",
                     status: "pending"
                 }
+
             ]
         },
 
@@ -381,6 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
             coursesCount: 5,
 
             courses: [
+
                 {
                     code: "DS-301",
                     name: "Data Analytics",
@@ -389,6 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B+",
                     credits: 3
                 },
+
                 {
                     code: "DS-303",
                     name: "Machine Learning",
@@ -397,6 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B",
                     credits: 3
                 },
+
                 {
                     code: "CS-303",
                     name: "Database Systems",
@@ -405,6 +441,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B+",
                     credits: 3
                 },
+
                 {
                     code: "STAT-301",
                     name: "Statistics",
@@ -413,6 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B",
                     credits: 3
                 },
+
                 {
                     code: "CS-305",
                     name: "Python Programming",
@@ -421,27 +459,32 @@ document.addEventListener("DOMContentLoaded", () => {
                     grade: "B+",
                     credits: 3
                 }
+
             ],
 
             assignments: [
+
                 {
                     title: "Machine Learning Model",
                     course: "Machine Learning",
                     due: "Oct 01, 2026",
                     status: "pending"
                 },
+
                 {
                     title: "Statistics Analysis",
                     course: "Statistics",
                     due: "Oct 04, 2026",
                     status: "pending"
                 },
+
                 {
                     title: "Python Data Analysis",
                     course: "Python Programming",
                     due: "Oct 07, 2026",
                     status: "submitted"
                 }
+
             ]
         },
 
@@ -500,7 +543,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       HELPER — NORMALIZE ROLE
+       NORMALIZE ROLE
        ===================================================== */
 
     function normalizeRole(role) {
@@ -513,7 +556,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       HELPER — HIDE MESSAGES
+       NORMALIZE EMAIL
+       ===================================================== */
+
+    function normalizeEmail(email) {
+
+        return String(email || "")
+            .trim()
+            .toLowerCase();
+
+    }
+
+
+    /* =====================================================
+       HIDE LOGIN MESSAGES
        ===================================================== */
 
     function hideMessages() {
@@ -530,7 +586,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       HELPER — CLEAR ERRORS
+       CLEAR FORM ERRORS
        ===================================================== */
 
     function clearErrors() {
@@ -555,6 +611,121 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
+       CLEAR PREVIOUS LOGIN SESSION
+       ===================================================== */
+
+    function clearPreviousSession() {
+
+        const sessionKeys = [
+
+            "learnora_current_user",
+            "learnora_logged_in",
+            "learnora_user_role",
+            "learnora_user_email",
+            "learnora_user_id",
+            "learnora_student_name"
+
+        ];
+
+        sessionKeys.forEach(key => {
+
+            localStorage.removeItem(key);
+
+        });
+
+    }
+
+
+    /* =====================================================
+       SAVE CURRENT USER
+       ===================================================== */
+
+    function saveCurrentUser(account) {
+
+        /*
+         * Create a fresh copy.
+         * This prevents accidental references to the
+         * original users array.
+         */
+
+        const currentUser = JSON.parse(
+            JSON.stringify(account)
+        );
+
+
+        /* -----------------------------------------------
+           SESSION STATUS
+           ----------------------------------------------- */
+
+        localStorage.setItem(
+            "learnora_logged_in",
+            "true"
+        );
+
+
+        /* -----------------------------------------------
+           ROLE
+           ----------------------------------------------- */
+
+        localStorage.setItem(
+            "learnora_user_role",
+            currentUser.role
+        );
+
+
+        /* -----------------------------------------------
+           EMAIL
+           ----------------------------------------------- */
+
+        localStorage.setItem(
+            "learnora_user_email",
+            currentUser.email
+        );
+
+
+        /* -----------------------------------------------
+           USER ID
+           ----------------------------------------------- */
+
+        localStorage.setItem(
+            "learnora_user_id",
+            currentUser.id
+        );
+
+
+        /* -----------------------------------------------
+           NAME
+           ----------------------------------------------- */
+
+        localStorage.setItem(
+            "learnora_student_name",
+            currentUser.name
+        );
+
+
+        /* -----------------------------------------------
+           COMPLETE USER OBJECT
+           ----------------------------------------------- */
+
+        localStorage.setItem(
+            "learnora_current_user",
+            JSON.stringify(currentUser)
+        );
+
+
+        /*
+         * Debug verification
+         */
+
+        console.log(
+            "Current Learnora User Saved:",
+            currentUser
+        );
+
+    }
+
+
+    /* =====================================================
        ROLE SELECTOR
        ===================================================== */
 
@@ -563,16 +734,22 @@ document.addEventListener("DOMContentLoaded", () => {
         option.addEventListener("click", () => {
 
             roleOptions.forEach(item => {
+
                 item.classList.remove("active");
+
             });
 
+
             option.classList.add("active");
+
 
             currentRole =
                 normalizeRole(option.dataset.role);
 
+
             hideMessages();
             clearErrors();
+
 
             if (username) {
 
@@ -615,16 +792,22 @@ document.addEventListener("DOMContentLoaded", () => {
             const icon =
                 passwordToggle.querySelector("i");
 
+
             if (password.type === "password") {
 
                 password.type = "text";
 
+
                 if (icon) {
 
                     icon.classList.remove("fa-eye");
-                    icon.classList.add("fa-eye-slash");
+
+                    icon.classList.add(
+                        "fa-eye-slash"
+                    );
 
                 }
+
 
                 passwordToggle.setAttribute(
                     "aria-label",
@@ -637,12 +820,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 password.type = "password";
 
+
                 if (icon) {
 
-                    icon.classList.remove("fa-eye-slash");
-                    icon.classList.add("fa-eye");
+                    icon.classList.remove(
+                        "fa-eye-slash"
+                    );
+
+                    icon.classList.add(
+                        "fa-eye"
+                    );
 
                 }
+
 
                 passwordToggle.setAttribute(
                     "aria-label",
@@ -666,14 +856,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
             demoContent.classList.toggle("open");
 
+
             const icon =
                 demoToggle.querySelector("i");
+
 
             if (!icon) {
                 return;
             }
 
-            if (demoContent.classList.contains("open")) {
+
+            if (
+                demoContent.classList.contains("open")
+            ) {
 
                 icon.classList.remove(
                     "fa-chevron-down"
@@ -713,32 +908,48 @@ document.addEventListener("DOMContentLoaded", () => {
             const email =
                 button.dataset.email || "";
 
+
             const userPassword =
                 button.dataset.password || "";
 
+
             const role =
-                normalizeRole(button.dataset.role);
+                normalizeRole(
+                    button.dataset.role
+                );
 
 
             if (username) {
+
                 username.value = email;
+
             }
 
+
             if (password) {
-                password.value = userPassword;
+
+                password.value =
+                    userPassword;
+
             }
 
 
             roleOptions.forEach(option => {
 
-                option.classList.remove("active");
+                option.classList.remove(
+                    "active"
+                );
+
 
                 if (
-                    normalizeRole(option.dataset.role) ===
-                    role
+                    normalizeRole(
+                        option.dataset.role
+                    ) === role
                 ) {
 
-                    option.classList.add("active");
+                    option.classList.add(
+                        "active"
+                    );
 
                 }
 
@@ -747,6 +958,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             currentRole = role;
 
+
             clearErrors();
             hideMessages();
 
@@ -754,7 +966,9 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
 
                 if (loginForm) {
+
                     loginForm.requestSubmit();
+
                 }
 
             }, 200);
@@ -772,18 +986,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let valid = true;
 
+
         clearErrors();
+
 
         const emailValue =
             username
                 ? username.value.trim()
                 : "";
 
+
         const passwordValue =
             password
                 ? password.value
                 : "";
 
+
+        /* -----------------------------------------------
+           USERNAME / EMAIL
+           ----------------------------------------------- */
 
         if (!emailValue) {
 
@@ -794,14 +1015,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
+
             if (username) {
-                username.classList.add("input-error");
+
+                username.classList.add(
+                    "input-error"
+                );
+
             }
+
 
             valid = false;
 
         }
 
+
+        /* -----------------------------------------------
+           PASSWORD
+           ----------------------------------------------- */
 
         if (!passwordValue) {
 
@@ -812,9 +1043,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
+
             if (password) {
-                password.classList.add("input-error");
+
+                password.classList.add(
+                    "input-error"
+                );
+
             }
+
 
             valid = false;
 
@@ -832,283 +1069,297 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (loginForm) {
 
-        loginForm.addEventListener("submit", event => {
+        loginForm.addEventListener(
+            "submit",
+            event => {
 
-            event.preventDefault();
-
-            hideMessages();
-
-
-            if (!validateLogin()) {
-                return;
-            }
+                event.preventDefault();
 
 
-            /* =============================================
-               GET INPUT VALUES
-               ============================================= */
-
-            const emailValue =
-                username.value
-                    .trim()
-                    .toLowerCase();
-
-            const passwordValue =
-                password.value;
-
-            const selectedRole =
-                normalizeRole(currentRole);
+                hideMessages();
 
 
-            /* =============================================
-               FIND ACCOUNT
-               ============================================= */
+                if (!validateLogin()) {
 
-            const account = users.find(user => {
+                    return;
 
-                const userEmail =
-                    String(user.email)
-                        .trim()
-                        .toLowerCase();
-
-                const userPassword =
-                    String(user.password);
-
-                const userRole =
-                    normalizeRole(user.role);
+                }
 
 
-                return (
-                    userEmail === emailValue &&
-                    userPassword === passwordValue &&
-                    userRole === selectedRole
-                );
+                /* =========================================
+                   GET FORM VALUES
+                   ========================================= */
 
-            });
+                const emailValue =
+                    normalizeEmail(
+                        username.value
+                    );
 
 
-            /* =============================================
-               INVALID LOGIN
-               ============================================= */
+                const passwordValue =
+                    password.value;
 
-            if (!account) {
 
-                if (loginError) {
+                const selectedRole =
+                    normalizeRole(
+                        currentRole
+                    );
 
-                    loginError.classList.add("show");
+
+                /* =========================================
+                   FIND USER ACCOUNT
+                   ========================================= */
+
+                const account =
+                    users.find(user => {
+
+                        const userEmail =
+                            normalizeEmail(
+                                user.email
+                            );
+
+
+                        const userPassword =
+                            String(
+                                user.password
+                            );
+
+
+                        const userRole =
+                            normalizeRole(
+                                user.role
+                            );
+
+
+                        return (
+
+                            userEmail ===
+                            emailValue
+
+                            &&
+
+                            userPassword ===
+                            passwordValue
+
+                            &&
+
+                            userRole ===
+                            selectedRole
+
+                        );
+
+                    });
+
+
+                /* =========================================
+                   INVALID LOGIN
+                   ========================================= */
+
+                if (!account) {
+
+                    if (loginError) {
+
+                        loginError.classList.add(
+                            "show"
+                        );
+
+
+                        const message =
+                            loginError.querySelector(
+                                "span"
+                            );
+
+
+                        if (message) {
+
+                            message.textContent =
+                                `Invalid ${selectedRole} credentials. Please check your email and password.`;
+
+                        }
+
+                    }
+
+
+                    console.log(
+                        "Login failed:",
+                        {
+                            email: emailValue,
+                            role: selectedRole
+                        }
+                    );
+
+
+                    return;
+
+                }
+
+
+                /* =========================================
+                   CLEAR OLD ACCOUNT
+                   ========================================= */
+
+                clearPreviousSession();
+
+
+                /* =========================================
+                   SAVE NEW ACCOUNT
+                   ========================================= */
+
+                saveCurrentUser(account);
+
+
+                /* =========================================
+                   REMEMBER ME
+                   ========================================= */
+
+                if (
+                    rememberMe &&
+                    rememberMe.checked
+                ) {
+
+                    localStorage.setItem(
+                        "learnora_remember",
+                        "true"
+                    );
+
+                }
+
+                else {
+
+                    localStorage.removeItem(
+                        "learnora_remember"
+                    );
+
+                }
+
+
+                /* =========================================
+                   SUCCESS MESSAGE
+                   ========================================= */
+
+                if (loginSuccess) {
+
+                    loginSuccess.classList.add(
+                        "show"
+                    );
+
 
                     const message =
-                        loginError.querySelector("span");
+                        loginSuccess.querySelector(
+                            "span"
+                        );
+
 
                     if (message) {
 
                         message.textContent =
-                            `Invalid ${selectedRole} credentials. Please check your email and password.`;
+                            `Welcome ${account.firstName}! Login successful. Redirecting...`;
 
                     }
 
                 }
+
+
+                /* =========================================
+                   LOADING STATE
+                   ========================================= */
+
+                if (loginButton) {
+
+                    loginButton.classList.add(
+                        "loading"
+                    );
+
+                    loginButton.disabled = true;
+
+                }
+
+
+                /* =========================================
+                   DEBUG
+                   ========================================= */
 
                 console.log(
-                    "Login failed:",
+                    "LOGIN SUCCESS",
                     {
-                        email: emailValue,
-                        role: selectedRole
+                        id: account.id,
+                        name: account.name,
+                        email: account.email,
+                        role: account.role
                     }
                 );
 
-                return;
 
-            }
-
-
-            /* =============================================
-               IMPORTANT
-               CLEAR OLD USER DATA
-               ============================================= */
-
-            localStorage.removeItem(
-                "learnora_current_user"
-            );
-
-            localStorage.removeItem(
-                "learnora_user_id"
-            );
-
-            localStorage.removeItem(
-                "learnora_student_name"
-            );
-
-
-            /* =============================================
-               SAVE LOGIN STATUS
-               ============================================= */
-
-            localStorage.setItem(
-                "learnora_logged_in",
-                "true"
-            );
-
-
-            /* =============================================
-               SAVE ROLE
-               ============================================= */
-
-            localStorage.setItem(
-                "learnora_user_role",
-                account.role
-            );
-
-
-            /* =============================================
-               SAVE EMAIL
-               ============================================= */
-
-            localStorage.setItem(
-                "learnora_user_email",
-                account.email
-            );
-
-
-            /* =============================================
-               SAVE COMPLETE USER
-               ============================================= */
-
-            localStorage.setItem(
-                "learnora_current_user",
-                JSON.stringify(account)
-            );
-
-
-            /* =============================================
-               SAVE USER ID
-               ============================================= */
-
-            localStorage.setItem(
-                "learnora_user_id",
-                account.id
-            );
-
-
-            /* =============================================
-               BACKWARD COMPATIBILITY
-               ============================================= */
-
-            localStorage.setItem(
-                "learnora_student_name",
-                account.name
-            );
-
-
-            /* =============================================
-               REMEMBER ME
-               ============================================= */
-
-            if (
-                rememberMe &&
-                rememberMe.checked
-            ) {
-
-                localStorage.setItem(
-                    "learnora_remember",
-                    "true"
+                console.log(
+                    "Saved Current User:",
+                    JSON.parse(
+                        localStorage.getItem(
+                            "learnora_current_user"
+                        )
+                    )
                 );
 
-            }
-
-            else {
-
-                localStorage.removeItem(
-                    "learnora_remember"
-                );
-
-            }
-
-
-            /* =============================================
-               SUCCESS MESSAGE
-               ============================================= */
-
-            if (loginSuccess) {
-
-                loginSuccess.classList.add("show");
-
-                const message =
-                    loginSuccess.querySelector("span");
-
-                if (message) {
-
-                    message.textContent =
-                        `Welcome ${account.firstName}! Login successful. Redirecting...`;
-
-                }
-
-            }
-
-
-            /* =============================================
-               LOADING STATE
-               ============================================= */
-
-            if (loginButton) {
-
-                loginButton.classList.add("loading");
-
-                loginButton.disabled = true;
-
-            }
-
-
-            /* =============================================
-               REDIRECT
-               ============================================= */
-
-            setTimeout(() => {
 
                 /* =========================================
-                   STUDENT
+                   REDIRECT
                    ========================================= */
 
-                if (account.role === "student") {
+                setTimeout(() => {
 
-                    window.location.href =
-                        "/Html/students/dashboard.html";
+                    /* -------------------------------------
+                       STUDENT
+                       ------------------------------------- */
 
-                    return;
+                    if (
+                        account.role ===
+                        "student"
+                    ) {
 
-                }
+                        window.location.href =
+                            "/Html/students/dashboard.html";
 
+                        return;
 
-                /* =========================================
-                   TEACHER
-                   ========================================= */
-
-                if (account.role === "teacher") {
-
-                    window.location.href =
-                        "/Html/teacher/dashboard.html";
-
-                    return;
-
-                }
+                    }
 
 
-                /* =========================================
-                   PARENT
-                   ========================================= */
+                    /* -------------------------------------
+                       TEACHER
+                       ------------------------------------- */
 
-                if (account.role === "parent") {
+                    if (
+                        account.role ===
+                        "teacher"
+                    ) {
 
-                    window.location.href =
-                        "/Html/parent/dashboard.html";
+                        window.location.href =
+                            "/Html/teacher/dashboard.html";
 
-                    return;
+                        return;
 
-                }
+                    }
 
-            }, 800);
 
-        });
+                    /* -------------------------------------
+                       PARENT
+                       ------------------------------------- */
+
+                    if (
+                        account.role ===
+                        "parent"
+                    ) {
+
+                        window.location.href =
+                            "/Html/parent/dashboard.html";
+
+                        return;
+
+                    }
+
+                }, 800);
+
+            }
+        );
 
     }
 
@@ -1122,34 +1373,45 @@ document.addEventListener("DOMContentLoaded", () => {
         forgotModal
     ) {
 
-        forgotPassword.addEventListener("click", () => {
+        forgotPassword.addEventListener(
+            "click",
+            () => {
 
-            forgotModal.classList.add("show");
+                forgotModal.classList.add(
+                    "show"
+                );
 
-            setTimeout(() => {
 
-                if (resetEmail) {
-                    resetEmail.focus();
-                }
+                setTimeout(() => {
 
-            }, 100);
+                    if (resetEmail) {
 
-        });
+                        resetEmail.focus();
+
+                    }
+
+                }, 100);
+
+            }
+        );
 
     }
 
 
     /* =====================================================
-       CLOSE FORGOT MODAL
+       CLOSE FORGOT PASSWORD MODAL
        ===================================================== */
 
     function closeForgotModal() {
 
         if (forgotModal) {
 
-            forgotModal.classList.remove("show");
+            forgotModal.classList.remove(
+                "show"
+            );
 
         }
+
 
         if (resetMessage) {
 
@@ -1183,15 +1445,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (forgotModal) {
 
-        forgotModal.addEventListener("click", event => {
+        forgotModal.addEventListener(
+            "click",
+            event => {
 
-            if (event.target === forgotModal) {
+                if (
+                    event.target ===
+                    forgotModal
+                ) {
 
-                closeForgotModal();
+                    closeForgotModal();
+
+                }
 
             }
-
-        });
+        );
 
     }
 
@@ -1200,15 +1468,21 @@ document.addEventListener("DOMContentLoaded", () => {
        ESCAPE KEY
        ===================================================== */
 
-    document.addEventListener("keydown", event => {
+    document.addEventListener(
+        "keydown",
+        event => {
 
-        if (event.key === "Escape") {
+            if (
+                event.key ===
+                "Escape"
+            ) {
 
-            closeForgotModal();
+                closeForgotModal();
+
+            }
 
         }
-
-    });
+    );
 
 
     /* =====================================================
@@ -1217,38 +1491,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (forgotForm) {
 
-        forgotForm.addEventListener("submit", event => {
+        forgotForm.addEventListener(
+            "submit",
+            event => {
 
-            event.preventDefault();
-
-            const email =
-                resetEmail
-                    ? resetEmail.value.trim()
-                    : "";
+                event.preventDefault();
 
 
-            if (!email) {
-                return;
+                const email =
+                    resetEmail
+                        ? resetEmail.value.trim()
+                        : "";
+
+
+                if (!email) {
+
+                    return;
+
+                }
+
+
+                if (resetMessage) {
+
+                    resetMessage.textContent =
+                        "Password reset instructions have been sent to your email.";
+
+                    resetMessage.classList.add(
+                        "show"
+                    );
+
+                }
+
+
+                setTimeout(() => {
+
+                    closeForgotModal();
+
+                }, 2500);
+
             }
-
-
-            if (resetMessage) {
-
-                resetMessage.textContent =
-                    "Password reset instructions have been sent to your email.";
-
-                resetMessage.classList.add("show");
-
-            }
-
-
-            setTimeout(() => {
-
-                closeForgotModal();
-
-            }, 2500);
-
-        });
+        );
 
     }
 
@@ -1291,22 +1573,34 @@ document.addEventListener("DOMContentLoaded", () => {
         if (savedRole) {
 
             const normalizedSavedRole =
-                normalizeRole(savedRole);
+                normalizeRole(
+                    savedRole
+                );
 
-            roleOptions.forEach(option => {
 
-                option.classList.remove("active");
+            roleOptions.forEach(
+                option => {
 
-                if (
-                    normalizeRole(option.dataset.role) ===
-                    normalizedSavedRole
-                ) {
+                    option.classList.remove(
+                        "active"
+                    );
 
-                    option.classList.add("active");
+
+                    if (
+                        normalizeRole(
+                            option.dataset.role
+                        ) ===
+                        normalizedSavedRole
+                    ) {
+
+                        option.classList.add(
+                            "active"
+                        );
+
+                    }
 
                 }
-
-            });
+            );
 
 
             currentRole =
@@ -1326,51 +1620,63 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       REMOVE USERNAME ERROR WHILE TYPING
+       USERNAME INPUT EVENT
        ===================================================== */
 
     if (username) {
 
-        username.addEventListener("input", () => {
+        username.addEventListener(
+            "input",
+            () => {
 
-            username.classList.remove(
-                "input-error"
-            );
+                username.classList.remove(
+                    "input-error"
+                );
 
-            if (usernameError) {
 
-                usernameError.textContent = "";
+                if (usernameError) {
+
+                    usernameError.textContent =
+                        "";
+
+                }
+
+
+                hideMessages();
 
             }
-
-            hideMessages();
-
-        });
+        );
 
     }
 
 
     /* =====================================================
-       REMOVE PASSWORD ERROR WHILE TYPING
+       PASSWORD INPUT EVENT
        ===================================================== */
 
     if (password) {
 
-        password.addEventListener("input", () => {
+        password.addEventListener(
+            "input",
+            () => {
 
-            password.classList.remove(
-                "input-error"
-            );
+                password.classList.remove(
+                    "input-error"
+                );
 
-            if (passwordError) {
 
-                passwordError.textContent = "";
+                if (passwordError) {
+
+                    passwordError.textContent =
+                        "";
+
+                }
+
+
+                hideMessages();
 
             }
-
-            hideMessages();
-
-        });
+        );
 
     }
 
@@ -1382,11 +1688,14 @@ document.addEventListener("DOMContentLoaded", () => {
     roleOptions.forEach(option => {
 
         if (
-            normalizeRole(option.dataset.role) ===
-            "student"
+            normalizeRole(
+                option.dataset.role
+            ) === "student"
         ) {
 
-            option.classList.add("active");
+            option.classList.add(
+                "active"
+            );
 
         }
 
@@ -1394,11 +1703,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* =====================================================
-       DEBUG
+       FINAL SYSTEM CHECK
        ===================================================== */
 
     console.log(
         "Learnora Login System Loaded Successfully."
     );
 
+    console.log(
+        `Available Accounts: ${users.length}`
+    );
+
 });
+
