@@ -1,15 +1,18 @@
-
+/* =========================================================
+   LEARNORA LMS — PREMIUM GLASSMORPHISM STUDENT UI
+   ========================================================= */
 
 :root {
-    --bg: #f4f7fb;
-    --bg-dark: #07111f;
+    --bg: #eef4fb;
+    --bg-dark: #050b16;
 
-    --sidebar: #071426;
-    --sidebar-soft: #0b1d32;
-    --sidebar-hover: #102943;
+    --sidebar: #061426;
+    --sidebar-soft: #0a1c31;
+    --sidebar-hover: #102b48;
 
-    --card: #ffffff;
-    --card-soft: #f8fafc;
+    --card: rgba(255, 255, 255, 0.78);
+    --card-solid: #ffffff;
+    --card-soft: rgba(248, 250, 252, 0.72);
 
     --primary: #2563eb;
     --primary-dark: #1d4ed8;
@@ -35,17 +38,27 @@
     --text-muted: #64748b;
     --text-light: #94a3b8;
 
-    --border: #e2e8f0;
-    --border-light: #edf2f7;
-
     --white: #ffffff;
 
-    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+    --border: rgba(148, 163, 184, 0.22);
+    --border-light: rgba(148, 163, 184, 0.14);
+
+    --glass-border: rgba(255, 255, 255, 0.62);
+
+    --shadow-sm:
+        0 8px 25px rgba(15, 23, 42, 0.06);
+
     --shadow:
-        0 10px 30px rgba(15, 23, 42, 0.07);
+        0 15px 40px rgba(15, 23, 42, 0.09);
 
     --shadow-lg:
-        0 20px 50px rgba(15, 23, 42, 0.10);
+        0 25px 65px rgba(15, 23, 42, 0.14);
+
+    --glow-blue:
+        0 0 45px rgba(37, 99, 235, 0.12);
+
+    --glow-cyan:
+        0 0 45px rgba(6, 182, 212, 0.12);
 
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -60,7 +73,7 @@
 
 
 /* =========================================================
-   2. RESET
+   RESET
    ========================================================= */
 
 * {
@@ -75,10 +88,34 @@ html {
 
 body {
     font-family: "DM Sans", "Manrope", sans-serif;
-    background: var(--bg);
     color: var(--text);
     min-height: 100vh;
     overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at 5% 5%,
+            rgba(37, 99, 235, 0.13),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(6, 182, 212, 0.12),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(139, 92, 246, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #f7fbff 0%,
+            #eef5fb 45%,
+            #f7f9fd 100%
+        );
+
+    background-attachment: fixed;
 }
 
 button,
@@ -110,18 +147,18 @@ ol {
 
 
 /* =========================================================
-   3. APP LAYOUT
+   APP LAYOUT
    ========================================================= */
 
 .student-app {
     min-height: 100vh;
     display: flex;
-    background: var(--bg);
+    background: transparent;
 }
 
 
 /* =========================================================
-   4. SIDEBAR
+   SIDEBAR
    ========================================================= */
 
 .sidebar {
@@ -135,13 +172,18 @@ ol {
     background:
         radial-gradient(
             circle at top left,
-            rgba(37, 99, 235, 0.18),
+            rgba(37, 99, 235, 0.24),
             transparent 30%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(6, 182, 212, 0.12),
+            transparent 35%
         ),
         linear-gradient(
             180deg,
             #071426 0%,
-            #06111f 100%
+            #04101e 100%
         );
 
     color: #fff;
@@ -151,7 +193,7 @@ ol {
     display: flex;
     flex-direction: column;
 
-    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
 
     overflow-y: auto;
     overflow-x: hidden;
@@ -166,11 +208,10 @@ ol {
 
 .sidebar.open {
     transform: translateX(0);
-    box-shadow: 10px 0 35px rgba(0, 0, 0, 0.18);
+
+    box-shadow:
+        15px 0 50px rgba(0, 0, 0, 0.24);
 }
-
-
-/* scrollbar */
 
 .sidebar::-webkit-scrollbar {
     width: 5px;
@@ -187,32 +228,34 @@ ol {
 
 
 /* =========================================================
-   5. SIDEBAR BRAND
+   SIDEBAR BRAND
    ========================================================= */
 
 .sidebar-brand {
     min-height: 92px;
-
-    padding: 22px 22px;
+    padding: 20px 22px;
 
     display: flex;
     align-items: center;
+
     gap: 13px;
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .brand-logo {
-    width: 45px;
-    height: 45px;
+    width: 47px;
+    height: 47px;
 
-    border-radius: 13px;
+    flex-shrink: 0;
+
+    border-radius: 14px;
 
     background:
         linear-gradient(
             135deg,
-            var(--primary),
-            var(--cyan)
+            #2563eb,
+            #06b6d4
         );
 
     display: flex;
@@ -220,10 +263,32 @@ ol {
     justify-content: center;
 
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 900;
+
+    color: #fff;
 
     box-shadow:
-        0 8px 25px rgba(37, 99, 235, 0.35);
+        0 10px 30px rgba(37, 99, 235, 0.4),
+        0 0 25px rgba(6, 182, 212, 0.18);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-logo::before {
+    content: "";
+
+    position: absolute;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    top: -30px;
+    right: -30px;
 }
 
 .brand-text {
@@ -234,19 +299,20 @@ ol {
 
 .brand-name {
     font-size: 19px;
-    font-weight: 800;
+    font-weight: 850;
     letter-spacing: -0.5px;
 }
 
 .brand-subtitle {
-    font-size: 11px;
+    font-size: 10px;
     color: #8fa4bc;
-    font-weight: 500;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 
 /* =========================================================
-   6. SIDEBAR NAV
+   SIDEBAR NAV
    ========================================================= */
 
 .sidebar-nav {
@@ -262,44 +328,45 @@ ol {
     padding: 0 12px;
     margin-bottom: 9px;
 
-    font-size: 10px;
-    font-weight: 800;
+    font-size: 9px;
+    font-weight: 850;
 
-    color: #667d96;
+    color: #607893;
 
     text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.4px;
 }
 
 .nav-item {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
 .nav-link {
-    min-height: 45px;
+    min-height: 46px;
 
     padding: 11px 13px;
 
     display: flex;
     align-items: center;
+
     gap: 12px;
 
     color: #a8bbcf;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 650;
 
     transition:
         background var(--transition),
         color var(--transition),
-        transform var(--transition);
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .nav-link i {
     width: 20px;
-
     text-align: center;
 
     font-size: 15px;
@@ -315,17 +382,21 @@ ol {
 
 .nav-link .nav-arrow {
     width: auto;
-
     font-size: 10px;
-
     color: #536a82;
 }
 
 .nav-link:hover {
-    background: rgba(255, 255, 255, 0.06);
-    color: #ffffff;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
 
-    transform: translateX(2px);
+    color: #fff;
+
+    transform: translateX(3px);
 }
 
 .nav-link:hover i {
@@ -335,24 +406,25 @@ ol {
 .nav-link.active {
     background:
         linear-gradient(
-            90deg,
-            rgba(37, 99, 235, 0.95),
-            rgba(6, 182, 212, 0.85)
+            100deg,
+            rgba(37, 99, 235, 0.98),
+            rgba(6, 182, 212, 0.90)
         );
 
-    color: #ffffff;
+    color: #fff;
 
     box-shadow:
-        0 8px 20px rgba(37, 99, 235, 0.22);
+        0 10px 25px rgba(37, 99, 235, 0.27),
+        inset 0 1px rgba(255,255,255,0.15);
 }
 
 .nav-link.active i {
-    color: #ffffff;
+    color: #fff;
 }
 
 
 /* =========================================================
-   7. NAV BADGE
+   NAV BADGE
    ========================================================= */
 
 .nav-badge {
@@ -363,43 +435,65 @@ ol {
 
     border-radius: 20px;
 
-    background: var(--danger);
+    background:
+        linear-gradient(
+            135deg,
+            #ef4444,
+            #f97316
+        );
+
     color: #fff;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    font-size: 10px;
-    font-weight: 800;
+    font-size: 9px;
+    font-weight: 850;
+
+    box-shadow:
+        0 5px 15px rgba(239,68,68,0.25);
 }
 
 
 /* =========================================================
-   8. SIDEBAR PROFILE
+   SIDEBAR PROFILE
    ========================================================= */
 
 .sidebar-profile {
     padding: 15px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top:
+        1px solid rgba(255,255,255,0.07);
 }
 
 .sidebar-profile-inner {
     padding: 12px;
 
-    border-radius: 14px;
+    border-radius: 15px;
 
-    background: rgba(255, 255, 255, 0.045);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.08);
 
     display: flex;
     align-items: center;
+
     gap: 10px;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,0.05);
 }
 
 .avatar {
-    width: 39px;
-    height: 39px;
+    width: 40px;
+    height: 40px;
 
     flex-shrink: 0;
 
@@ -418,8 +512,11 @@ ol {
     align-items: center;
     justify-content: center;
 
-    font-weight: 800;
+    font-weight: 850;
     font-size: 13px;
+
+    box-shadow:
+        0 7px 20px rgba(37,99,235,0.28);
 }
 
 .profile-info {
@@ -429,7 +526,8 @@ ol {
 
 .profile-name {
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 750;
+
     color: #fff;
 
     white-space: nowrap;
@@ -440,13 +538,13 @@ ol {
 .profile-role {
     margin-top: 2px;
 
-    font-size: 10px;
+    font-size: 9px;
     color: #8298b0;
 }
 
 
 /* =========================================================
-   9. MAIN AREA
+   MAIN AREA
    ========================================================= */
 
 .main-area {
@@ -462,15 +560,17 @@ ol {
 
 
 /* =========================================================
-   10. TOPBAR
+   TOPBAR
    ========================================================= */
 
 .topbar {
     height: var(--topbar-height);
 
-    background: rgba(255, 255, 255, 0.95);
+    background:
+        rgba(255,255,255,0.76);
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid rgba(148,163,184,0.20);
 
     display: flex;
     align-items: center;
@@ -483,7 +583,11 @@ ol {
 
     z-index: 900;
 
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 5px 25px rgba(15,23,42,0.035);
 }
 
 .topbar-left {
@@ -497,18 +601,34 @@ ol {
     height: 42px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
-    background: var(--card-soft);
+    background:
+        rgba(255,255,255,0.72);
+
     color: var(--text);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     font-size: 17px;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    transition: all var(--transition);
+}
+
+.mobile-menu-btn:hover {
+    color: var(--primary);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        var(--shadow);
 }
 
 .page-mini-title {
@@ -519,17 +639,17 @@ ol {
 
 .page-mini-title strong {
     font-size: 14px;
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .page-mini-title span {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--text-muted);
 }
 
 
 /* =========================================================
-   11. SEARCH
+   SEARCH
    ========================================================= */
 
 .topbar-search {
@@ -554,14 +674,15 @@ ol {
     width: 100%;
     height: 43px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid rgba(148,163,184,0.22);
 
-    background: #f8fafc;
+    background:
+        rgba(248,250,252,0.72);
 
-    border-radius: 11px;
+    border-radius: 12px;
 
-    padding:
-        0 16px 0 42px;
+    padding: 0 16px 0 42px;
 
     color: var(--text);
 
@@ -580,17 +701,19 @@ ol {
 }
 
 .topbar-search input:focus {
-    background: #fff;
+    background: rgba(255,255,255,0.95);
 
-    border-color: var(--primary-light);
+    border-color:
+        rgba(37,99,235,0.45);
 
     box-shadow:
-        0 0 0 4px rgba(37, 99, 235, 0.08);
+        0 0 0 4px rgba(37,99,235,0.07),
+        0 8px 25px rgba(37,99,235,0.07);
 }
 
 
 /* =========================================================
-   12. TOPBAR RIGHT
+   TOPBAR RIGHT
    ========================================================= */
 
 .topbar-right {
@@ -605,9 +728,11 @@ ol {
 
     border-radius: 11px;
 
-    background: #f8fafc;
+    background:
+        rgba(255,255,255,0.70);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     display: flex;
     align-items: center;
@@ -618,13 +743,23 @@ ol {
     position: relative;
 
     transition: all var(--transition);
+
+    box-shadow:
+        0 5px 18px rgba(15,23,42,0.04);
 }
 
 .topbar-icon:hover {
-    background: #eef5ff;
+    background: rgba(255,255,255,0.95);
+
     color: var(--primary);
 
-    border-color: #cbdcf8;
+    border-color:
+        rgba(37,99,235,0.25);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,0.10);
 }
 
 .notification-dot {
@@ -641,11 +776,14 @@ ol {
     border-radius: 50%;
 
     border: 2px solid #fff;
+
+    box-shadow:
+        0 0 0 3px rgba(239,68,68,0.08);
 }
 
 
 /* =========================================================
-   13. TOPBAR USER
+   TOPBAR USER
    ========================================================= */
 
 .topbar-user {
@@ -671,7 +809,7 @@ ol {
 
 .topbar-user-name {
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .topbar-user-role {
@@ -681,27 +819,26 @@ ol {
 
 .topbar-user i {
     margin-left: 3px;
-
     color: var(--text-muted);
-
     font-size: 10px;
 }
 
 
 /* =========================================================
-   14. PAGE CONTENT
+   PAGE CONTENT
    ========================================================= */
 
 .page-content {
     padding: 34px;
 
     max-width: 1800px;
+
     margin: 0 auto;
 }
 
 
 /* =========================================================
-   15. PAGE HEADER
+   PAGE HEADER
    ========================================================= */
 
 .page-header {
@@ -727,8 +864,8 @@ ol {
 
     color: var(--primary);
 
-    font-size: 11px;
-    font-weight: 800;
+    font-size: 10px;
+    font-weight: 850;
 
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -745,7 +882,7 @@ ol {
 
     letter-spacing: -1px;
 
-    font-weight: 850;
+    font-weight: 900;
 
     color: var(--text);
 }
@@ -758,13 +895,13 @@ ol {
     color: var(--text-muted);
 
     font-size: 13px;
-
     line-height: 1.7;
 }
 
 .page-actions {
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     flex-shrink: 0;
@@ -772,7 +909,7 @@ ol {
 
 
 /* =========================================================
-   16. BUTTONS
+   BUTTONS
    ========================================================= */
 
 .btn {
@@ -780,7 +917,7 @@ ol {
 
     padding: 0 17px;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
     display: inline-flex;
     align-items: center;
@@ -799,7 +936,7 @@ ol {
 }
 
 .btn:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .btn-primary {
@@ -813,25 +950,33 @@ ol {
         );
 
     box-shadow:
-        0 7px 18px rgba(37, 99, 235, 0.22);
+        0 8px 22px rgba(37,99,235,0.24);
 }
 
 .btn-primary:hover {
     box-shadow:
-        0 10px 25px rgba(37, 99, 235, 0.30);
+        0 12px 30px rgba(37,99,235,0.32);
 }
 
 .btn-secondary {
     color: var(--text);
 
-    background: #fff;
+    background:
+        rgba(255,255,255,0.78);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow-sm);
 }
 
 .btn-secondary:hover {
-    border-color: #bfd0e7;
-    background: #f8fafc;
+    border-color:
+        rgba(37,99,235,0.20);
+
+    background:
+        rgba(255,255,255,0.95);
 }
 
 .btn-success {
@@ -839,7 +984,7 @@ ol {
     background: var(--success);
 
     box-shadow:
-        0 7px 18px rgba(16, 185, 129, 0.18);
+        0 7px 18px rgba(16,185,129,0.18);
 }
 
 .btn-warning {
@@ -854,9 +999,10 @@ ol {
 
 .btn-small {
     min-height: 36px;
+
     padding: 0 12px;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     font-size: 11px;
 }
@@ -872,7 +1018,45 @@ ol {
 
 
 /* =========================================================
-   17. STAT GRID
+   GLASS CARD BASE
+   ========================================================= */
+
+.card,
+.stat-card,
+.course-card,
+.recording-card,
+.assignment-item,
+.quiz-card,
+.grade-box,
+.attendance-stat,
+.attendance-circle-card,
+.material-card,
+.announcement-item,
+.lecture-item {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.88),
+            rgba(255,255,255,0.64)
+        );
+
+    border:
+        1px solid rgba(255,255,255,0.78);
+
+    box-shadow:
+        0 10px 35px rgba(15,23,42,0.065);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+/* =========================================================
+   STAT GRID
    ========================================================= */
 
 .stats-grid {
@@ -889,15 +1073,9 @@ ol {
 .stat-card {
     min-height: 145px;
 
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius-lg);
+    border-radius: 20px;
 
     padding: 20px;
-
-    box-shadow: var(--shadow-sm);
 
     position: relative;
 
@@ -909,28 +1087,53 @@ ol {
         border var(--transition);
 }
 
+.stat-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 140px;
+    height: 140px;
+
+    right: -55px;
+    top: -65px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(37,99,235,0.10),
+            rgba(6,182,212,0.04)
+        );
+}
+
 .stat-card::after {
     content: "";
 
     position: absolute;
 
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 
-    right: -40px;
+    left: -35px;
     bottom: -45px;
 
     border-radius: 50%;
 
-    background: rgba(37, 99, 235, 0.05);
+    background:
+        rgba(139,92,246,0.05);
 }
 
 .stat-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        0 18px 45px rgba(15,23,42,0.11),
+        0 0 35px rgba(37,99,235,0.05);
 
-    border-color: #d7e2f0;
+    border-color:
+        rgba(37,99,235,0.18);
 }
 
 .stat-top {
@@ -939,49 +1142,55 @@ ol {
     justify-content: space-between;
 
     margin-bottom: 16px;
+
+    position: relative;
+    z-index: 2;
 }
 
 .stat-icon {
     width: 43px;
     height: 43px;
 
-    border-radius: 12px;
+    border-radius: 13px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
     font-size: 16px;
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,0.5);
 }
 
 .stat-icon.blue {
     color: var(--primary);
-    background: #eaf2ff;
+    background: rgba(234,242,255,0.90);
 }
 
 .stat-icon.cyan {
     color: #0891b2;
-    background: #e6faff;
+    background: rgba(230,250,255,0.90);
 }
 
 .stat-icon.green {
     color: var(--success-dark);
-    background: #e8faf4;
+    background: rgba(232,250,244,0.90);
 }
 
 .stat-icon.orange {
     color: #d97706;
-    background: #fff7df;
+    background: rgba(255,247,223,0.90);
 }
 
 .stat-icon.purple {
     color: #7c3aed;
-    background: #f1eaff;
+    background: rgba(241,234,255,0.90);
 }
 
 .stat-icon.red {
     color: var(--danger-dark);
-    background: #fff0f0;
+    background: rgba(255,240,240,0.90);
 }
 
 .stat-menu {
@@ -996,6 +1205,9 @@ ol {
     font-weight: 650;
 
     margin-bottom: 4px;
+
+    position: relative;
+    z-index: 2;
 }
 
 .stat-value {
@@ -1003,9 +1215,12 @@ ol {
 
     line-height: 1.1;
 
-    font-weight: 850;
+    font-weight: 900;
 
     letter-spacing: -0.6px;
+
+    position: relative;
+    z-index: 2;
 }
 
 .stat-meta {
@@ -1013,11 +1228,15 @@ ol {
 
     display: flex;
     align-items: center;
+
     gap: 5px;
 
     color: var(--text-muted);
 
     font-size: 10px;
+
+    position: relative;
+    z-index: 2;
 }
 
 .stat-meta .positive {
@@ -1032,17 +1251,13 @@ ol {
 
 
 /* =========================================================
-   18. COMMON CARD
+   COMMON CARD
    ========================================================= */
 
 .card {
-    background: var(--card);
+    border-radius: 20px;
 
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius-lg);
-
-    box-shadow: var(--shadow-sm);
+    overflow: hidden;
 }
 
 .card-header {
@@ -1056,14 +1271,16 @@ ol {
 
     gap: 15px;
 
-    border-bottom: 1px solid var(--border-light);
+    border-bottom:
+        1px solid rgba(148,163,184,0.13);
+
+    background:
+        rgba(255,255,255,0.18);
 }
 
 .card-title {
     font-size: 15px;
-    font-weight: 800;
-
-    color: var(--text);
+    font-weight: 850;
 }
 
 .card-subtitle {
@@ -1080,7 +1297,7 @@ ol {
 
 
 /* =========================================================
-   19. CONTENT GRID
+   CONTENT GRID
    ========================================================= */
 
 .content-grid {
@@ -1107,7 +1324,7 @@ ol {
 
 
 /* =========================================================
-   20. COURSE CARDS
+   COURSE CARDS
    ========================================================= */
 
 .course-grid {
@@ -1120,15 +1337,9 @@ ol {
 }
 
 .course-card {
-    background: #fff;
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius-lg);
+    border-radius: 20px;
 
     overflow: hidden;
-
-    box-shadow: var(--shadow-sm);
 
     transition:
         transform var(--transition),
@@ -1137,11 +1348,13 @@ ol {
 }
 
 .course-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
 
-    box-shadow: var(--shadow-lg);
+    box-shadow:
+        0 22px 55px rgba(15,23,42,0.13);
 
-    border-color: #d4e1f2;
+    border-color:
+        rgba(37,99,235,0.20);
 }
 
 .course-cover {
@@ -1158,8 +1371,8 @@ ol {
     background:
         linear-gradient(
             135deg,
-            #1d4ed8,
-            #0891b2
+            #173d89,
+            #087e96
         );
 }
 
@@ -1168,15 +1381,16 @@ ol {
 
     position: absolute;
 
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
 
-    right: -60px;
-    top: -80px;
+    right: -75px;
+    top: -100px;
 
     border-radius: 50%;
 
-    border: 25px solid rgba(255,255,255,0.07);
+    border:
+        28px solid rgba(255,255,255,0.08);
 }
 
 .course-cover::after {
@@ -1184,15 +1398,16 @@ ol {
 
     position: absolute;
 
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
 
-    left: -45px;
-    bottom: -55px;
+    left: -55px;
+    bottom: -65px;
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,0.08);
+    background:
+        rgba(255,255,255,0.08);
 }
 
 .course-code {
@@ -1205,12 +1420,14 @@ ol {
 
     border-radius: 7px;
 
-    background: rgba(255,255,255,0.15);
+    background:
+        rgba(255,255,255,0.15);
 
-    border: 1px solid rgba(255,255,255,0.16);
+    border:
+        1px solid rgba(255,255,255,0.16);
 
     font-size: 10px;
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .course-cover-title {
@@ -1222,9 +1439,10 @@ ol {
     max-width: 260px;
 
     font-size: 20px;
+
     line-height: 1.2;
 
-    font-weight: 800;
+    font-weight: 850;
 
     letter-spacing: -0.4px;
 }
@@ -1236,6 +1454,7 @@ ol {
 .course-teacher {
     display: flex;
     align-items: center;
+
     gap: 9px;
 
     color: var(--text-muted);
@@ -1251,7 +1470,12 @@ ol {
 
     border-radius: 50%;
 
-    background: #eaf2ff;
+    background:
+        linear-gradient(
+            135deg,
+            #eaf2ff,
+            #e6faff
+        );
 
     color: var(--primary);
 
@@ -1260,7 +1484,7 @@ ol {
     justify-content: center;
 
     font-size: 10px;
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .course-progress {
@@ -1283,7 +1507,7 @@ ol {
 
 .progress-value {
     color: var(--text);
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .progress-bar {
@@ -1292,7 +1516,8 @@ ol {
 
     border-radius: 20px;
 
-    background: #edf2f7;
+    background:
+        rgba(226,232,240,0.72);
 
     overflow: hidden;
 }
@@ -1308,6 +1533,9 @@ ol {
             var(--primary),
             var(--cyan)
         );
+
+    box-shadow:
+        0 0 12px rgba(37,99,235,0.22);
 }
 
 .course-meta {
@@ -1317,7 +1545,8 @@ ol {
 
     padding-top: 14px;
 
-    border-top: 1px solid var(--border-light);
+    border-top:
+        1px solid var(--border-light);
 
     color: var(--text-muted);
 
@@ -1337,11 +1566,12 @@ ol {
 
 
 /* =========================================================
-   21. BADGES
+   BADGES
    ========================================================= */
 
 .badge {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
@@ -1352,7 +1582,7 @@ ol {
     border-radius: 20px;
 
     font-size: 9px;
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .badge-success {
@@ -1392,19 +1622,19 @@ ol {
 
 
 /* =========================================================
-   22. TABLE
+   TABLE
    ========================================================= */
 
 .table-wrapper {
     width: 100%;
-
     overflow-x: auto;
 }
 
 .data-table {
     width: 100%;
 
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
 
     min-width: 700px;
 }
@@ -1414,9 +1644,11 @@ ol {
 
     text-align: left;
 
-    background: #f8fafc;
+    background:
+        rgba(248,250,252,0.70);
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid var(--border);
 
     color: var(--text-muted);
 
@@ -1426,13 +1658,14 @@ ol {
 
     letter-spacing: 0.6px;
 
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .data-table td {
     padding: 15px;
 
-    border-bottom: 1px solid var(--border-light);
+    border-bottom:
+        1px solid var(--border-light);
 
     font-size: 11px;
 
@@ -1446,7 +1679,8 @@ ol {
 }
 
 .data-table tbody tr:hover {
-    background: #fafcff;
+    background:
+        rgba(255,255,255,0.55);
 }
 
 .data-table tbody tr:last-child td {
@@ -1457,7 +1691,6 @@ ol {
     color: var(--text);
 
     font-size: 11px;
-
     font-weight: 750;
 }
 
@@ -1471,7 +1704,7 @@ ol {
 
 
 /* =========================================================
-   23. ACTIVITY LIST
+   ACTIVITY LIST
    ========================================================= */
 
 .activity-list {
@@ -1486,7 +1719,8 @@ ol {
 
     padding: 15px 0;
 
-    border-bottom: 1px solid var(--border-light);
+    border-bottom:
+        1px solid var(--border-light);
 }
 
 .activity-item:first-child {
@@ -1499,12 +1733,12 @@ ol {
 }
 
 .activity-icon {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
 
     flex-shrink: 0;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
     display: flex;
     align-items: center;
@@ -1541,7 +1775,6 @@ ol {
 .activity-title {
     font-size: 11px;
     font-weight: 750;
-    color: var(--text);
 }
 
 .activity-description {
@@ -1564,22 +1797,19 @@ ol {
 
 
 /* =========================================================
-   24. LECTURE LIST
+   LECTURE LIST
    ========================================================= */
 
 .lecture-list {
     display: flex;
     flex-direction: column;
-
     gap: 10px;
 }
 
 .lecture-item {
     padding: 14px;
 
-    border: 1px solid var(--border);
-
-    border-radius: 12px;
+    border-radius: 14px;
 
     display: flex;
     align-items: center;
@@ -1589,15 +1819,21 @@ ol {
     transition:
         background var(--transition),
         border var(--transition),
-        transform var(--transition);
+        transform var(--transition),
+        box-shadow var(--transition);
 }
 
 .lecture-item:hover {
-    background: #fbfdff;
+    background:
+        rgba(255,255,255,0.92);
 
-    border-color: #d7e3f3;
+    border-color:
+        rgba(37,99,235,0.18);
 
-    transform: translateX(2px);
+    transform: translateX(3px);
+
+    box-shadow:
+        var(--shadow-sm);
 }
 
 .lecture-number {
@@ -1608,7 +1844,12 @@ ol {
 
     border-radius: 10px;
 
-    background: #eaf2ff;
+    background:
+        linear-gradient(
+            135deg,
+            #eaf2ff,
+            #e6faff
+        );
 
     color: var(--primary);
 
@@ -1617,13 +1858,11 @@ ol {
     justify-content: center;
 
     font-size: 11px;
-
     font-weight: 850;
 }
 
 .lecture-info {
     flex: 1;
-
     min-width: 0;
 }
 
@@ -1632,7 +1871,9 @@ ol {
     font-weight: 750;
 
     white-space: nowrap;
+
     overflow: hidden;
+
     text-overflow: ellipsis;
 }
 
@@ -1663,7 +1904,7 @@ ol {
 
 
 /* =========================================================
-   25. FILTER BAR
+   FILTER BAR
    ========================================================= */
 
 .filter-bar {
@@ -1671,11 +1912,13 @@ ol {
 
     margin-bottom: 18px;
 
-    background: #fff;
+    background:
+        rgba(255,255,255,0.72);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 14px;
+    border-radius: 15px;
 
     display: flex;
     align-items: center;
@@ -1684,6 +1927,8 @@ ol {
     gap: 12px;
 
     flex-wrap: wrap;
+
+    backdrop-filter: blur(15px);
 }
 
 .filter-group {
@@ -1707,7 +1952,6 @@ ol {
     color: var(--text-muted);
 
     font-size: 10px;
-
     font-weight: 700;
 
     transition: all var(--transition);
@@ -1715,13 +1959,11 @@ ol {
 
 .filter-btn:hover {
     background: #f1f5f9;
-
     color: var(--text);
 }
 
 .filter-btn.active {
     color: var(--primary);
-
     background: #eaf2ff;
 }
 
@@ -1730,11 +1972,13 @@ ol {
 
     padding: 0 32px 0 11px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 8px;
+    border-radius: 9px;
 
-    background: #fff;
+    background:
+        rgba(255,255,255,0.75);
 
     color: var(--text-soft);
 
@@ -1747,7 +1991,7 @@ ol {
 
 
 /* =========================================================
-   26. SEARCH INPUT
+   FORM INPUTS
    ========================================================= */
 
 .input-group {
@@ -1772,11 +2016,13 @@ ol {
 .form-textarea {
     width: 100%;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 9px;
+    border-radius: 10px;
 
-    background: #fff;
+    background:
+        rgba(255,255,255,0.75);
 
     color: var(--text);
 
@@ -1784,7 +2030,8 @@ ol {
 
     transition:
         border var(--transition),
-        box-shadow var(--transition);
+        box-shadow var(--transition),
+        background var(--transition);
 }
 
 .form-input {
@@ -1814,10 +2061,15 @@ ol {
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-    border-color: var(--primary-light);
+    background:
+        rgba(255,255,255,0.95);
+
+    border-color:
+        var(--primary-light);
 
     box-shadow:
-        0 0 0 4px rgba(37, 99, 235, 0.07);
+        0 0 0 4px rgba(37,99,235,0.07),
+        0 8px 20px rgba(37,99,235,0.05);
 }
 
 .form-label {
@@ -1834,7 +2086,7 @@ ol {
 
 
 /* =========================================================
-   27. COURSE HERO
+   COURSE HERO
    ========================================================= */
 
 .course-hero {
@@ -1843,22 +2095,30 @@ ol {
     overflow: hidden;
 
     background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(34,211,238,0.18),
+            transparent 25%
+        ),
         linear-gradient(
             135deg,
-            #0b2442,
-            #0d4260
+            #071d38,
+            #0c506c
         );
 
     color: #fff;
 
-    border-radius: var(--radius-xl);
+    border-radius: 24px;
 
     padding: 30px;
 
     margin-bottom: 20px;
 
     box-shadow:
-        0 18px 45px rgba(7, 20, 38, 0.17);
+        0 20px 55px rgba(7,20,38,0.18);
+
+    border:
+        1px solid rgba(255,255,255,0.10);
 }
 
 .course-hero::before {
@@ -1874,7 +2134,8 @@ ol {
 
     border-radius: 50%;
 
-    border: 55px solid rgba(255,255,255,0.04);
+    border:
+        55px solid rgba(255,255,255,0.04);
 }
 
 .course-hero::after {
@@ -1890,17 +2151,18 @@ ol {
 
     border-radius: 50%;
 
-    background: rgba(6, 182, 212, 0.08);
+    background:
+        rgba(6,182,212,0.08);
 }
 
 .course-hero-content {
     position: relative;
-
     z-index: 2;
 
     display: grid;
 
-    grid-template-columns: 1fr 180px;
+    grid-template-columns:
+        1fr 180px;
 
     gap: 30px;
 
@@ -1912,13 +2174,16 @@ ol {
 
     padding: 6px 10px;
 
-    background: rgba(255,255,255,0.12);
+    background:
+        rgba(255,255,255,0.12);
 
-    border: 1px solid rgba(255,255,255,0.12);
+    border:
+        1px solid rgba(255,255,255,0.12);
 
     border-radius: 7px;
 
     font-size: 10px;
+
     font-weight: 800;
 }
 
@@ -1956,16 +2221,20 @@ ol {
 
 .course-hero-meta-item {
     display: inline-flex;
+
     align-items: center;
+
     gap: 7px;
 
     padding: 8px 11px;
 
     border-radius: 8px;
 
-    background: rgba(255,255,255,0.08);
+    background:
+        rgba(255,255,255,0.08);
 
-    color: rgba(255,255,255,0.82);
+    color:
+        rgba(255,255,255,0.82);
 
     font-size: 10px;
 }
@@ -1989,6 +2258,9 @@ ol {
             var(--cyan-light) 0 82%,
             rgba(255,255,255,0.12) 82% 100%
         );
+
+    box-shadow:
+        0 0 30px rgba(34,211,238,0.15);
 }
 
 .course-progress-circle::before {
@@ -2006,7 +2278,6 @@ ol {
 
 .course-progress-value {
     position: relative;
-
     z-index: 2;
 
     text-align: center;
@@ -2016,19 +2287,19 @@ ol {
     display: block;
 
     font-size: 28px;
-
     font-weight: 850;
 }
 
 .course-progress-value span {
     font-size: 9px;
 
-    color: rgba(255,255,255,0.65);
+    color:
+        rgba(255,255,255,0.65);
 }
 
 
 /* =========================================================
-   28. TABS
+   TABS
    ========================================================= */
 
 .tabs {
@@ -2042,13 +2313,20 @@ ol {
 
     padding: 5px;
 
-    background: #fff;
+    background:
+        rgba(255,255,255,0.70);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    border-radius: 12px;
+    border-radius: 13px;
 
     overflow-x: auto;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        var(--shadow-sm);
 }
 
 .tab {
@@ -2056,7 +2334,7 @@ ol {
 
     padding: 0 14px;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     white-space: nowrap;
 
@@ -2067,21 +2345,34 @@ ol {
     font-size: 10px;
 
     font-weight: 750;
+
+    transition: all var(--transition);
 }
 
 .tab:hover {
     color: var(--text);
-    background: #f8fafc;
+
+    background:
+        rgba(241,245,249,0.75);
 }
 
 .tab.active {
-    background: #eaf2ff;
+    background:
+        linear-gradient(
+            135deg,
+            #eaf2ff,
+            #e6faff
+        );
+
     color: var(--primary);
+
+    box-shadow:
+        inset 0 1px rgba(255,255,255,0.7);
 }
 
 
 /* =========================================================
-   29. RECORDING CARDS
+   RECORDING CARDS
    ========================================================= */
 
 .recording-grid {
@@ -2096,13 +2387,7 @@ ol {
 .recording-card {
     overflow: hidden;
 
-    border: 1px solid var(--border);
-
-    background: #fff;
-
-    border-radius: 15px;
-
-    box-shadow: var(--shadow-sm);
+    border-radius: 18px;
 
     transition:
         transform var(--transition),
@@ -2110,9 +2395,10 @@ ol {
 }
 
 .recording-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        0 20px 45px rgba(15,23,42,0.12);
 }
 
 .recording-thumb {
@@ -2121,6 +2407,7 @@ ol {
     position: relative;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
@@ -2135,26 +2422,34 @@ ol {
 }
 
 .recording-play {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
 
     border-radius: 50%;
 
-    background: rgba(255,255,255,0.14);
+    background:
+        rgba(255,255,255,0.14);
 
-    border: 1px solid rgba(255,255,255,0.2);
+    border:
+        1px solid rgba(255,255,255,0.2);
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     font-size: 15px;
 
-    transition: transform var(--transition);
+    transition:
+        transform var(--transition),
+        background var(--transition);
 }
 
 .recording-card:hover .recording-play {
-    transform: scale(1.08);
+    transform: scale(1.10);
+
+    background:
+        rgba(255,255,255,0.20);
 }
 
 .recording-duration {
@@ -2167,7 +2462,8 @@ ol {
 
     border-radius: 5px;
 
-    background: rgba(0,0,0,0.65);
+    background:
+        rgba(0,0,0,0.65);
 
     font-size: 9px;
 }
@@ -2198,27 +2494,21 @@ ol {
 
 
 /* =========================================================
-   30. ASSIGNMENT CARDS
+   ASSIGNMENTS
    ========================================================= */
 
 .assignment-list {
     display: flex;
     flex-direction: column;
-
     gap: 11px;
 }
 
 .assignment-item {
     padding: 17px;
 
-    background: #fff;
-
-    border: 1px solid var(--border);
-
-    border-radius: 13px;
+    border-radius: 15px;
 
     display: flex;
-
     align-items: center;
 
     gap: 15px;
@@ -2230,11 +2520,13 @@ ol {
 }
 
 .assignment-item:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 
-    border-color: #d4e0f0;
+    border-color:
+        rgba(37,99,235,0.18);
 
-    box-shadow: var(--shadow-sm);
+    box-shadow:
+        var(--shadow);
 }
 
 .assignment-icon {
@@ -2243,26 +2535,30 @@ ol {
 
     flex-shrink: 0;
 
-    border-radius: 11px;
+    border-radius: 12px;
 
-    background: #eaf2ff;
+    background:
+        linear-gradient(
+            135deg,
+            #eaf2ff,
+            #e6faff
+        );
 
     color: var(--primary);
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
 
 .assignment-info {
     flex: 1;
-
     min-width: 0;
 }
 
 .assignment-title {
     font-size: 12px;
-
     font-weight: 800;
 }
 
@@ -2289,7 +2585,7 @@ ol {
 
 
 /* =========================================================
-   31. QUIZ CARDS
+   QUIZ
    ========================================================= */
 
 .quiz-grid {
@@ -2304,11 +2600,7 @@ ol {
 .quiz-card {
     padding: 20px;
 
-    border: 1px solid var(--border);
-
-    border-radius: 15px;
-
-    background: #fff;
+    border-radius: 17px;
 
     transition:
         transform var(--transition),
@@ -2316,9 +2608,10 @@ ol {
 }
 
 .quiz-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        var(--shadow);
 }
 
 .quiz-top {
@@ -2335,13 +2628,15 @@ ol {
     width: 43px;
     height: 43px;
 
-    border-radius: 11px;
+    border-radius: 12px;
 
-    background: #f1eaff;
+    background:
+        #f1eaff;
 
     color: var(--purple);
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 }
@@ -2378,9 +2673,13 @@ ol {
 .quiz-meta-item {
     padding: 9px;
 
-    background: #f8fafc;
+    background:
+        rgba(248,250,252,0.70);
 
-    border-radius: 8px;
+    border-radius: 9px;
+
+    border:
+        1px solid rgba(148,163,184,0.08);
 }
 
 .quiz-meta-item span {
@@ -2411,249 +2710,7 @@ ol {
 
 
 /* =========================================================
-   32. QUIZ TAKING PAGE
-   ========================================================= */
-
-.quiz-layout {
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        280px;
-
-    gap: 20px;
-
-    align-items: start;
-}
-
-.quiz-question-card {
-    padding: 25px;
-
-    background: #fff;
-
-    border: 1px solid var(--border);
-
-    border-radius: 17px;
-
-    box-shadow: var(--shadow-sm);
-}
-
-.quiz-question-header {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 15px;
-
-    margin-bottom: 23px;
-
-    padding-bottom: 17px;
-
-    border-bottom: 1px solid var(--border-light);
-}
-
-.question-number {
-    color: var(--text-muted);
-
-    font-size: 10px;
-
-    font-weight: 700;
-}
-
-.question-number strong {
-    color: var(--text);
-
-    font-size: 14px;
-}
-
-.quiz-timer {
-    min-height: 36px;
-
-    padding: 0 11px;
-
-    border-radius: 8px;
-
-    background: #fff0f0;
-
-    color: var(--danger-dark);
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 7px;
-
-    font-size: 10px;
-
-    font-weight: 800;
-}
-
-.question-text {
-    font-size: 18px;
-
-    line-height: 1.55;
-
-    font-weight: 800;
-
-    letter-spacing: -0.3px;
-}
-
-.options-list {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 10px;
-
-    margin-top: 22px;
-}
-
-.option {
-    position: relative;
-}
-
-.option input {
-    position: absolute;
-
-    opacity: 0;
-
-    pointer-events: none;
-}
-
-.option label {
-    min-height: 55px;
-
-    padding: 12px 15px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 11px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    cursor: pointer;
-
-    color: var(--text-soft);
-
-    font-size: 11px;
-
-    transition: all var(--transition);
-}
-
-.option-letter {
-    width: 29px;
-    height: 29px;
-
-    flex-shrink: 0;
-
-    border-radius: 8px;
-
-    background: #f1f5f9;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 10px;
-
-    font-weight: 800;
-}
-
-.option input:checked + label {
-    border-color: var(--primary-light);
-
-    background: #f1f6ff;
-
-    color: var(--text);
-}
-
-.option input:checked + label .option-letter {
-    color: #fff;
-
-    background: var(--primary);
-}
-
-.quiz-navigation {
-    display: flex;
-
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 10px;
-
-    margin-top: 25px;
-
-    padding-top: 18px;
-
-    border-top: 1px solid var(--border-light);
-}
-
-.question-map {
-    padding: 19px;
-
-    background: #fff;
-
-    border: 1px solid var(--border);
-
-    border-radius: 15px;
-
-    box-shadow: var(--shadow-sm);
-
-    position: sticky;
-
-    top: 105px;
-}
-
-.question-map-title {
-    font-size: 12px;
-
-    font-weight: 800;
-
-    margin-bottom: 14px;
-}
-
-.question-map-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(5, 1fr);
-
-    gap: 7px;
-}
-
-.question-map-btn {
-    width: 35px;
-    height: 35px;
-
-    border-radius: 8px;
-
-    background: #f1f5f9;
-
-    color: var(--text-muted);
-
-    font-size: 10px;
-
-    font-weight: 800;
-}
-
-.question-map-btn.active {
-    background: var(--primary);
-    color: #fff;
-}
-
-.question-map-btn.completed {
-    background: #e8f8f1;
-    color: var(--success-dark);
-}
-
-
-/* =========================================================
-   33. RESULTS
+   RESULTS
    ========================================================= */
 
 .grade-summary {
@@ -2670,15 +2727,20 @@ ol {
 .grade-box {
     padding: 20px;
 
-    background: #fff;
-
-    border: 1px solid var(--border);
-
-    border-radius: 15px;
+    border-radius: 17px;
 
     text-align: center;
 
-    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.grade-box:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        var(--shadow);
 }
 
 .grade-box-label {
@@ -2686,7 +2748,7 @@ ol {
 
     font-size: 9px;
 
-    font-weight: 700;
+    font-weight: 750;
 
     text-transform: uppercase;
 }
@@ -2696,7 +2758,7 @@ ol {
 
     font-size: 27px;
 
-    font-weight: 850;
+    font-weight: 900;
 
     color: var(--text);
 }
@@ -2715,15 +2777,14 @@ ol {
 
 
 /* =========================================================
-   34. ATTENDANCE
+   ATTENDANCE
    ========================================================= */
 
 .attendance-overview {
     display: grid;
 
     grid-template-columns:
-        220px
-        1fr;
+        220px 1fr;
 
     gap: 20px;
 
@@ -2736,14 +2797,9 @@ ol {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
-    background: #fff;
-
-    border: 1px solid var(--border);
-
-    border-radius: 16px;
+    border-radius: 18px;
 }
 
 .attendance-circle {
@@ -2776,7 +2832,7 @@ ol {
 
     border-radius: 50%;
 
-    background: #fff;
+    background: rgba(255,255,255,0.95);
 }
 
 .attendance-value {
@@ -2792,7 +2848,7 @@ ol {
 
     font-size: 27px;
 
-    font-weight: 850;
+    font-weight: 900;
 }
 
 .attendance-value span {
@@ -2813,11 +2869,11 @@ ol {
 .attendance-stat {
     padding: 17px;
 
-    border: 1px solid var(--border);
+    border-radius: 15px;
+}
 
-    border-radius: 13px;
-
-    background: #fff;
+.attendance-stat:hover {
+    transform: translateY(-3px);
 }
 
 .attendance-stat-icon {
@@ -2839,7 +2895,7 @@ ol {
 
     font-size: 22px;
 
-    font-weight: 850;
+    font-weight: 900;
 }
 
 .attendance-stat span {
@@ -2854,36 +2910,7 @@ ol {
 
 
 /* =========================================================
-   35. ATTENDANCE BAR
-   ========================================================= */
-
-.attendance-bar-wrapper {
-    margin-top: 10px;
-}
-
-.attendance-bar {
-    height: 8px;
-
-    width: 100%;
-
-    background: #edf2f7;
-
-    border-radius: 20px;
-
-    overflow: hidden;
-}
-
-.attendance-bar-fill {
-    height: 100%;
-
-    border-radius: inherit;
-
-    background: var(--success);
-}
-
-
-/* =========================================================
-   36. SCHEDULE
+   SCHEDULE
    ========================================================= */
 
 .schedule-wrapper {
@@ -2891,7 +2918,7 @@ ol {
 
     overflow-x: auto;
 
-    padding-bottom: 5px;
+    padding-bottom: 7px;
 }
 
 .schedule-grid {
@@ -2902,23 +2929,34 @@ ol {
     grid-template-columns:
         75px repeat(5, minmax(150px, 1fr));
 
-    border: 1px solid var(--border);
+    border:
+        1px solid rgba(148,163,184,0.18);
 
-    border-radius: 15px;
+    border-radius: 17px;
 
     overflow: hidden;
 
-    background: #fff;
+    background:
+        rgba(255,255,255,0.60);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        var(--shadow);
 }
 
 .schedule-head {
     padding: 15px 10px;
 
-    background: #f8fafc;
+    background:
+        rgba(248,250,252,0.78);
 
-    border-right: 1px solid var(--border);
+    border-right:
+        1px solid var(--border);
 
-    border-bottom: 1px solid var(--border);
+    border-bottom:
+        1px solid var(--border);
 
     text-align: center;
 
@@ -2926,7 +2964,7 @@ ol {
 
     font-size: 9px;
 
-    font-weight: 800;
+    font-weight: 850;
 
     text-transform: uppercase;
 }
@@ -2936,11 +2974,19 @@ ol {
 
     padding: 9px;
 
-    border-right: 1px solid var(--border-light);
+    border-right:
+        1px solid var(--border-light);
 
-    border-bottom: 1px solid var(--border-light);
+    border-bottom:
+        1px solid var(--border-light);
 
-    background: #fff;
+    background:
+        rgba(255,255,255,0.42);
+}
+
+.schedule-cell:hover {
+    background:
+        rgba(255,255,255,0.70);
 }
 
 .schedule-time {
@@ -2961,39 +3007,55 @@ ol {
 
     padding: 10px;
 
-    border-radius: 9px;
+    border-radius: 11px;
 
-    background: #eaf2ff;
+    background:
+        rgba(234,242,255,0.88);
 
-    border-left: 3px solid var(--primary);
+    border-left:
+        3px solid var(--primary);
 
     color: var(--text);
+
+    box-shadow:
+        0 6px 18px rgba(37,99,235,0.07);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.class-block:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,0.12);
 }
 
 .class-block.cyan {
-    background: #e6faff;
+    background: rgba(230,250,255,0.88);
     border-left-color: var(--cyan);
 }
 
 .class-block.green {
-    background: #e9f9f2;
+    background: rgba(233,249,242,0.88);
     border-left-color: var(--success);
 }
 
 .class-block.purple {
-    background: #f1eaff;
+    background: rgba(241,234,255,0.88);
     border-left-color: var(--purple);
 }
 
 .class-block.orange {
-    background: #fff7df;
+    background: rgba(255,247,223,0.88);
     border-left-color: var(--warning);
 }
 
 .class-title {
     font-size: 10px;
 
-    font-weight: 800;
+    font-weight: 850;
 
     line-height: 1.35;
 }
@@ -3016,7 +3078,7 @@ ol {
 
 
 /* =========================================================
-   37. ANNOUNCEMENTS
+   ANNOUNCEMENTS
    ========================================================= */
 
 .announcement-list {
@@ -3030,11 +3092,7 @@ ol {
 .announcement-item {
     padding: 18px;
 
-    background: #fff;
-
-    border: 1px solid var(--border);
-
-    border-radius: 14px;
+    border-radius: 16px;
 
     display: flex;
 
@@ -3042,13 +3100,18 @@ ol {
 
     transition:
         border var(--transition),
-        box-shadow var(--transition);
+        box-shadow var(--transition),
+        transform var(--transition);
 }
 
 .announcement-item:hover {
-    border-color: #d5e1f0;
+    border-color:
+        rgba(37,99,235,0.18);
 
-    box-shadow: var(--shadow-sm);
+    box-shadow:
+        var(--shadow);
+
+    transform: translateY(-2px);
 }
 
 .announcement-icon {
@@ -3057,28 +3120,32 @@ ol {
 
     flex-shrink: 0;
 
-    border-radius: 11px;
+    border-radius: 12px;
 
     display: flex;
 
     align-items: center;
     justify-content: center;
 
-    background: #eaf2ff;
+    background:
+        linear-gradient(
+            135deg,
+            #eaf2ff,
+            #e6faff
+        );
 
     color: var(--primary);
 }
 
 .announcement-content {
     min-width: 0;
-
     flex: 1;
 }
 
 .announcement-title {
     font-size: 13px;
 
-    font-weight: 800;
+    font-weight: 850;
 
     line-height: 1.4;
 }
@@ -3109,7 +3176,7 @@ ol {
 
 
 /* =========================================================
-   38. MATERIALS
+   MATERIALS
    ========================================================= */
 
 .material-grid {
@@ -3124,11 +3191,7 @@ ol {
 .material-card {
     padding: 17px;
 
-    background: #fff;
-
-    border: 1px solid var(--border);
-
-    border-radius: 14px;
+    border-radius: 16px;
 
     transition:
         transform var(--transition),
@@ -3136,15 +3199,17 @@ ol {
 }
 
 .material-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        var(--shadow);
 }
 
 .material-top {
     display: flex;
 
     align-items: flex-start;
+
     justify-content: space-between;
 
     gap: 10px;
@@ -3154,7 +3219,7 @@ ol {
     width: 43px;
     height: 43px;
 
-    border-radius: 11px;
+    border-radius: 12px;
 
     display: flex;
 
@@ -3194,7 +3259,7 @@ ol {
 
     font-size: 12px;
 
-    font-weight: 800;
+    font-weight: 850;
 
     line-height: 1.45;
 }
@@ -3212,7 +3277,8 @@ ol {
 
     padding-top: 12px;
 
-    border-top: 1px solid var(--border-light);
+    border-top:
+        1px solid var(--border-light);
 
     display: flex;
 
@@ -3237,7 +3303,7 @@ ol {
 
 
 /* =========================================================
-   39. EMPTY STATE
+   EMPTY STATE
    ========================================================= */
 
 .empty-state {
@@ -3245,11 +3311,16 @@ ol {
 
     text-align: center;
 
-    border: 1px dashed #cfd9e5;
+    border:
+        1px dashed #cfd9e5;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
-    background: #fbfdff;
+    background:
+        rgba(255,255,255,0.55);
+
+    backdrop-filter:
+        blur(15px);
 }
 
 .empty-icon {
@@ -3258,9 +3329,14 @@ ol {
 
     margin: 0 auto 14px;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
-    background: #eaf2ff;
+    background:
+        linear-gradient(
+            135deg,
+            #eaf2ff,
+            #e6faff
+        );
 
     color: var(--primary);
 
@@ -3270,12 +3346,14 @@ ol {
     justify-content: center;
 
     font-size: 19px;
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,0.08);
 }
 
 .empty-state h3 {
     font-size: 15px;
-
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .empty-state p {
@@ -3292,13 +3370,13 @@ ol {
 
 
 /* =========================================================
-   40. ALERT
+   ALERT
    ========================================================= */
 
 .alert {
     padding: 13px 15px;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
     display: flex;
 
@@ -3317,31 +3395,27 @@ ol {
 
 .alert-info {
     background: #eaf2ff;
-
     color: #1d4ed8;
 }
 
 .alert-success {
     background: #e9f9f2;
-
     color: #047857;
 }
 
 .alert-warning {
     background: #fff7df;
-
     color: #b45309;
 }
 
 .alert-danger {
     background: #fff0f0;
-
     color: #b91c1c;
 }
 
 
 /* =========================================================
-   41. MODAL
+   MODAL
    ========================================================= */
 
 .modal-overlay {
@@ -3349,9 +3423,11 @@ ol {
 
     inset: 0;
 
-    background: rgba(3, 10, 20, 0.65);
+    background:
+        rgba(3,10,20,0.65);
 
-    backdrop-filter: blur(6px);
+    backdrop-filter:
+        blur(8px);
 
     z-index: 2000;
 
@@ -3374,32 +3450,46 @@ ol {
 
     overflow-y: auto;
 
-    background: #fff;
+    background:
+        rgba(255,255,255,0.92);
 
-    border-radius: 18px;
+    border:
+        1px solid rgba(255,255,255,0.75);
+
+    border-radius: 20px;
 
     box-shadow:
-        0 25px 80px rgba(0,0,0,0.22);
+        0 30px 90px rgba(0,0,0,0.25);
 
-    animation: modalIn 0.22s ease;
+    backdrop-filter:
+        blur(25px);
+
+    animation:
+        modalIn 0.22s ease;
 }
 
 @keyframes modalIn {
+
     from {
         opacity: 0;
-        transform: translateY(12px) scale(0.98);
+        transform:
+            translateY(12px)
+            scale(0.98);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
 .modal-header {
     padding: 19px 21px;
 
-    border-bottom: 1px solid var(--border-light);
+    border-bottom:
+        1px solid var(--border-light);
 
     display: flex;
 
@@ -3409,15 +3499,14 @@ ol {
 
 .modal-title {
     font-size: 15px;
-
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .modal-close {
     width: 33px;
     height: 33px;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     background: #f1f5f9;
 
@@ -3436,7 +3525,8 @@ ol {
 .modal-footer {
     padding: 15px 21px;
 
-    border-top: 1px solid var(--border-light);
+    border-top:
+        1px solid var(--border-light);
 
     display: flex;
 
@@ -3447,7 +3537,7 @@ ol {
 
 
 /* =========================================================
-   42. FOOTER
+   FOOTER
    ========================================================= */
 
 .footer {
@@ -3455,7 +3545,8 @@ ol {
 
     margin-top: 25px;
 
-    border-top: 1px solid var(--border);
+    border-top:
+        1px solid rgba(148,163,184,0.16);
 
     display: flex;
 
@@ -3483,29 +3574,41 @@ ol {
 
 
 /* =========================================================
-   43. MOBILE OVERLAY
+   SIDEBAR OVERLAY
    ========================================================= */
 
 .sidebar-overlay {
     position: fixed;
+
     inset: 0;
-    background: rgba(3, 10, 20, 0.55);
+
+    background:
+        rgba(3,10,20,0.55);
+
     z-index: 950;
+
     opacity: 0;
+
     visibility: hidden;
+
     pointer-events: none;
-    transition: opacity var(--transition), visibility var(--transition);
+
+    transition:
+        opacity var(--transition),
+        visibility var(--transition);
 }
 
 .sidebar-overlay.show {
     opacity: 1;
+
     visibility: visible;
+
     pointer-events: auto;
 }
 
 
 /* =========================================================
-   44. COURSE ADD/DROP
+   ADD COURSE
    ========================================================= */
 
 .add-course-box {
@@ -3514,15 +3617,22 @@ ol {
     background:
         linear-gradient(
             135deg,
-            #f4f8ff,
-            #f7fcff
+            rgba(244,248,255,0.88),
+            rgba(247,252,255,0.70)
         );
 
-    border: 1px solid #dce8f7;
+    border:
+        1px solid rgba(148,163,184,0.18);
 
-    border-radius: 15px;
+    border-radius: 17px;
 
     margin-bottom: 20px;
+
+    box-shadow:
+        var(--shadow-sm);
+
+    backdrop-filter:
+        blur(15px);
 }
 
 .add-course-content {
@@ -3541,8 +3651,7 @@ ol {
 
 .add-course-text h3 {
     font-size: 15px;
-
-    font-weight: 800;
+    font-weight: 850;
 }
 
 .add-course-text p {
@@ -3566,6 +3675,7 @@ ol {
 .course-code-search .form-input {
     flex: 1;
 }
+
 .mini-progress {
     display: flex;
 
@@ -3586,28 +3696,47 @@ ol {
 
     color: var(--text-muted);
 }
+
+
+/* =========================================================
+   WELCOME CARD
+   ========================================================= */
+
 .welcome-card {
     position: relative;
 
     overflow: hidden;
 
-    padding: 28px;
+    padding: 30px;
 
     margin-bottom: 22px;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     color: #fff;
 
     background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(34,211,238,0.20),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 10% 100%,
+            rgba(37,99,235,0.18),
+            transparent 30%
+        ),
         linear-gradient(
             115deg,
-            #0a2140,
-            #0d5570
+            #071a33,
+            #0c4e69
         );
 
     box-shadow:
-        0 18px 45px rgba(7, 30, 53, 0.16);
+        0 22px 55px rgba(7,30,53,0.18);
+
+    border:
+        1px solid rgba(255,255,255,0.10);
 }
 
 .welcome-card::before {
@@ -3615,15 +3744,16 @@ ol {
 
     position: absolute;
 
-    width: 250px;
-    height: 250px;
+    width: 270px;
+    height: 270px;
 
-    right: -70px;
-    top: -120px;
+    right: -75px;
+    top: -130px;
 
     border-radius: 50%;
 
-    border: 45px solid rgba(255,255,255,0.05);
+    border:
+        48px solid rgba(255,255,255,0.05);
 }
 
 .welcome-card::after {
@@ -3631,15 +3761,16 @@ ol {
 
     position: absolute;
 
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
 
     right: 20%;
-    bottom: -100px;
+    bottom: -105px;
 
     border-radius: 50%;
 
-    background: rgba(6,182,212,0.08);
+    background:
+        rgba(6,182,212,0.08);
 }
 
 .welcome-content {
@@ -3653,9 +3784,10 @@ ol {
 .welcome-label {
     font-size: 10px;
 
-    color: rgba(255,255,255,0.62);
+    color:
+        rgba(255,255,255,0.62);
 
-    font-weight: 700;
+    font-weight: 750;
 
     text-transform: uppercase;
 
@@ -3667,7 +3799,7 @@ ol {
 
     font-size: clamp(25px, 3vw, 35px);
 
-    font-weight: 850;
+    font-weight: 900;
 
     letter-spacing: -0.8px;
 }
@@ -3677,12 +3809,60 @@ ol {
 
     margin-top: 8px;
 
-    color: rgba(255,255,255,0.72);
+    color:
+        rgba(255,255,255,0.72);
 
     font-size: 11px;
 
     line-height: 1.7;
 }
+
+
+/* =========================================================
+   EXTRA GLASS EFFECT
+   ========================================================= */
+
+.page-content > .card,
+.page-content > .stats-grid,
+.page-content > .content-grid,
+.page-content > .course-grid,
+.page-content > .recording-grid,
+.page-content > .quiz-grid,
+.page-content > .material-grid {
+
+    position: relative;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(226,232,240,0.35);
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            180deg,
+            #2563eb,
+            #06b6d4
+        );
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1250
+   ========================================================= */
+
 @media (max-width: 1250px) {
 
     :root {
@@ -3718,6 +3898,12 @@ ol {
             repeat(2, 1fr);
     }
 }
+
+
+/* =========================================================
+   RESPONSIVE — 1000
+   ========================================================= */
+
 @media (max-width: 1000px) {
 
     :root {
@@ -3734,7 +3920,6 @@ ol {
 
     .main-area {
         width: 100%;
-
         margin-left: 0;
     }
 
@@ -3772,6 +3957,12 @@ ol {
         grid-template-columns: 1fr 150px;
     }
 }
+
+
+/* =========================================================
+   RESPONSIVE — 760
+   ========================================================= */
+
 @media (max-width: 760px) {
 
     :root {
@@ -3838,7 +4029,6 @@ ol {
 
     .stat-card {
         min-height: 130px;
-
         padding: 15px;
     }
 
@@ -3897,21 +4087,20 @@ ol {
 
     .assignment-item {
         align-items: flex-start;
-
         flex-wrap: wrap;
     }
 
     .assignment-due {
         min-width: auto;
 
-        width: calc(100% - 59px);
+        width:
+            calc(100% - 59px);
 
         margin-left: 59px;
     }
 
     .assignment-actions {
         width: 100%;
-
         margin-left: 59px;
     }
 
@@ -3931,7 +4120,6 @@ ol {
 
     .add-course-content {
         flex-direction: column;
-
         align-items: stretch;
     }
 
@@ -3963,6 +4151,12 @@ ol {
         font-size: 16px;
     }
 }
+
+
+/* =========================================================
+   RESPONSIVE — 480
+   ========================================================= */
+
 @media (max-width: 480px) {
 
     .page-content {
@@ -3982,7 +4176,7 @@ ol {
 
         padding: 13px;
 
-        border-radius: 13px;
+        border-radius: 14px;
     }
 
     .stat-label {
@@ -4035,7 +4229,8 @@ ol {
     }
 
     .lecture-info {
-        width: calc(100% - 51px);
+        width:
+            calc(100% - 51px);
     }
 
     .lecture-actions {
@@ -4107,6 +4302,11 @@ ol {
     }
 }
 
+
+/* =========================================================
+   RESPONSIVE — 360
+   ========================================================= */
+
 @media (max-width: 360px) {
 
     .stats-grid {
@@ -4142,27 +4342,44 @@ ol {
     }
 }
 
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid rgba(37, 99, 235, 0.22);
+
+    outline:
+        3px solid rgba(37,99,235,0.22);
 
     outline-offset: 2px;
 }
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
     *,
     *::before,
     *::after {
+
         scroll-behavior: auto !important;
 
-        transition-duration: 0.01ms !important;
+        transition-duration:
+            0.01ms !important;
 
-        animation-duration: 0.01ms !important;
+        animation-duration:
+            0.01ms !important;
 
-        animation-iteration-count: 1 !important;
+        animation-iteration-count:
+            1 !important;
     }
 }
+

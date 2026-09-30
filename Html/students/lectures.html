@@ -5,18 +5,27 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
+    <meta
+        name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Learnora LMS Student Lectures — Access your course lectures and track learning progress.">
+    <meta
+        name="description"
+        content="Learnora LMS Student Lectures — Access your enrolled course lectures and track learning progress.">
 
     <title>Lectures — Learnora LMS</title>
 
-    <link rel="preconnect"
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
         href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
+    <link
+        rel="preconnect"
         href="https://fonts.gstatic.com"
         crossorigin>
 
@@ -24,18 +33,211 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- =====================================================
+         STUDENT CSS
+    ====================================================== -->
 
     <link
         rel="stylesheet"
         href="../../Css/student.css">
 
+
+    <!-- =====================================================
+         PAGE-SPECIFIC CSS
+    ====================================================== -->
+
+    <style>
+
+        .lecture-course-select {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            min-width: 270px;
+        }
+
+        .lecture-course-select label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+
+        .lecture-course-select select {
+            min-width: 270px;
+            padding: 12px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: #ffffff;
+            color: #1e293b;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .lecture-course-select select:focus {
+            border-color: #2878ff;
+            box-shadow: 0 0 0 3px rgba(40, 120, 255, .10);
+        }
+
+
+        /* =====================================================
+           EMPTY STATE
+        ====================================================== */
+
+        .lecture-empty-state {
+            text-align: center;
+            padding: 65px 25px;
+            color: #64748b;
+        }
+
+        .lecture-empty-state .empty-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 18px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            color: #64748b;
+            font-size: 28px;
+        }
+
+        .lecture-empty-state h4 {
+            margin: 0 0 8px;
+            color: #1e293b;
+            font-size: 18px;
+        }
+
+        .lecture-empty-state p {
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           COURSE INFO
+        ====================================================== */
+
+        .selected-course-description {
+            margin-top: 7px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           COURSE PERCENT
+        ====================================================== */
+
+        .course-percent {
+            font-size: 22px;
+            font-weight: 800;
+            color: #2878ff;
+        }
+
+
+        /* =====================================================
+           NO DATA VALUE
+        ====================================================== */
+
+        .no-data-value {
+            color: #94a3b8;
+            font-size: 22px;
+        }
+
+
+        /* =====================================================
+           LECTURE FILTERS
+        ====================================================== */
+
+        .lecture-filters {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            color: #64748b;
+            padding: 8px 13px;
+            border-radius: 9px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .filter-btn:hover {
+            border-color: #2878ff;
+            color: #2878ff;
+        }
+
+        .filter-btn.active {
+            background: #2878ff;
+            color: #ffffff;
+            border-color: #2878ff;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 768px) {
+
+            .page-intro {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .lecture-course-select,
+            .lecture-course-select select {
+                width: 100%;
+                min-width: 100%;
+            }
+
+            .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .lecture-filters {
+                width: 100%;
+            }
+
+            .filter-btn {
+                flex: 1;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
 <body>
+
 
 <div class="app">
 
@@ -44,12 +246,17 @@
          SIDEBAR
     ====================================================== -->
 
-    <aside class="sidebar" id="sidebar">
+    <aside
+        class="sidebar"
+        id="sidebar">
 
+
+        <!-- BRAND -->
 
         <div class="sidebar-brand">
 
-            <a href="dashboard.html"
+            <a
+                href="dashboard.html"
                 class="brand-logo">
 
                 <span class="brand-icon">
@@ -75,20 +282,26 @@
         </div>
 
 
+        <!-- PROFILE -->
+
         <div class="sidebar-profile">
 
-            <div class="profile-avatar">
-                SA
+            <div
+                class="profile-avatar"
+                id="sidebarAvatar">
+
+                ST
+
             </div>
 
             <div class="profile-info">
 
-                <strong>
-                    Sheheryar Ahmed
+                <strong id="sidebarName">
+                    Student
                 </strong>
 
-                <span>
-                    Software Engineering
+                <span id="sidebarProgram">
+                    Student
                 </span>
 
             </div>
@@ -96,8 +309,12 @@
         </div>
 
 
+        <!-- NAVIGATION -->
+
         <nav class="sidebar-nav">
 
+
+            <!-- MAIN -->
 
             <div class="nav-section">
 
@@ -105,11 +322,14 @@
                     MAIN
                 </p>
 
-                <a href="dashboard.html"
+                <a
+                    href="dashboard.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-house"></i>
+
                     </span>
 
                     <span>
@@ -121,6 +341,8 @@
             </div>
 
 
+            <!-- ACADEMICS -->
+
             <div class="nav-section">
 
                 <p class="nav-title">
@@ -128,11 +350,14 @@
                 </p>
 
 
-                <a href="courses.html"
+                <a
+                    href="courses.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-book-open"></i>
+
                     </span>
 
                     <span>
@@ -142,11 +367,14 @@
                 </a>
 
 
-                <a href="courses.html#add-drop"
+                <a
+                    href="courses.html#add-drop"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-plus-minus"></i>
+
                     </span>
 
                     <span>
@@ -156,11 +384,14 @@
                 </a>
 
 
-                <a href="lectures.html"
+                <a
+                    href="lectures.html"
                     class="nav-link active">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-chalkboard-user"></i>
+
                     </span>
 
                     <span>
@@ -170,11 +401,14 @@
                 </a>
 
 
-                <a href="recordings.html"
+                <a
+                    href="recordings.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-circle-play"></i>
+
                     </span>
 
                     <span>
@@ -184,25 +418,39 @@
                 </a>
 
 
-                <a href="assignments.html"
+                <a
+                    href="assignments.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-file-lines"></i>
+
                     </span>
 
                     <span>
                         Assignments
                     </span>
 
+                    <span
+                        class="nav-badge"
+                        id="assignmentBadge">
+
+                        0
+
+                    </span>
+
                 </a>
 
 
-                <a href="quizzes.html"
+                <a
+                    href="quizzes.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-clipboard-question"></i>
+
                     </span>
 
                     <span>
@@ -212,11 +460,14 @@
                 </a>
 
 
-                <a href="results.html"
+                <a
+                    href="results.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-chart-column"></i>
+
                     </span>
 
                     <span>
@@ -228,6 +479,8 @@
             </div>
 
 
+            <!-- MY LEARNING -->
+
             <div class="nav-section">
 
                 <p class="nav-title">
@@ -235,11 +488,14 @@
                 </p>
 
 
-                <a href="attendance.html"
+                <a
+                    href="attendance.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-calendar-check"></i>
+
                     </span>
 
                     <span>
@@ -249,11 +505,14 @@
                 </a>
 
 
-                <a href="schedule.html"
+                <a
+                    href="schedule.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-calendar-days"></i>
+
                     </span>
 
                     <span>
@@ -263,11 +522,14 @@
                 </a>
 
 
-                <a href="materials.html"
+                <a
+                    href="materials.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-folder-open"></i>
+
                     </span>
 
                     <span>
@@ -277,11 +539,14 @@
                 </a>
 
 
-                <a href="announcements.html"
+                <a
+                    href="announcements.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-bullhorn"></i>
+
                     </span>
 
                     <span>
@@ -291,11 +556,14 @@
                 </a>
 
 
-                <a href="messages.html"
+                <a
+                    href="messages.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-envelope"></i>
+
                     </span>
 
                     <span>
@@ -307,6 +575,8 @@
             </div>
 
 
+            <!-- ACCOUNT -->
+
             <div class="nav-section">
 
                 <p class="nav-title">
@@ -314,11 +584,14 @@
                 </p>
 
 
-                <a href="profile.html"
+                <a
+                    href="profile.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-user"></i>
+
                     </span>
 
                     <span>
@@ -328,11 +601,14 @@
                 </a>
 
 
-                <a href="settings.html"
+                <a
+                    href="settings.html"
                     class="nav-link">
 
                     <span class="nav-icon">
+
                         <i class="fa-solid fa-gear"></i>
+
                     </span>
 
                     <span>
@@ -346,13 +622,18 @@
         </nav>
 
 
+        <!-- LOGOUT -->
+
         <div class="sidebar-bottom">
 
-            <a href="../login.html"
+            <a
+                href="../login.html"
                 class="logout-link">
 
                 <span class="nav-icon">
+
                     <i class="fa-solid fa-right-from-bracket"></i>
+
                 </span>
 
                 <span>
@@ -366,14 +647,18 @@
     </aside>
 
 
+
     <!-- =====================================================
-         MAIN
+         MAIN CONTENT
     ====================================================== -->
 
     <main class="main-content">
 
 
+        <!-- TOPBAR -->
+
         <header class="topbar">
+
 
             <button
                 class="mobile-menu-btn"
@@ -399,6 +684,7 @@
 
             <div class="topbar-actions">
 
+
                 <button class="topbar-icon">
 
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -415,17 +701,24 @@
                 </button>
 
 
-                <a href="profile.html"
+                <a
+                    href="profile.html"
                     class="topbar-profile">
 
-                    <div class="topbar-avatar">
-                        SA
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar">
+
+                        ST
+
                     </div>
+
 
                     <div class="topbar-user">
 
-                        <strong>
-                            Sheheryar Ahmed
+                        <strong id="topbarName">
+                            Student
                         </strong>
 
                         <span>
@@ -433,6 +726,7 @@
                         </span>
 
                     </div>
+
 
                     <i class="fa-solid fa-chevron-down"></i>
 
@@ -443,6 +737,11 @@
         </header>
 
 
+
+        <!-- =====================================================
+             DASHBOARD CONTAINER
+        ====================================================== -->
+
         <div class="dashboard-container">
 
 
@@ -451,6 +750,7 @@
             ================================================== -->
 
             <section class="page-intro">
+
 
                 <div>
 
@@ -463,8 +763,8 @@
                     </h2>
 
                     <p>
-                        Continue your lectures and keep track
-                        of your learning progress.
+                        Select one of your enrolled courses
+                        to access its lectures and learning content.
                     </p>
 
                 </div>
@@ -472,27 +772,12 @@
 
                 <div class="lecture-course-select">
 
-                    <label>
+                    <label for="courseSelector">
                         Select Course
                     </label>
 
-                    <select>
-
-                        <option>
-                            CS-401 — Software Engineering
-                        </option>
-
-                        <option>
-                            CS-403 — Database Systems
-                        </option>
-
-                        <option>
-                            DS-301 — Data Analytics
-                        </option>
-
-                        <option>
-                            SE-405 — Mobile Application Development
-                        </option>
+                    <select
+                        id="courseSelector">
 
                     </select>
 
@@ -501,12 +786,15 @@
             </section>
 
 
+
             <!-- =================================================
                  LECTURE SUMMARY
             ================================================== -->
 
             <section class="stats-grid">
 
+
+                <!-- TOTAL -->
 
                 <div class="stat-card">
 
@@ -522,18 +810,23 @@
                             Total Lectures
                         </span>
 
-                        <strong>
-                            22
+                        <strong
+                            id="totalLectures">
+
+                            —
+
                         </strong>
 
                         <small>
-                            This course
+                            Selected course
                         </small>
 
                     </div>
 
                 </div>
 
+
+                <!-- COMPLETED -->
 
                 <div class="stat-card">
 
@@ -549,18 +842,26 @@
                             Completed
                         </span>
 
-                        <strong>
-                            18
+                        <strong
+                            id="completedLectures">
+
+                            —
+
                         </strong>
 
-                        <small>
-                            82% completed
+                        <small
+                            id="completedText">
+
+                            Lecture data unavailable
+
                         </small>
 
                     </div>
 
                 </div>
 
+
+                <!-- REMAINING -->
 
                 <div class="stat-card">
 
@@ -576,12 +877,15 @@
                             Remaining
                         </span>
 
-                        <strong>
-                            4
+                        <strong
+                            id="remainingLectures">
+
+                            —
+
                         </strong>
 
                         <small>
-                            Lectures left
+                            Lecture data unavailable
                         </small>
 
                     </div>
@@ -589,26 +893,31 @@
                 </div>
 
 
+                <!-- PROGRESS -->
+
                 <div class="stat-card">
 
                     <div class="stat-icon purple">
 
-                        <i class="fa-solid fa-hourglass-half"></i>
+                        <i class="fa-solid fa-chart-line"></i>
 
                     </div>
 
                     <div class="stat-content">
 
                         <span>
-                            Learning Time
+                            Course Progress
                         </span>
 
-                        <strong>
-                            14h
+                        <strong
+                            id="courseProgress">
+
+                            0%
+
                         </strong>
 
                         <small>
-                            This semester
+                            From your account
                         </small>
 
                     </div>
@@ -616,6 +925,7 @@
                 </div>
 
             </section>
+
 
 
             <!-- =================================================
@@ -629,18 +939,38 @@
 
                     <div>
 
-                        <span class="card-eyebrow">
-                            CS-401
+                        <span
+                            class="card-eyebrow"
+                            id="selectedCourseCode">
+
+                            COURSE
+
                         </span>
 
-                        <h3>
-                            Software Engineering
+                        <h3
+                            id="selectedCourseName">
+
+                            Course
+
                         </h3>
+
+                        <p
+                            class="selected-course-description"
+                            id="selectedCourseInstructor">
+
+                            Instructor
+
+                        </p>
 
                     </div>
 
-                    <span class="course-percent">
-                        82%
+
+                    <span
+                        class="course-percent"
+                        id="coursePercent">
+
+                        0%
+
                     </span>
 
                 </div>
@@ -651,24 +981,33 @@
                     <div class="progress-label">
 
                         <span>
-                            Lecture Completion
+                            Course Progress
                         </span>
 
-                        <strong>
-                            18 of 22 completed
+                        <strong
+                            id="progressText">
+
+                            0%
+
                         </strong>
 
                     </div>
 
+
                     <div class="progress-bar large">
 
-                        <span style="width:82%;"></span>
+                        <span
+                            id="courseProgressBar"
+                            style="width:0%;">
+
+                        </span>
 
                     </div>
 
                 </div>
 
             </section>
+
 
 
             <!-- =================================================
@@ -680,31 +1019,46 @@
 
                 <div class="card-header">
 
+
                     <div>
 
                         <span class="card-eyebrow">
                             ALL LECTURES
                         </span>
 
-                        <h3>
-                            Software Engineering Lectures
+                        <h3 id="lectureListTitle">
+                            Course Lectures
                         </h3>
 
                     </div>
 
 
-                    <div class="lecture-filters">
+                    <div
+                        class="lecture-filters"
+                        id="lectureFilters">
 
-                        <button class="filter-btn active">
+                        <button
+                            class="filter-btn active"
+                            data-filter="all">
+
                             All
+
                         </button>
 
-                        <button class="filter-btn">
+                        <button
+                            class="filter-btn"
+                            data-filter="completed">
+
                             Completed
+
                         </button>
 
-                        <button class="filter-btn">
+                        <button
+                            class="filter-btn"
+                            data-filter="pending">
+
                             Pending
+
                         </button>
 
                     </div>
@@ -712,681 +1066,48 @@
                 </div>
 
 
-                <div class="lecture-list">
+                <!-- DYNAMIC LECTURE LIST -->
 
+                <div
+                    class="lecture-list"
+                    id="lectureList">
 
-                    <!-- Lecture 1 -->
+                </div>
 
-                    <article class="lecture-item completed">
 
-                        <div class="lecture-number">
-                            <span>
-                                01
-                            </span>
+                <!-- EMPTY STATE -->
 
-                            <i class="fa-solid fa-check"></i>
-                        </div>
+                <div
+                    class="lecture-empty-state"
+                    id="lectureEmptyState"
+                    style="display:none;">
 
+                    <div class="empty-icon">
 
-                        <div class="lecture-main">
+                        <i class="fa-solid fa-video-slash"></i>
 
-                            <div class="lecture-title">
+                    </div>
 
-                                <span>
-                                    Introduction
-                                </span>
+                    <h4>
+                        Lecture data not available
+                    </h4>
 
-                                <h4>
-                                    Introduction to Software Engineering
-                                </h4>
+                    <p id="emptyStateText">
 
-                                <p>
-                                    Fundamentals, software processes
-                                    and engineering principles.
-                                </p>
+                        Lecture-level information has not been
+                        added to this student account yet.
 
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    42 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-circle-play"></i>
-                                    Video
-                                </span>
-
-                                <span class="completed-label">
-                                    <i class="fa-solid fa-check-circle"></i>
-                                    Completed
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <a href="course-detail.html"
-                            class="lecture-action">
-
-                            <i class="fa-solid fa-rotate-right"></i>
-
-                            Review
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- Lecture 2 -->
-
-                    <article class="lecture-item completed">
-
-                        <div class="lecture-number">
-                            <span>
-                                02
-                            </span>
-
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-
-
-                        <div class="lecture-main">
-
-                            <div class="lecture-title">
-
-                                <span>
-                                    Software Processes
-                                </span>
-
-                                <h4>
-                                    Software Development Life Cycle
-                                </h4>
-
-                                <p>
-                                    SDLC models, agile development
-                                    and process management.
-                                </p>
-
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    51 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-circle-play"></i>
-                                    Video
-                                </span>
-
-                                <span class="completed-label">
-                                    <i class="fa-solid fa-check-circle"></i>
-                                    Completed
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <a href="course-detail.html"
-                            class="lecture-action">
-
-                            <i class="fa-solid fa-rotate-right"></i>
-
-                            Review
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- Lecture 3 -->
-
-                    <article class="lecture-item completed">
-
-                        <div class="lecture-number">
-
-                            <span>
-                                03
-                            </span>
-
-                            <i class="fa-solid fa-check"></i>
-
-                        </div>
-
-
-                        <div class="lecture-main">
-
-                            <div class="lecture-title">
-
-                                <span>
-                                    Requirements
-                                </span>
-
-                                <h4>
-                                    Requirements Engineering
-                                </h4>
-
-                                <p>
-                                    Functional requirements, stakeholders
-                                    and requirements analysis.
-                                </p>
-
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    46 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-circle-play"></i>
-                                    Video
-                                </span>
-
-                                <span class="completed-label">
-                                    <i class="fa-solid fa-check-circle"></i>
-                                    Completed
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <a href="course-detail.html"
-                            class="lecture-action">
-
-                            <i class="fa-solid fa-rotate-right"></i>
-
-                            Review
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- Lecture 4 -->
-
-                    <article class="lecture-item completed">
-
-                        <div class="lecture-number">
-
-                            <span>
-                                04
-                            </span>
-
-                            <i class="fa-solid fa-check"></i>
-
-                        </div>
-
-
-                        <div class="lecture-main">
-
-                            <div class="lecture-title">
-
-                                <span>
-                                    System Design
-                                </span>
-
-                                <h4>
-                                    Software Architecture & Design
-                                </h4>
-
-                                <p>
-                                    Architecture patterns, design principles
-                                    and system components.
-                                </p>
-
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    58 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-circle-play"></i>
-                                    Video
-                                </span>
-
-                                <span class="completed-label">
-                                    <i class="fa-solid fa-check-circle"></i>
-                                    Completed
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <a href="course-detail.html"
-                            class="lecture-action">
-
-                            <i class="fa-solid fa-rotate-right"></i>
-
-                            Review
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- Lecture 5 -->
-
-                    <article class="lecture-item completed">
-
-                        <div class="lecture-number">
-
-                            <span>
-                                05
-                            </span>
-
-                            <i class="fa-solid fa-check"></i>
-
-                        </div>
-
-
-                        <div class="lecture-main">
-
-                            <div class="lecture-title">
-
-                                <span>
-                                    Testing
-                                </span>
-
-                                <h4>
-                                    Software Testing Fundamentals
-                                </h4>
-
-                                <p>
-                                    Testing strategies, test cases and
-                                    quality assurance.
-                                </p>
-
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    48 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-circle-play"></i>
-                                    Video
-                                </span>
-
-                                <span class="completed-label">
-                                    <i class="fa-solid fa-check-circle"></i>
-                                    Completed
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <a href="course-detail.html"
-                            class="lecture-action">
-
-                            <i class="fa-solid fa-rotate-right"></i>
-
-                            Review
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- Lecture 18 -->
-
-                    <article class="lecture-item completed">
-
-                        <div class="lecture-number">
-
-                            <span>
-                                18
-                            </span>
-
-                            <i class="fa-solid fa-check"></i>
-
-                        </div>
-
-
-                        <div class="lecture-main">
-
-                            <div class="lecture-title">
-
-                                <span>
-                                    Current Lecture
-                                </span>
-
-                                <h4>
-                                    Software Project Management
-                                </h4>
-
-                                <p>
-                                    Project planning, estimation and
-                                    resource management.
-                                </p>
-
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    55 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-circle-play"></i>
-                                    Video
-                                </span>
-
-                                <span class="completed-label">
-                                    <i class="fa-solid fa-check-circle"></i>
-                                    Completed
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <a href="course-detail.html"
-                            class="lecture-action">
-
-                            <i class="fa-solid fa-rotate-right"></i>
-
-                            Review
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- Lecture 19 -->
-
-                    <article class="lecture-item current">
-
-                        <div class="lecture-number">
-
-                            <span>
-                                19
-                            </span>
-
-                            <i class="fa-solid fa-play"></i>
-
-                        </div>
-
-
-                        <div class="lecture-main">
-
-                            <div class="lecture-title">
-
-                                <span>
-                                    Up Next
-                                </span>
-
-                                <h4>
-                                    Software Testing Strategies
-                                </h4>
-
-                                <p>
-                                    Advanced testing methods and
-                                    practical testing strategies.
-                                </p>
-
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    48 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-circle-play"></i>
-                                    Video
-                                </span>
-
-                                <span class="current-label">
-                                    <i class="fa-solid fa-play"></i>
-                                    Continue
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <a href="course-detail.html"
-                            class="lecture-action primary">
-
-                            <i class="fa-solid fa-play"></i>
-
-                            Start
-
-                        </a>
-
-                    </article>
-
-
-                    <!-- Lecture 20 -->
-
-                    <article class="lecture-item locked">
-
-                        <div class="lecture-number">
-
-                            <span>
-                                20
-                            </span>
-
-                            <i class="fa-solid fa-lock"></i>
-
-                        </div>
-
-
-                        <div class="lecture-main">
-
-                            <div class="lecture-title">
-
-                                <span>
-                                    Upcoming
-                                </span>
-
-                                <h4>
-                                    Deployment & Maintenance
-                                </h4>
-
-                                <p>
-                                    Software deployment, maintenance
-                                    and release management.
-                                </p>
-
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    50 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-lock"></i>
-                                    Locked
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <button class="lecture-action disabled">
-
-                            <i class="fa-solid fa-lock"></i>
-
-                            Locked
-
-                        </button>
-
-                    </article>
-
-
-                    <!-- Lecture 21 -->
-
-                    <article class="lecture-item locked">
-
-                        <div class="lecture-number">
-
-                            <span>
-                                21
-                            </span>
-
-                            <i class="fa-solid fa-lock"></i>
-
-                        </div>
-
-
-                        <div class="lecture-main">
-
-                            <div class="lecture-title">
-
-                                <span>
-                                    Upcoming
-                                </span>
-
-                                <h4>
-                                    Software Evolution
-                                </h4>
-
-                                <p>
-                                    Evolution processes and legacy
-                                    software systems.
-                                </p>
-
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    44 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-lock"></i>
-                                    Locked
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <button class="lecture-action disabled">
-
-                            <i class="fa-solid fa-lock"></i>
-
-                            Locked
-
-                        </button>
-
-                    </article>
-
-
-                    <!-- Lecture 22 -->
-
-                    <article class="lecture-item locked">
-
-                        <div class="lecture-number">
-
-                            <span>
-                                22
-                            </span>
-
-                            <i class="fa-solid fa-lock"></i>
-
-                        </div>
-
-
-                        <div class="lecture-main">
-
-                            <div class="lecture-title">
-
-                                <span>
-                                    Upcoming
-                                </span>
-
-                                <h4>
-                                    Final Course Review
-                                </h4>
-
-                                <p>
-                                    Complete course revision and
-                                    examination preparation.
-                                </p>
-
-                            </div>
-
-
-                            <div class="lecture-meta">
-
-                                <span>
-                                    <i class="fa-solid fa-clock"></i>
-                                    60 min
-                                </span>
-
-                                <span>
-                                    <i class="fa-solid fa-lock"></i>
-                                    Locked
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <button class="lecture-action disabled">
-
-                            <i class="fa-solid fa-lock"></i>
-
-                            Locked
-
-                        </button>
-
-                    </article>
-
+                    </p>
 
                 </div>
 
             </section>
 
+
+
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
 
             <footer class="dashboard-footer">
 
@@ -1394,8 +1115,8 @@
                     © 2026 Learnora LMS
                 </span>
 
-                <span>
-                    CS-401 · Software Engineering
+                <span id="footerCourse">
+                    Smart Learning Management System
                 </span>
 
             </footer>
@@ -1407,13 +1128,1389 @@
 </div>
 
 
+
+<!-- =====================================================
+     SIDEBAR OVERLAY
+====================================================== -->
+
 <div
     class="sidebar-overlay"
     id="sidebarOverlay">
 </div>
 
 
+
+<!-- =====================================================
+     STUDENT JS
+====================================================== -->
+
 <script src="../../js/student.js"></script>
+
+
+
+<!-- =====================================================
+     ACCOUNT-BASED LECTURES SCRIPT
+====================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* =====================================================
+           GET CURRENT USER
+        ====================================================== */
+
+        const storedUser =
+            localStorage.getItem(
+                "learnora_current_user"
+            );
+
+
+        if (!storedUser) {
+
+            window.location.href =
+                "../login.html";
+
+            return;
+
+        }
+
+
+        let currentUser;
+
+
+        try {
+
+            currentUser =
+                JSON.parse(storedUser);
+
+        } catch (error) {
+
+            console.error(
+                "Unable to read current user:",
+                error
+            );
+
+            localStorage.removeItem(
+                "learnora_current_user"
+            );
+
+            window.location.href =
+                "../login.html";
+
+            return;
+
+        }
+
+
+
+        /* =====================================================
+           ROLE CHECK
+        ====================================================== */
+
+        if (
+            currentUser.role !==
+            "student"
+        ) {
+
+            if (
+                currentUser.role ===
+                "teacher"
+            ) {
+
+                window.location.href =
+                    "../teacher/dashboard.html";
+
+            }
+
+            else if (
+                currentUser.role ===
+                "parent"
+            ) {
+
+                window.location.href =
+                    "../parent/dashboard.html";
+
+            }
+
+            else {
+
+                window.location.href =
+                    "../login.html";
+
+            }
+
+            return;
+
+        }
+
+
+
+        /* =====================================================
+           COURSES
+        ====================================================== */
+
+        const courses =
+            Array.isArray(
+                currentUser.courses
+            )
+                ? currentUser.courses
+                : [];
+
+
+        const assignments =
+            Array.isArray(
+                currentUser.assignments
+            )
+                ? currentUser.assignments
+                : [];
+
+
+
+        /* =====================================================
+           ELEMENTS
+        ====================================================== */
+
+        const sidebarAvatar =
+            document.getElementById(
+                "sidebarAvatar"
+            );
+
+
+        const sidebarName =
+            document.getElementById(
+                "sidebarName"
+            );
+
+
+        const sidebarProgram =
+            document.getElementById(
+                "sidebarProgram"
+            );
+
+
+        const topbarAvatar =
+            document.getElementById(
+                "topbarAvatar"
+            );
+
+
+        const topbarName =
+            document.getElementById(
+                "topbarName"
+            );
+
+
+        const assignmentBadge =
+            document.getElementById(
+                "assignmentBadge"
+            );
+
+
+        const courseSelector =
+            document.getElementById(
+                "courseSelector"
+            );
+
+
+        const totalLectures =
+            document.getElementById(
+                "totalLectures"
+            );
+
+
+        const completedLectures =
+            document.getElementById(
+                "completedLectures"
+            );
+
+
+        const completedText =
+            document.getElementById(
+                "completedText"
+            );
+
+
+        const remainingLectures =
+            document.getElementById(
+                "remainingLectures"
+            );
+
+
+        const courseProgress =
+            document.getElementById(
+                "courseProgress"
+            );
+
+
+        const selectedCourseCode =
+            document.getElementById(
+                "selectedCourseCode"
+            );
+
+
+        const selectedCourseName =
+            document.getElementById(
+                "selectedCourseName"
+            );
+
+
+        const selectedCourseInstructor =
+            document.getElementById(
+                "selectedCourseInstructor"
+            );
+
+
+        const coursePercent =
+            document.getElementById(
+                "coursePercent"
+            );
+
+
+        const progressText =
+            document.getElementById(
+                "progressText"
+            );
+
+
+        const courseProgressBar =
+            document.getElementById(
+                "courseProgressBar"
+            );
+
+
+        const lectureListTitle =
+            document.getElementById(
+                "lectureListTitle"
+            );
+
+
+        const lectureList =
+            document.getElementById(
+                "lectureList"
+            );
+
+
+        const lectureEmptyState =
+            document.getElementById(
+                "lectureEmptyState"
+            );
+
+
+        const emptyStateText =
+            document.getElementById(
+                "emptyStateText"
+            );
+
+
+        const footerCourse =
+            document.getElementById(
+                "footerCourse"
+            );
+
+
+
+        /* =====================================================
+           USER PROFILE
+        ====================================================== */
+
+        const userName =
+            currentUser.name ||
+            "Student";
+
+
+        const userAvatar =
+            currentUser.avatar ||
+            getInitials(userName);
+
+
+        const userProgram =
+            currentUser.program ||
+            "Student";
+
+
+        sidebarAvatar.textContent =
+            userAvatar;
+
+
+        sidebarName.textContent =
+            userName;
+
+
+        sidebarProgram.textContent =
+            userProgram;
+
+
+        topbarAvatar.textContent =
+            userAvatar;
+
+
+        topbarName.textContent =
+            userName;
+
+
+
+        /* =====================================================
+           ASSIGNMENT BADGE
+        ====================================================== */
+
+        assignmentBadge.textContent =
+            assignments.length;
+
+
+
+        /* =====================================================
+           NO COURSES
+        ====================================================== */
+
+        if (!courses.length) {
+
+            courseSelector.innerHTML =
+                `
+                <option value="">
+                    No courses available
+                </option>
+                `;
+
+
+            selectedCourseCode.textContent =
+                "NO COURSE";
+
+
+            selectedCourseName.textContent =
+                "No enrolled courses";
+
+
+            selectedCourseInstructor.textContent =
+                "Please contact your academic department.";
+
+
+            courseProgress.textContent =
+                "0%";
+
+
+            coursePercent.textContent =
+                "0%";
+
+
+            progressText.textContent =
+                "0%";
+
+
+            courseProgressBar.style.width =
+                "0%";
+
+
+            lectureList.style.display =
+                "none";
+
+
+            lectureEmptyState.style.display =
+                "block";
+
+
+            emptyStateText.textContent =
+                "No enrolled courses are available for this account.";
+
+
+            return;
+
+        }
+
+
+
+        /* =====================================================
+           BUILD COURSE SELECTOR
+        ====================================================== */
+
+        courses.forEach(
+            function (course) {
+
+                const option =
+                    document.createElement(
+                        "option"
+                    );
+
+
+                option.value =
+                    course.code || "";
+
+
+                option.textContent =
+                    `${course.code || "N/A"} — ${course.name || "Unnamed Course"}`;
+
+
+                courseSelector.appendChild(
+                    option
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           URL COURSE
+        ====================================================== */
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const requestedCourse =
+            params.get(
+                "course"
+            );
+
+
+
+        let selectedCourse =
+            courses.find(
+                function (course) {
+
+                    return (
+                        course.code ===
+                        requestedCourse
+                    );
+
+                }
+            );
+
+
+        if (!selectedCourse) {
+
+            selectedCourse =
+                courses[0];
+
+        }
+
+
+
+        courseSelector.value =
+            selectedCourse.code;
+
+
+
+        /* =====================================================
+           RENDER SELECTED COURSE
+        ====================================================== */
+
+        renderCourse(
+            selectedCourse
+        );
+
+
+
+        /* =====================================================
+           COURSE SELECT CHANGE
+        ====================================================== */
+
+        courseSelector.addEventListener(
+            "change",
+            function () {
+
+                const selectedCode =
+                    this.value;
+
+
+                const course =
+                    courses.find(
+                        function (item) {
+
+                            return (
+                                item.code ===
+                                selectedCode
+                            );
+
+                        }
+                    );
+
+
+                if (!course) {
+                    return;
+                }
+
+
+                const newUrl =
+                    `${window.location.pathname}?course=${encodeURIComponent(course.code)}`;
+
+
+                window.history.replaceState(
+                    {},
+                    "",
+                    newUrl
+                );
+
+
+                renderCourse(
+                    course
+                );
+
+            }
+        );
+
+
+
+        /* =====================================================
+           RENDER COURSE
+        ====================================================== */
+
+        function renderCourse(
+            course
+        ) {
+
+
+            if (!course) {
+                return;
+            }
+
+
+            const progress =
+                clampProgress(
+                    Number(
+                        course.progress || 0
+                    )
+                );
+
+
+            const instructor =
+                course.instructor ||
+                "Instructor not available";
+
+
+            const code =
+                course.code ||
+                "N/A";
+
+
+            const name =
+                course.name ||
+                "Unnamed Course";
+
+
+
+            /* =================================================
+               COURSE INFORMATION
+            ================================================== */
+
+            selectedCourseCode.textContent =
+                code;
+
+
+            selectedCourseName.textContent =
+                name;
+
+
+            selectedCourseInstructor.textContent =
+                `${instructor} · ${course.credits || 0} Credit ${
+                    Number(course.credits || 0) === 1
+                        ? "Hour"
+                        : "Hours"
+                }`;
+
+
+
+            /* =================================================
+               PROGRESS
+            ================================================== */
+
+            courseProgress.textContent =
+                `${progress}%`;
+
+
+            coursePercent.textContent =
+                `${progress}%`;
+
+
+            progressText.textContent =
+                `${progress}%`;
+
+
+            courseProgressBar.style.width =
+                `${progress}%`;
+
+
+
+            /* =================================================
+               FOOTER
+            ================================================== */
+
+            footerCourse.textContent =
+                `${code} · ${name}`;
+
+
+
+            /* =================================================
+               LECTURE DATA
+            ==================================================
+
+               Current login.js course objects do not contain
+               lecture-level data.
+
+               Future structure can be:
+
+               lectures: [
+                   {
+                       id: 1,
+                       title: "...",
+                       description: "...",
+                       duration: "45 min",
+                       type: "Video",
+                       status: "completed"
+                   }
+               ]
+
+            ================================================== */
+
+            const lectures =
+                Array.isArray(
+                    course.lectures
+                )
+                    ? course.lectures
+                    : [];
+
+
+            renderLectureSummary(
+                lectures,
+                progress
+            );
+
+
+            renderLectures(
+                lectures,
+                name
+            );
+
+        }
+
+
+
+        /* =====================================================
+           LECTURE SUMMARY
+        ====================================================== */
+
+        function renderLectureSummary(
+            lectures,
+            progress
+        ) {
+
+
+            if (!lectures.length) {
+
+                totalLectures.textContent =
+                    "—";
+
+
+                completedLectures.textContent =
+                    "—";
+
+
+                remainingLectures.textContent =
+                    "—";
+
+
+                completedText.textContent =
+                    "Lecture data unavailable";
+
+
+                return;
+
+            }
+
+
+            const completed =
+                lectures.filter(
+                    function (lecture) {
+
+                        return normalize(
+                            lecture.status
+                        ) ===
+                        "completed";
+
+                    }
+                ).length;
+
+
+            const remaining =
+                Math.max(
+                    lectures.length -
+                    completed,
+                    0
+                );
+
+
+            totalLectures.textContent =
+                lectures.length;
+
+
+            completedLectures.textContent =
+                completed;
+
+
+            remainingLectures.textContent =
+                remaining;
+
+
+            const completionPercentage =
+                lectures.length
+                    ? Math.round(
+                        (
+                            completed /
+                            lectures.length
+                        ) * 100
+                    )
+                    : 0;
+
+
+            completedText.textContent =
+                `${completionPercentage}% completed`;
+
+        }
+
+
+
+        /* =====================================================
+           RENDER LECTURES
+        ====================================================== */
+
+        function renderLectures(
+            lectures,
+            courseName
+        ) {
+
+
+            lectureList.innerHTML =
+                "";
+
+
+            lectureListTitle.textContent =
+                `${courseName} Lectures`;
+
+
+            if (!lectures.length) {
+
+                lectureList.style.display =
+                    "none";
+
+
+                lectureEmptyState.style.display =
+                    "block";
+
+
+                emptyStateText.textContent =
+                    `Lecture-level content for ${courseName} has not been added to this account yet. Course progress is available from the student account data.`;
+
+
+                return;
+
+            }
+
+
+            lectureList.style.display =
+                "";
+
+
+            lectureEmptyState.style.display =
+                "none";
+
+
+            lectures.forEach(
+                function (
+                    lecture,
+                    index
+                ) {
+
+                    const item =
+                        createLectureItem(
+                            lecture,
+                            index
+                        );
+
+
+                    lectureList.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+
+            initializeFilters();
+
+        }
+
+
+
+        /* =====================================================
+           CREATE LECTURE ITEM
+        ====================================================== */
+
+        function createLectureItem(
+            lecture,
+            index
+        ) {
+
+
+            const article =
+                document.createElement(
+                    "article"
+                );
+
+
+            const status =
+                normalize(
+                    lecture.status
+                );
+
+
+            let itemClass =
+                "lecture-item";
+
+
+            if (
+                status ===
+                "completed"
+            ) {
+
+                itemClass +=
+                    " completed";
+
+            }
+
+            else if (
+                status ===
+                "current" ||
+                status ===
+                "in-progress"
+            ) {
+
+                itemClass +=
+                    " current";
+
+            }
+
+            else if (
+                status ===
+                "locked"
+            ) {
+
+                itemClass +=
+                    " locked";
+
+            }
+
+            else {
+
+                itemClass +=
+                    " pending";
+
+            }
+
+
+            article.className =
+                itemClass;
+
+
+            const number =
+                String(
+                    lecture.id ||
+                    index + 1
+                )
+                .padStart(
+                    2,
+                    "0"
+                );
+
+
+            const title =
+                lecture.title ||
+                `Lecture ${index + 1}`;
+
+
+            const description =
+                lecture.description ||
+                "Lecture description not available.";
+
+
+            const duration =
+                lecture.duration ||
+                "—";
+
+
+            const type =
+                lecture.type ||
+                "Lecture";
+
+
+            const isCompleted =
+                status ===
+                "completed";
+
+
+            const isLocked =
+                status ===
+                "locked";
+
+
+            const isCurrent =
+                status ===
+                "current" ||
+                status ===
+                "in-progress";
+
+
+
+            let statusIcon =
+                "fa-solid fa-play";
+
+
+            if (isCompleted) {
+
+                statusIcon =
+                    "fa-solid fa-check";
+
+            }
+
+            else if (isLocked) {
+
+                statusIcon =
+                    "fa-solid fa-lock";
+
+            }
+
+
+
+            let statusLabel =
+                "Pending";
+
+
+            let statusClass =
+                "";
+
+
+            if (isCompleted) {
+
+                statusLabel =
+                    "Completed";
+
+                statusClass =
+                    "completed-label";
+
+            }
+
+            else if (isCurrent) {
+
+                statusLabel =
+                    "Continue";
+
+                statusClass =
+                    "current-label";
+
+            }
+
+            else if (isLocked) {
+
+                statusLabel =
+                    "Locked";
+
+            }
+
+
+
+            article.innerHTML = `
+
+                <div class="lecture-number">
+
+                    <span>
+                        ${escapeHTML(number)}
+                    </span>
+
+                    <i class="${statusIcon}"></i>
+
+                </div>
+
+
+                <div class="lecture-main">
+
+                    <div class="lecture-title">
+
+                        <span>
+                            ${escapeHTML(
+                                lecture.category ||
+                                type
+                            )}
+                        </span>
+
+                        <h4>
+                            ${escapeHTML(title)}
+                        </h4>
+
+                        <p>
+                            ${escapeHTML(description)}
+                        </p>
+
+                    </div>
+
+
+                    <div class="lecture-meta">
+
+                        <span>
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            ${escapeHTML(
+                                duration
+                            )}
+
+                        </span>
+
+
+                        <span>
+
+                            <i class="fa-solid fa-circle-play"></i>
+
+                            ${escapeHTML(
+                                type
+                            )}
+
+                        </span>
+
+
+                        ${
+                            statusClass
+                                ? `
+                                <span class="${statusClass}">
+                                    <i class="fa-solid ${
+                                        isCompleted
+                                            ? "fa-check-circle"
+                                            : "fa-play"
+                                    }"></i>
+
+                                    ${statusLabel}
+                                </span>
+                                `
+                                : `
+                                <span>
+                                    <i class="fa-solid fa-circle"></i>
+                                    ${statusLabel}
+                                </span>
+                                `
+                        }
+
+                    </div>
+
+                </div>
+
+
+                ${
+                    isLocked
+                        ? `
+                        <button
+                            type="button"
+                            class="lecture-action disabled"
+                            disabled>
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            Locked
+
+                        </button>
+                        `
+                        : `
+                        <a
+                            href="course-detail.html?course=${encodeURIComponent(
+                                selectedCourse.code
+                            )}"
+                            class="lecture-action ${
+                                isCurrent
+                                    ? "primary"
+                                    : ""
+                            }">
+
+                            <i class="fa-solid ${
+                                isCompleted
+                                    ? "fa-rotate-right"
+                                    : "fa-play"
+                            }"></i>
+
+                            ${
+                                isCompleted
+                                    ? "Review"
+                                    : isCurrent
+                                        ? "Continue"
+                                        : "Open"
+                            }
+
+                        </a>
+                        `
+                }
+
+            `;
+
+
+            return article;
+
+        }
+
+
+
+        /* =====================================================
+           FILTERS
+        ====================================================== */
+
+        function initializeFilters() {
+
+
+            const filterButtons =
+                document.querySelectorAll(
+                    ".filter-btn"
+                );
+
+
+            filterButtons.forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            filterButtons.forEach(
+                                function (item) {
+
+                                    item.classList.remove(
+                                        "active"
+                                    );
+
+                                }
+                            );
+
+
+                            this.classList.add(
+                                "active"
+                            );
+
+
+                            const filter =
+                                this.dataset.filter;
+
+
+                            applyLectureFilter(
+                                filter
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           APPLY FILTER
+        ====================================================== */
+
+        function applyLectureFilter(
+            filter
+        ) {
+
+
+            const items =
+                document.querySelectorAll(
+                    ".lecture-item"
+                );
+
+
+            items.forEach(
+                function (item) {
+
+
+                    if (
+                        filter ===
+                        "all"
+                    ) {
+
+                        item.style.display =
+                            "";
+
+                        return;
+
+                    }
+
+
+                    if (
+                        filter ===
+                        "completed"
+                    ) {
+
+                        item.style.display =
+                            item.classList.contains(
+                                "completed"
+                            )
+                                ? ""
+                                : "none";
+
+                        return;
+
+                    }
+
+
+                    if (
+                        filter ===
+                        "pending"
+                    ) {
+
+                        item.style.display =
+                            (
+                                item.classList.contains(
+                                    "pending"
+                                ) ||
+                                item.classList.contains(
+                                    "current"
+                                )
+                            )
+                                ? ""
+                                : "none";
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           GET INITIALS
+        ====================================================== */
+
+        function getInitials(
+            name
+        ) {
+
+            return String(
+                name
+            )
+                .trim()
+                .split(/\s+/)
+                .map(
+                    function (word) {
+
+                        return word
+                            .charAt(0);
+
+                    }
+                )
+                .join("")
+                .substring(
+                    0,
+                    2
+                )
+                .toUpperCase();
+
+        }
+
+
+
+        /* =====================================================
+           NORMALIZE
+        ====================================================== */
+
+        function normalize(
+            value
+        ) {
+
+            return String(
+                value || ""
+            )
+                .trim()
+                .toLowerCase()
+                .replace(
+                    /\s+/g,
+                    " "
+                );
+
+        }
+
+
+
+        /* =====================================================
+           CLAMP PROGRESS
+        ====================================================== */
+
+        function clampProgress(
+            value
+        ) {
+
+            if (
+                isNaN(value)
+            ) {
+
+                return 0;
+
+            }
+
+
+            return Math.min(
+                Math.max(
+                    value,
+                    0
+                ),
+                100
+            );
+
+        }
+
+
+
+        /* =====================================================
+           ESCAPE HTML
+        ====================================================== */
+
+        function escapeHTML(
+            value
+        ) {
+
+            return String(
+                value ?? ""
+            )
+                .replace(
+                    /&/g,
+                    "&amp;"
+                )
+                .replace(
+                    /</g,
+                    "&lt;"
+                )
+                .replace(
+                    />/g,
+                    "&gt;"
+                )
+                .replace(
+                    /"/g,
+                    "&quot;"
+                )
+                .replace(
+                    /'/g,
+                    "&#039;"
+                );
+
+        }
+
+    }
+
+);
+
+</script>
+
 
 </body>
 
