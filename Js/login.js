@@ -1,8 +1,8 @@
-
 /* =========================================================
    LEARNORA LMS — LOGIN JAVASCRIPT
    Multi-User Student / Teacher / Parent Login
    Dynamic Account-Based LMS
+   Parent → Child Relationship
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -512,25 +512,141 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* =================================================
-           PARENT
+           PARENT 1 — SHEHERYAR'S FATHER
            ================================================= */
 
         {
             id: "PAR001",
 
-            email: "parent@learnora.com",
-            password: "Parent@123",
+            email: "father.sheheryar@learnora.com",
+            password: "Father@123",
 
-            name: "Ahmed's Parent",
-            firstName: "Parent",
+            name: "Mr. Ahmed Ahmed",
+            firstName: "Ahmed",
 
             role: "parent",
 
             program: "Parent Portal",
             semester: "",
 
-            avatar: "AP"
-        }
+            avatar: "AA",
+
+            parentId: "LR-PAR-001",
+
+            relationship: "Father",
+
+            childId: "STU001",
+
+            childName: "Sheheryar Ahmed",
+
+            childStudentId: "LR-STU-001"
+        },
+
+
+        /* =================================================
+           PARENT 2 — SHEHERYAR'S MOTHER
+           ================================================= */
+
+        {
+            id: "PAR002",
+
+            email: "mother.sheheryar@learnora.com",
+            password: "Mother@123",
+
+            name: "Mrs. Ayesha Ahmed",
+            firstName: "Ayesha",
+
+            role: "parent",
+
+            program: "Parent Portal",
+            semester: "",
+
+            avatar: "AA",
+
+            parentId: "LR-PAR-002",
+
+            relationship: "Mother",
+
+            childId: "STU001",
+
+            childName: "Sheheryar Ahmed",
+
+            childStudentId: "LR-STU-001"
+        },
+
+
+        /* =================================================
+           PARENT 3 — ALI'S FATHER
+           ================================================= */
+
+        {
+            id: "PAR003",
+
+            email: "father.ali@learnora.com",
+            password: "FatherAli@123",
+
+            name: "Mr. Imran Khan",
+            firstName: "Imran",
+
+            role: "parent",
+
+            program: "Parent Portal",
+            semester: "",
+
+            avatar: "IK",
+
+            parentId: "LR-PAR-003",
+
+            relationship: "Father",
+
+            childId: "STU002",
+
+            childName: "Ali Khan",
+
+            childStudentId: "LR-STU-002"
+        },
+
+
+        /* =================================================
+           PARENT 4 — SARA'S MOTHER
+           ================================================= */
+
+        {
+            id: "PAR004",
+
+            email: "mother.sara@learnora.com",
+            password: "SaraMother@123",
+
+            name: "Mrs. Nadia Ahmed",
+            firstName: "Nadia",
+
+            role: "parent",
+
+            program: "Parent Portal",
+            semester: "",
+
+            avatar: "NA",
+
+            parentId: "LR-PAR-004",
+
+            relationship: "Mother",
+
+            childId: "STU003",
+
+            childName: "Sara Ahmed",
+
+            childStudentId: "LR-STU-003"
+        },
+
+        {
+    id: "PAR004",
+    name: "Hamza's Mother",
+    email: "mother.hamza@learnora.com",
+    password: "HamzaMother@123",
+    role: "parent",
+    relationship: "Mother",
+    childId: "STU004"
+}
 
     ];
 
@@ -623,15 +739,81 @@ document.addEventListener("DOMContentLoaded", () => {
             "learnora_user_role",
             "learnora_user_email",
             "learnora_user_id",
-            "learnora_student_name"
+            "learnora_student_name",
+            "learnora_current_parent",
+            "learnora_current_child"
 
         ];
 
         sessionKeys.forEach(key => {
 
             localStorage.removeItem(key);
+            sessionStorage.removeItem(key);
 
         });
+
+    }
+
+
+    /* =====================================================
+       SAVE USER DATABASE
+       ===================================================== */
+
+    function saveUserDatabase() {
+
+        try {
+
+            const safeUsers =
+                JSON.parse(
+                    JSON.stringify(users)
+                );
+
+            localStorage.setItem(
+                "learnora_users",
+                JSON.stringify(safeUsers)
+            );
+
+            console.log(
+                "Learnora user database saved:",
+                safeUsers
+            );
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Unable to save Learnora user database:",
+                error
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       FIND STUDENT BY ID
+       ===================================================== */
+
+    function findStudentById(studentId) {
+
+        if (!studentId) {
+            return null;
+        }
+
+        return users.find(user => {
+
+            return (
+
+                user.id === studentId &&
+
+                normalizeRole(user.role) ===
+                "student"
+
+            );
+
+        }) || null;
 
     }
 
@@ -643,18 +825,126 @@ document.addEventListener("DOMContentLoaded", () => {
     function saveCurrentUser(account) {
 
         /*
-         * Create a fresh copy.
-         * This prevents accidental references to the
-         * original users array.
+         * Create a completely separate copy.
          */
 
-        const currentUser = JSON.parse(
-            JSON.stringify(account)
-        );
+        const currentUser =
+            JSON.parse(
+                JSON.stringify(account)
+            );
 
 
         /* -----------------------------------------------
-           SESSION STATUS
+           FIND LINKED CHILD FOR PARENT
+           ----------------------------------------------- */
+
+        let linkedChild = null;
+
+
+        if (
+            normalizeRole(
+                currentUser.role
+            ) === "parent"
+        ) {
+
+            linkedChild =
+                findStudentById(
+                    currentUser.childId
+                );
+
+
+            if (linkedChild) {
+
+                /*
+                 * Store only a safe copy of child
+                 * inside current parent session.
+                 */
+
+                currentUser.child = {
+
+                    id: linkedChild.id,
+
+                    name: linkedChild.name,
+
+                    firstName:
+                        linkedChild.firstName,
+
+                    email: linkedChild.email,
+
+                    role: linkedChild.role,
+
+                    program: linkedChild.program,
+
+                    semester: linkedChild.semester,
+
+                    avatar: linkedChild.avatar,
+
+                    studentId:
+                        linkedChild.studentId,
+
+                    gpa: linkedChild.gpa,
+
+                    attendance:
+                        linkedChild.attendance,
+
+                    overallProgress:
+                        linkedChild.overallProgress,
+
+                    coursesCount:
+                        linkedChild.coursesCount,
+
+                    courses:
+                        linkedChild.courses || [],
+
+                    assignments:
+                        linkedChild.assignments || [],
+
+                    results:
+                        linkedChild.results || [],
+
+                    attendanceData:
+                        linkedChild.attendanceData || [],
+
+                    quizzes:
+                        linkedChild.quizzes || [],
+
+                    exams:
+                        linkedChild.exams || [],
+
+                    schedule:
+                        linkedChild.schedule || [],
+
+                    announcements:
+                        linkedChild.announcements || []
+                };
+
+
+                /*
+                 * Also save separately for parent.js.
+                 */
+
+                localStorage.setItem(
+                    "learnora_current_child",
+                    JSON.stringify(
+                        currentUser.child
+                    )
+                );
+
+            }
+
+            else {
+
+                localStorage.removeItem(
+                    "learnora_current_child"
+                );
+
+            }
+
+        }
+
+
+        /* -----------------------------------------------
+           LOGIN STATUS
            ----------------------------------------------- */
 
         localStorage.setItem(
@@ -669,7 +959,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         localStorage.setItem(
             "learnora_user_role",
-            currentUser.role
+            normalizeRole(
+                currentUser.role
+            )
         );
 
 
@@ -704,23 +996,80 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         /* -----------------------------------------------
-           COMPLETE USER OBJECT
+           COMPLETE CURRENT USER
            ----------------------------------------------- */
 
         localStorage.setItem(
             "learnora_current_user",
-            JSON.stringify(currentUser)
+            JSON.stringify(
+                currentUser
+            )
         );
 
 
-        /*
-         * Debug verification
-         */
+        /* -----------------------------------------------
+           CURRENT PARENT
+           ----------------------------------------------- */
+
+        if (
+            normalizeRole(
+                currentUser.role
+            ) === "parent"
+        ) {
+
+            localStorage.setItem(
+                "learnora_current_parent",
+                JSON.stringify(
+                    currentUser
+                )
+            );
+
+        }
+
+
+        /* -----------------------------------------------
+           ALSO SAVE IN SESSION STORAGE
+           ----------------------------------------------- */
+
+        sessionStorage.setItem(
+            "learnora_current_user",
+            JSON.stringify(
+                currentUser
+            )
+        );
+
+        sessionStorage.setItem(
+            "learnora_logged_in",
+            "true"
+        );
+
+        sessionStorage.setItem(
+            "learnora_user_role",
+            normalizeRole(
+                currentUser.role
+            )
+        );
+
+        sessionStorage.setItem(
+            "learnora_user_id",
+            currentUser.id
+        );
+
 
         console.log(
             "Current Learnora User Saved:",
             currentUser
         );
+
+
+        if (linkedChild) {
+
+            console.log(
+                "Linked Child:",
+                linkedChild
+            );
+
+        }
 
     }
 
@@ -735,16 +1084,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
             roleOptions.forEach(item => {
 
-                item.classList.remove("active");
+                item.classList.remove(
+                    "active"
+                );
 
             });
 
 
-            option.classList.add("active");
+            option.classList.add(
+                "active"
+            );
 
 
             currentRole =
-                normalizeRole(option.dataset.role);
+                normalizeRole(
+                    option.dataset.role
+                );
 
 
             hideMessages();
@@ -753,21 +1108,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (username) {
 
-                if (currentRole === "student") {
+                if (
+                    currentRole ===
+                    "student"
+                ) {
 
                     username.placeholder =
                         "Enter your student email or username";
 
                 }
 
-                else if (currentRole === "teacher") {
+                else if (
+                    currentRole ===
+                    "teacher"
+                ) {
 
                     username.placeholder =
                         "Enter your teacher email or username";
 
                 }
 
-                else if (currentRole === "parent") {
+                else if (
+                    currentRole ===
+                    "parent"
+                ) {
 
                     username.placeholder =
                         "Enter your parent email or username";
@@ -785,63 +1149,78 @@ document.addEventListener("DOMContentLoaded", () => {
        PASSWORD SHOW / HIDE
        ===================================================== */
 
-    if (passwordToggle && password) {
+    if (
+        passwordToggle &&
+        password
+    ) {
 
-        passwordToggle.addEventListener("click", () => {
+        passwordToggle.addEventListener(
+            "click",
+            () => {
 
-            const icon =
-                passwordToggle.querySelector("i");
+                const icon =
+                    passwordToggle.querySelector(
+                        "i"
+                    );
 
 
-            if (password.type === "password") {
+                if (
+                    password.type ===
+                    "password"
+                ) {
 
-                password.type = "text";
+                    password.type =
+                        "text";
 
 
-                if (icon) {
+                    if (icon) {
 
-                    icon.classList.remove("fa-eye");
+                        icon.classList.remove(
+                            "fa-eye"
+                        );
 
-                    icon.classList.add(
-                        "fa-eye-slash"
+                        icon.classList.add(
+                            "fa-eye-slash"
+                        );
+
+                    }
+
+
+                    passwordToggle.setAttribute(
+                        "aria-label",
+                        "Hide password"
                     );
 
                 }
 
+                else {
 
-                passwordToggle.setAttribute(
-                    "aria-label",
-                    "Hide password"
-                );
-
-            }
-
-            else {
-
-                password.type = "password";
+                    password.type =
+                        "password";
 
 
-                if (icon) {
+                    if (icon) {
 
-                    icon.classList.remove(
-                        "fa-eye-slash"
-                    );
+                        icon.classList.remove(
+                            "fa-eye-slash"
+                        );
 
-                    icon.classList.add(
-                        "fa-eye"
+                        icon.classList.add(
+                            "fa-eye"
+                        );
+
+                    }
+
+
+                    passwordToggle.setAttribute(
+                        "aria-label",
+                        "Show password"
                     );
 
                 }
 
-
-                passwordToggle.setAttribute(
-                    "aria-label",
-                    "Show password"
-                );
-
             }
-
-        });
+        );
 
     }
 
@@ -850,49 +1229,61 @@ document.addEventListener("DOMContentLoaded", () => {
        DEMO ACCESS TOGGLE
        ===================================================== */
 
-    if (demoToggle && demoContent) {
+    if (
+        demoToggle &&
+        demoContent
+    ) {
 
-        demoToggle.addEventListener("click", () => {
+        demoToggle.addEventListener(
+            "click",
+            () => {
 
-            demoContent.classList.toggle("open");
+                demoContent.classList.toggle(
+                    "open"
+                );
 
 
-            const icon =
-                demoToggle.querySelector("i");
+                const icon =
+                    demoToggle.querySelector(
+                        "i"
+                    );
 
 
-            if (!icon) {
-                return;
+                if (!icon) {
+                    return;
+                }
+
+
+                if (
+                    demoContent.classList.contains(
+                        "open"
+                    )
+                ) {
+
+                    icon.classList.remove(
+                        "fa-chevron-down"
+                    );
+
+                    icon.classList.add(
+                        "fa-chevron-up"
+                    );
+
+                }
+
+                else {
+
+                    icon.classList.remove(
+                        "fa-chevron-up"
+                    );
+
+                    icon.classList.add(
+                        "fa-chevron-down"
+                    );
+
+                }
+
             }
-
-
-            if (
-                demoContent.classList.contains("open")
-            ) {
-
-                icon.classList.remove(
-                    "fa-chevron-down"
-                );
-
-                icon.classList.add(
-                    "fa-chevron-up"
-                );
-
-            }
-
-            else {
-
-                icon.classList.remove(
-                    "fa-chevron-up"
-                );
-
-                icon.classList.add(
-                    "fa-chevron-down"
-                );
-
-            }
-
-        });
+        );
 
     }
 
@@ -903,77 +1294,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
     demoButtons.forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            const email =
-                button.dataset.email || "";
-
-
-            const userPassword =
-                button.dataset.password || "";
-
-
-            const role =
-                normalizeRole(
-                    button.dataset.role
-                );
+                const email =
+                    button.dataset.email ||
+                    "";
 
 
-            if (username) {
-
-                username.value = email;
-
-            }
+                const userPassword =
+                    button.dataset.password ||
+                    "";
 
 
-            if (password) {
-
-                password.value =
-                    userPassword;
-
-            }
-
-
-            roleOptions.forEach(option => {
-
-                option.classList.remove(
-                    "active"
-                );
-
-
-                if (
+                const role =
                     normalizeRole(
-                        option.dataset.role
-                    ) === role
-                ) {
-
-                    option.classList.add(
-                        "active"
+                        button.dataset.role
                     );
 
-                }
 
-            });
+                if (username) {
 
-
-            currentRole = role;
-
-
-            clearErrors();
-            hideMessages();
-
-
-            setTimeout(() => {
-
-                if (loginForm) {
-
-                    loginForm.requestSubmit();
+                    username.value =
+                        email;
 
                 }
 
-            }, 200);
 
-        });
+                if (password) {
+
+                    password.value =
+                        userPassword;
+
+                }
+
+
+                roleOptions.forEach(
+                    option => {
+
+                        option.classList.remove(
+                            "active"
+                        );
+
+
+                        if (
+                            normalizeRole(
+                                option.dataset.role
+                            ) === role
+                        ) {
+
+                            option.classList.add(
+                                "active"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                currentRole =
+                    role;
+
+
+                clearErrors();
+                hideMessages();
+
+
+                setTimeout(() => {
+
+                    if (loginForm) {
+
+                        loginForm.requestSubmit();
+
+                    }
+
+                }, 200);
+
+            }
+        );
 
     });
 
@@ -1087,7 +1487,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /* =========================================
-                   GET FORM VALUES
+                   FORM VALUES
                    ========================================= */
 
                 const emailValue =
@@ -1195,6 +1595,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /* =========================================
+                   PARENT CHILD VALIDATION
+                   ========================================= */
+
+                if (
+                    selectedRole ===
+                    "parent"
+                ) {
+
+                    const child =
+                        findStudentById(
+                            account.childId
+                        );
+
+
+                    if (!child) {
+
+                        if (loginError) {
+
+                            loginError.classList.add(
+                                "show"
+                            );
+
+
+                            const message =
+                                loginError.querySelector(
+                                    "span"
+                                );
+
+
+                            if (message) {
+
+                                message.textContent =
+                                    "This parent account is not linked to a valid student account.";
+
+                            }
+
+                        }
+
+
+                        console.error(
+                            "Parent child relationship not found:",
+                            account
+                        );
+
+
+                        return;
+
+                    }
+
+                }
+
+
+                /* =========================================
                    CLEAR OLD ACCOUNT
                    ========================================= */
 
@@ -1202,10 +1655,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
                 /* =========================================
-                   SAVE NEW ACCOUNT
+                   SAVE COMPLETE USER DATABASE
                    ========================================= */
 
-                saveCurrentUser(account);
+                saveUserDatabase();
+
+
+                /* =========================================
+                   SAVE CURRENT ACCOUNT
+                   ========================================= */
+
+                saveCurrentUser(
+                    account
+                );
 
 
                 /* =========================================
@@ -1252,8 +1714,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     if (message) {
 
-                        message.textContent =
-                            `Welcome ${account.firstName}! Login successful. Redirecting...`;
+                        if (
+                            selectedRole ===
+                            "parent"
+                        ) {
+
+                            message.textContent =
+                                `Welcome ${account.firstName}! ${account.relationship} portal loaded. Redirecting...`;
+
+                        }
+
+                        else {
+
+                            message.textContent =
+                                `Welcome ${account.firstName}! Login successful. Redirecting...`;
+
+                        }
 
                     }
 
@@ -1270,7 +1746,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         "loading"
                     );
 
-                    loginButton.disabled = true;
+                    loginButton.disabled =
+                        true;
 
                 }
 
@@ -1285,7 +1762,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         id: account.id,
                         name: account.name,
                         email: account.email,
-                        role: account.role
+                        role: account.role,
+                        childId:
+                            account.childId ||
+                            null
                     }
                 );
 
@@ -1311,7 +1791,7 @@ document.addEventListener("DOMContentLoaded", () => {
                        ------------------------------------- */
 
                     if (
-                        account.role ===
+                        selectedRole ===
                         "student"
                     ) {
 
@@ -1328,7 +1808,7 @@ document.addEventListener("DOMContentLoaded", () => {
                        ------------------------------------- */
 
                     if (
-                        account.role ===
+                        selectedRole ===
                         "teacher"
                     ) {
 
@@ -1345,7 +1825,7 @@ document.addEventListener("DOMContentLoaded", () => {
                        ------------------------------------- */
 
                     if (
-                        account.role ===
+                        selectedRole ===
                         "parent"
                     ) {
 
@@ -1415,7 +1895,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (resetMessage) {
 
-            resetMessage.textContent = "";
+            resetMessage.textContent =
+                "";
 
             resetMessage.className =
                 "reset-message";
@@ -1500,21 +1981,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const email =
                     resetEmail
-                        ? resetEmail.value.trim()
+                        ? normalizeEmail(
+                            resetEmail.value
+                        )
                         : "";
 
 
                 if (!email) {
+
+                    if (resetMessage) {
+
+                        resetMessage.textContent =
+                            "Please enter your email address.";
+
+                        resetMessage.className =
+                            "reset-message show";
+
+                    }
 
                     return;
 
                 }
 
 
+                /* -----------------------------------------
+                   CHECK WHETHER EMAIL EXISTS
+                   ----------------------------------------- */
+
+                const account =
+                    users.find(user => {
+
+                        return (
+                            normalizeEmail(
+                                user.email
+                            ) === email
+                        );
+
+                    });
+
+
                 if (resetMessage) {
 
-                    resetMessage.textContent =
-                        "Password reset instructions have been sent to your email.";
+                    if (account) {
+
+                        resetMessage.textContent =
+                            "Password reset instructions have been sent to your email.";
+
+                    }
+
+                    else {
+
+                        /*
+                         * For a frontend demo, we don't reveal
+                         * unnecessary account details.
+                         */
+
+                        resetMessage.textContent =
+                            "If an account exists for this email, reset instructions have been sent.";
+
+                    }
+
 
                     resetMessage.classList.add(
                         "show"
@@ -1533,6 +2059,13 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
     }
+
+
+    /* =====================================================
+       SAVE DATABASE ON LOGIN PAGE LOAD
+       ===================================================== */
+
+    saveUserDatabase();
 
 
     /* =====================================================
@@ -1685,26 +2218,55 @@ document.addEventListener("DOMContentLoaded", () => {
        INITIAL STUDENT ROLE
        ===================================================== */
 
+    let roleAlreadySelected =
+        false;
+
+
     roleOptions.forEach(option => {
 
         if (
-            normalizeRole(
-                option.dataset.role
-            ) === "student"
+            option.classList.contains(
+                "active"
+            )
         ) {
 
-            option.classList.add(
-                "active"
-            );
+            roleAlreadySelected =
+                true;
 
         }
 
     });
 
 
+    if (!roleAlreadySelected) {
+
+        roleOptions.forEach(option => {
+
+            if (
+                normalizeRole(
+                    option.dataset.role
+                ) ===
+                "student"
+            ) {
+
+                option.classList.add(
+                    "active"
+                );
+
+            }
+
+        });
+
+    }
+
+
     /* =====================================================
        FINAL SYSTEM CHECK
        ===================================================== */
+
+    console.log(
+        "======================================="
+    );
 
     console.log(
         "Learnora Login System Loaded Successfully."
@@ -1714,5 +2276,35 @@ document.addEventListener("DOMContentLoaded", () => {
         `Available Accounts: ${users.length}`
     );
 
-});
+    console.log(
+        "Students:",
+        users.filter(
+            user =>
+                normalizeRole(user.role) ===
+                "student"
+        ).length
+    );
 
+    console.log(
+        "Teachers:",
+        users.filter(
+            user =>
+                normalizeRole(user.role) ===
+                "teacher"
+        ).length
+    );
+
+    console.log(
+        "Parents:",
+        users.filter(
+            user =>
+                normalizeRole(user.role) ===
+                "parent"
+        ).length
+    );
+
+    console.log(
+        "======================================="
+    );
+
+});
